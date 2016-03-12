@@ -1,10 +1,7 @@
 ---
-title: about me
+title: about
+date: 2016-03-11 17:33:04
 ---
-
-This post contains the old root content as I move to [Hexo](https://hexo.io/)
-
-Steven R. Loomis
 
 * Sr Software Engineer, [IBM Global Foundations Technology Team](http://ibm.com/software/globalization/)
 * Social: [LinkedIn](http://www.linkedin.com/in/srloomis) [Twitter: @srl295](http://twitter.com/srl295) [Github: @srl295](https://github.com/srl295) [openhub](https://www.openhub.net/accounts/srl295) [keybase](https://keybase.io/srl295)
@@ -24,5 +21,3 @@ Steven R. Loomis
 
 # Badges
 I am acclaim certified as a [Node.js contributor](https://www.youracclaim.com/badges/5cc821b1-11ac-43ff-a9b1-92d17b37b625/public_url)!
-
-
