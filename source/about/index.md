@@ -1,6 +1,6 @@
 ---
 title: about
-date: 2016-05-02 00:00:00
+date: 2016-05-02 16:26:36
 ---
 
 * Sr Software Engineer, [IBM Global Foundations Technology Team](http://ibm.com/software/globalization/)
@@ -25,3 +25,6 @@ date: 2016-05-02 00:00:00
 
 # Badges
 I am acclaim certified as a [Node.js contributor](https://www.youracclaim.com/badges/5cc821b1-11ac-43ff-a9b1-92d17b37b625/public_url)!
+
+# Recent Posts
+See the sidebar or click [Archives](/archives) to view other blog posts.
