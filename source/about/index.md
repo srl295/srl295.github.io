@@ -1,6 +1,6 @@
 ---
 title: about
-date: 2016-03-11 17:33:04
+date: 2016-05-02 00:00:00
 ---
 
 * Sr Software Engineer, [IBM Global Foundations Technology Team](http://ibm.com/software/globalization/)
