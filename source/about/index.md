@@ -12,6 +12,10 @@ date: 2016-03-11 17:33:04
  * June 27: [Building Blocks for Multilingual Data in CLDR](http://www.slideshare.net/StevenRLoomis/building-blocks-for-accessing-multilingual-data-cldr) at [ALAAC15](http://alaac15.ala.org/node/28690)
  * December 9: [Node.js Intl: Where we are, What’s Next?](https://rawgit.com/srl295/srl295-slides/7fdcfec64da215d71d16dee80261883eb610196b/index.html) | [repo](https://github.com/srl295/srl295-slides/tree/2015-12-NodeInteractive) | [vid](http://youtu.be/U0z_yO5gFP8)
 
+# Unicode Proposals
+* 2016
+ * May 2: [L2/16-105: Coded Hashes of Arbitrary Images](http://www.unicode.org/L2/L2016/16105-unicode-image-hash.pdf)
+
 # Note
 * Note: I'll be moving stuff from my old [Connections](https://www-304.ibm.com/connections/profiles/html/profileView.do?userid=1200008EFG&lang=en_us) page.
 * [https://ibm.biz/srloomis](ibm.biz/srloomis) also links here.
