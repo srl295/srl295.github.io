@@ -1,19 +1,34 @@
 ---
 title: about
-date: 2016-05-02 16:26:36
+date: 2017-07-14 16:26:36
 ---
 
 * Sr Software Engineer, [IBM Global Foundations Technology Team](http://ibm.com/software/globalization/)
 * Social: [LinkedIn](http://www.linkedin.com/in/srloomis) [Twitter: @srl295](http://twitter.com/srl295) [Github: @srl295](https://github.com/srl295) [openhub](https://www.openhub.net/accounts/srl295) [keybase](https://keybase.io/srl295)
-* Projects: [ICU](http://icu-project.org) ([me](https://ssl.icu-project.org/trac/wiki/Srl)) [CLDR](http://unicode.org/cldr) [ULI-TC Chair](http://unicode.org/uli) [Unicode-TC rep](http://unicode.org)
+* Projects: [ICU](http://icu-project.org) ([me](https://ssl.icu-project.org/trac/wiki/Srl)) | [CLDR](http://unicode.org/cldr) | [ULI-TC Chair](http://unicode.org/uli) | [Unicode-TC rep](http://unicode.org) | [Globalization Pipeline](https://developer.ibm.com/open/ibm-bluemix-globalization-pipeline-service/)
+* See my [dev story](https://developer.ibm.com/open/stevens-dev-story/)
 
 # Presentations
-* 2015
- * June 27: [Building Blocks for Multilingual Data in CLDR](http://www.slideshare.net/StevenRLoomis/building-blocks-for-accessing-multilingual-data-cldr) at [ALAAC15](http://alaac15.ala.org/node/28690)
- * December 9: [Node.js Intl: Where we are, What’s Next?](https://rawgit.com/srl295/srl295-slides/7fdcfec64da215d71d16dee80261883eb610196b/index.html) | [repo](https://github.com/srl295/srl295-slides/tree/2015-12-NodeInteractive) | [vid](http://youtu.be/U0z_yO5gFP8)
+
+Upcoming
+* July 28: [NodeSummit](http://nodesummit.com) SF
+* Aug 8: [FresNode](http://www.meetup.com/en-US/fresno-node-js) Fresno
+* Nov 1-3: [40th IUC Conference](http://www.unicodeconference.org/program.htm) Santa Clara
+
+2016
+* Mar 9
+   * [Globalization Pipeline (keynote)](http://conferences.oreilly.com/fluent/javascript-html-us/public/schedule/detail/50476) | [vid](https://www.oreilly.com/ideas/globalization-pipeline-translations-at-cloud-speeds) at Fluent  w/ Steven Atkin
+   * [Interview](https://www.youtube.com/watch?v=uMD4XhVaekY) at Fluent  w/ Steven Atkin
+   * [Globalization Pipeline (session)](http://conferences.oreilly.com/fluent/javascript-html-us/public/schedule/detail/50517) at Fluent w/ Steven Atkin
+
+
+2015
+* Feb 11: [Intl as in Internationalization](http://nodesummit.com/media/intl-as-in-internationalization-tools-for-global-node-js-applications/) at Nodesummit SF
+* June 27: [Building Blocks for Multilingual Data in CLDR](http://www.slideshare.net/StevenRLoomis/building-blocks-for-accessing-multilingual-data-cldr) at [ALAAC15](http://alaac15.ala.org/node/28690) SF
+* December 9: [Node.js Intl: Where we are, What’s Next?](https://rawgit.com/srl295/srl295-slides/7fdcfec64da215d71d16dee80261883eb610196b/index.html) | [repo](https://github.com/srl295/srl295-slides/tree/2015-12-NodeInteractive) | [vid](http://youtu.be/U0z_yO5gFP8) at Node Interactive Portland
 
 # Unicode Proposals
-* 2016
+2016
  * May 2: [L2/16-105: Coded Hashes of Arbitrary Images](http://www.unicode.org/L2/L2016/16105-unicode-image-hash.pdf)
 
 # Note
