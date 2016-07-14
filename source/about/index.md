@@ -32,8 +32,8 @@ Upcoming
  * May 2: [L2/16-105: Coded Hashes of Arbitrary Images](http://www.unicode.org/L2/L2016/16105-unicode-image-hash.pdf)
 
 # Note
-* Note: I'll be moving stuff from my old [Connections](https://www-304.ibm.com/connections/profiles/html/profileView.do?userid=1200008EFG&lang=en_us) page.
 * [https://ibm.biz/srloomis](ibm.biz/srloomis) also links here.
+* My old [Connections](https://www-304.ibm.com/connections/profiles/html/profileView.do?userid=1200008EFG&lang=en_us) page is now gone. Hopefully everything was moved over.
 
 # GPG
 `E409 8B78 AFC9 4394 F3F4  9AA9 0399 6C7C 83F1 2F11` also [keybase](https://keybase.io/srl295)
