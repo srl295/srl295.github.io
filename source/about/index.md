@@ -11,7 +11,6 @@ date: 2017-07-14 16:26:36
 # Presentations
 
 Upcoming
-* July 28: [NodeSummit](http://nodesummit.com) SF
 * Aug 8: [FresNode](http://www.meetup.com/en-US/fresno-node-js) Fresno
 * Nov 1-3: [40th IUC Conference](http://www.unicodeconference.org/program.htm) Santa Clara
 
@@ -20,7 +19,8 @@ Upcoming
    * [Globalization Pipeline (keynote)](http://conferences.oreilly.com/fluent/javascript-html-us/public/schedule/detail/50476) | [vid](https://www.oreilly.com/ideas/globalization-pipeline-translations-at-cloud-speeds) at Fluent  w/ Steven Atkin
    * [Interview](https://www.youtube.com/watch?v=uMD4XhVaekY) at Fluent  w/ Steven Atkin
    * [Globalization Pipeline (session)](http://conferences.oreilly.com/fluent/javascript-html-us/public/schedule/detail/50517) at Fluent w/ Steven Atkin
-
+* July 28
+   * [Intl as in Internationalization](https://rawgit.com/srl295/srl295-slides/5782c73a786d71acb94a31057ea70a929a4f48a5/index.html) at [NodeSummit](http://nodesummit.com) SF
 
 2015
 * Feb 11: [Intl as in Internationalization](http://nodesummit.com/media/intl-as-in-internationalization-tools-for-global-node-js-applications/) at Nodesummit SF
