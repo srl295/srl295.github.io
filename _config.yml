@@ -74,3 +74,9 @@ deploy:
 #  message: [message]
 
 disqus_shortname: srl295
+
+feed:
+  type: atom
+  path: atom.xml
+  limit: 0
+  hub:
