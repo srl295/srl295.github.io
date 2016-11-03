@@ -12,7 +12,13 @@ date: 2017-07-14 16:26:36
 
 ## 2016
 * Nov 1-3: [40th IUC Conference](http://www.unicodeconference.org/program.htm) Santa Clara
-  * Slides coming soon…
+   * ICU Tutorial: coming soon
+   * CLDR Tutorial: coming soon
+   * New in ICU: coming soon
+   * CLDR Advanced Topics: coming soon
+   * CLDR Panel: coming soon
+   * “Behind the Curtain”: coming soon
+   * Intl all the things: [slides](https://cdn.rawgit.com/srl295/srl295-slides/2016-11-03-iuc40/index.html) | [repo](https://github.com/srl295/srl295-slides/tree/2016-11-03-iuc40) | [pdf](https://www.dropbox.com/s/0nuyx8nhvh85ukn/s9t3%20Nodejs%20Intl%20All%20the%20Things.pdf?dl=0)
 * Aug 8: [FresNode](http://www.meetup.com/en-US/fresno-node-js) Fresno
 * July 28
    * [Intl as in Internationalization](https://cdn.rawgit.com/srl295/srl295-slides/2016-07-NodeSummit-final/index.html) at [NodeSummit](http://nodesummit.com) SF | [repo](https://github.com/srl295/srl295-slides/tree/2016-07-NodeSummit) 
