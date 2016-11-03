@@ -10,18 +10,17 @@ date: 2017-07-14 16:26:36
 
 # Presentations
 
-## Upcoming
-* Aug 8: [FresNode](http://www.meetup.com/en-US/fresno-node-js) Fresno
-* Nov 1-3: [40th IUC Conference](http://www.unicodeconference.org/program.htm) Santa Clara
-
 ## 2016
+* Nov 1-3: [40th IUC Conference](http://www.unicodeconference.org/program.htm) Santa Clara
+  * Slides coming soon…
+* Aug 8: [FresNode](http://www.meetup.com/en-US/fresno-node-js) Fresno
+* July 28
+   * [Intl as in Internationalization](https://cdn.rawgit.com/srl295/srl295-slides/2016-07-NodeSummit-final/index.html) at [NodeSummit](http://nodesummit.com) SF | [repo](https://github.com/srl295/srl295-slides/tree/2016-07-NodeSummit) 
+   NOTE: Use an Intl-enabled browser for best results, such as Firefox.
 * Mar 9 - Fluent, SF
    * [Globalization Pipeline (keynote)](http://conferences.oreilly.com/fluent/javascript-html-us/public/schedule/detail/50476) | [vid](https://www.oreilly.com/ideas/globalization-pipeline-translations-at-cloud-speeds)   w/ Steven Atkin
    * [Interview](https://www.youtube.com/watch?v=uMD4XhVaekY)   w/ Steven Atkin
    * [Globalization Pipeline (session)](http://conferences.oreilly.com/fluent/javascript-html-us/public/schedule/detail/50517)  w/ Steven Atkin
-* July 28
-   * [Intl as in Internationalization](https://cdn.rawgit.com/srl295/srl295-slides/2016-07-NodeSummit-final/index.html) at [NodeSummit](http://nodesummit.com) SF | [repo](https://github.com/srl295/srl295-slides/tree/2016-07-NodeSummit) 
-   NOTE: Use an Intl-enabled browser for best results, such as Firefox.
 
 ## 2015
 * Feb 11 NodeSummit SF
