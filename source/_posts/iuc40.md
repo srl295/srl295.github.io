@@ -1,8 +1,10 @@
 ---
 title: 40th Internationalization and Unicode Conference
-s: iuc40
 tags: unicode
+s: iuc40
+date: 2016-11-04 22:33:58
 ---
+
 
 I'll start, and could almost end, my post with this tweet:
 
@@ -21,4 +23,13 @@ The conference, and Unicode in general, is about _people_. It is always great to
 folks I've kept up with over the years… including of course my fellow IBMers from
 many time zones away.
 
-Off the top of my head, the important technical (besides personal) conversations 
+Off the top of my head, the important technical (besides personal) conversations I've had include:
+
+- our [Globalization Pipeline](https://github.com/IBM-Bluemix/gp-common) service
+- CLDR … ICU … [ULI](http://uli.unicode.org)
+- Keyboards
+- Node.js
+- [Greek casing](http://bugs.icu-project.org/trac/ticket/12845)
+- …and even a little emoji discussion
+
+Next week : IBM is hosting [UTC 149](http://www.unicode.org/consortium/utc.html) !
