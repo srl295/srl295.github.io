@@ -53,7 +53,7 @@ date: 2017-07-14 16:26:36
 * I am acclaim certified as a [Node.js contributor](https://www.youracclaim.com/badges/5cc821b1-11ac-43ff-a9b1-92d17b37b625/public_url)!
 
 [![OpenHub](https://www.openhub.net/accounts/9247/widgets/account_detailed.gif)](https://www.openhub.net/accounts/9247?ref=Detailed)
-[![Stack Exchange](http://stackexchange.com/users/flair/c1970b3f26b54398bc7b033048c7a2f0.png)](http://stackoverflow.com/users/185799/steven-r-loomis)
+[![Stack Exchange](https://stackexchange.com/users/flair/c1970b3f26b54398bc7b033048c7a2f0.png)](http://stackoverflow.com/users/185799/steven-r-loomis)
 
 # Recent Posts
 See the sidebar or click [Archives](/archives) to view other blog posts.
