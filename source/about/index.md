@@ -15,6 +15,7 @@ date: 2017-07-14 16:26:36
    * ICU Tutorial: [pdf](https://www.dropbox.com/s/mhe9ypava28gdhz/ts2t2%20-%20Putting%20ICU%20to%20Work.pdf?dl=0) | [icu4c sample](http://source.icu-project.org/repos/icu/icuapps/trunk/icufacts/) | [icu4j sample](http://source.icu-project.org/repos/icu/icu4j/trunk/samples/)
    * CLDR Tutorial: [pdf](https://www.dropbox.com/s/fonrk0ljlt11ffv/TS3T3%20CLDR_Tutorial_IUC40.pdf?dl=0)
    * New in ICU: [slides](https://goo.gl/KkYxC9)
+   * Translating at Cloud Speeds: The IBM Globalization Pipeline
    * CLDR Advanced Topics: [slides](https://cdn.rawgit.com/srl295/srl295-slides/2016-11-02-iuc40-cldradv/index.html) | [repo](https://github.com/srl295/srl295-slides/tree/2016-11-02-iuc40-cldradv) | [pdf](https://www.dropbox.com/s/0c6sehw0x1wsz4l/S3T2%20CLDR%20New%20Advanced%20Topics.pdf?dl=0)
    * CLDR Panel: [slides](https://bit.ly/iuc40cldr)
    * “The Unicode Consortium: Behind the Curtain”
@@ -38,6 +39,7 @@ date: 2017-07-14 16:26:36
 
 # Unicode Proposals
 2016
+ * May 2: [L2/16-105: Coded Hashes of Arbitrary Images](http://www.unicode.org/L2/L2016/16105-unicode-image-hash.pdf)
  * May 2: [L2/16-105: Coded Hashes of Arbitrary Images](http://www.unicode.org/L2/L2016/16105-unicode-image-hash.pdf)
 
 # Note
