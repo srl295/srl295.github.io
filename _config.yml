@@ -64,6 +64,9 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: landscape
+plugins:
+- hexo-generator-robotstxt
+
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -84,3 +87,15 @@ feed:
 # Miscellaneous
 google_analytics: UA-70353707-1
 google_site_verification: sbLStvzF9g9-7JUTpZDHcWb0XO3ztnCYqUHzwLENBxs
+
+robotstxt:
+  useragent: "*"
+  # disallow:
+  #   - /one_file_to_disallow.html
+  #   - /2nd_file_to_disallow.html
+  #   - /3rd_file_to_disallow.html
+  # allow:
+  #   - /one_file_to_allow.html
+  #   - /2nd_file_to_allow.html
+  #   - /3rd_file_to_allow.html
+  sitemap: /sitemap.xml
