@@ -6,7 +6,7 @@ date: 2017-01-06 17:59:34
 ---
 
 
-Today we just tagged v1.0 of the [Globalization Pipeline SDK for iOS](https://github.com/IBM-Bluemix/gp-ios-client). What can an iOS client do? Well, let’s build a simple app and find out.
+Yesterday we just tagged v1.0 of the [Globalization Pipeline SDK for iOS](https://github.com/IBM-Bluemix/gp-ios-client). What can an iOS client do? Well, let’s build a simple app and find out.
 
 Starting Out
 ==
