@@ -99,3 +99,12 @@ robotstxt:
   #   - /2nd_file_to_allow.html
   #   - /3rd_file_to_allow.html
   sitemap: /sitemap.xml
+
+marked:
+  gfm: true
+  pedantic: false
+  sanitize: false
+  tables: true
+  breaks: false
+  smartLists: true
+  smartypants: false

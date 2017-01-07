@@ -2,7 +2,7 @@
 title: GP Client for JavaScript v1.3.0 released
 s: g11n-pipeline-1.3.0
 date: 2016-12-07 16:43:08
-tags: globalization-pipeline
+tags: globalizationpipeline
 ---
 
 It’s time for a refresh on the Globalization Pipeline Node.js client.
