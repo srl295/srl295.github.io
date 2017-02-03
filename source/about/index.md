@@ -3,6 +3,8 @@ title: about
 date: 2017-07-14 16:26:36
 ---
 
+To see the latest blog posts, visit the [archives](https://srl295.github.io/archives/).
+
 * Sr Software Engineer, [IBM Global Foundations Technology Team](http://ibm.com/software/globalization/)
 * Social: [LinkedIn](http://www.linkedin.com/in/srloomis) [Twitter: @srl295](http://twitter.com/srl295) [Github: @srl295](https://github.com/srl295) [openhub](https://www.openhub.net/accounts/srl295) [keybase](https://keybase.io/srl295)
 * Projects: [ICU](http://icu-project.org) ([me](https://ssl.icu-project.org/trac/wiki/Srl)) | [CLDR](http://unicode.org/cldr) | [ULI-TC Chair](http://unicode.org/uli) | [Unicode-TC rep](http://unicode.org) | [Globalization Pipeline](https://developer.ibm.com/open/ibm-bluemix-globalization-pipeline-service/)
