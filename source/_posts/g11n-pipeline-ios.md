@@ -17,6 +17,9 @@ While that is launching, I’ll warn you that your author is only a recent gradu
 
 Today’s app will be a color mixer, to help artists mix their colors. You know, red and blue makes purple, and so on.
 
+{% asset_img 00_title.png %}
+
+
 I will name the workspace `gp-ios-color-mixer`, and create a new single view app called `GP Color Mixer`.  To simplify things, for now, I disable the checkbox “automatically manage signing.”
 
 {% asset_img 01_singleview.png %}
