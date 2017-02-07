@@ -21,3 +21,15 @@ In i18n, there are other words that have very specific meanings: _global_, _glob
 
 To that end, I have started to add some tongue-in-cheek “redefinitions” to the [bottom of the blog](#rdfooter) just to remind us all that these words have non-software meanings.
 
+If you want to see them all without hitting reload an infinite number of times, you can see the original source [here](https://github.com/srl295/srl295.github.io/blob/hexo/themes/landscape/source/js/retrodefinitions.js).
+
+Speaking of i18n, this overloading doesn’t apply to English only. Most of my devices are set to `es-US` as their locale, so I see a lot of translated error message.  `gcc` for example has a thriving [translation project](http://translationproject.org/domain/gcc.html) where dedicated persons cause “English” to be translated into, for example, “Spanish” such as:
+
+
+> `#~ msgid "function ‘%D’ declared overloaded, but no definitions appear with which to resolve it?!?"`
+
+> `#~ msgstr "¿!¿se declaró la función ‘%D’ sobrecargada, pero no aparece ninguna definición con la cual resolverlo?!?"`
+
+Not sure why that’s `¿!¿` where I might expect `¿¡¿` — perhaps the initial `!` just shows the compiler’s incredulity. In any event, _sobrecargada_ seems to be a great cognate for _overloaded_. And with that, I will let you goto whatever you were doing before you started reading.
+
+PR’s are welcome on my little list, or leave comments below. What are your favorite examples of overloaded terms, in any language?
