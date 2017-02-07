@@ -25,6 +25,18 @@
             'journal': {
                 def: 'A record of events, a diary. Also see: log',
                 ex:  'Home for the day, the computer took the well-worn journal out of its container.'
+            },
+            'proposal': {
+                def: 'An offer of marriage.',
+                ex: 'He submitted the proposal into her hand, replete with copious footnotes, an index, and a hefty change history.'
+            },
+            'communication': {
+                def: 'Talking to actual people.',
+                ex: 'Communication issues were deemed the culprit of the network protocol redesign effort’s notorious failure.'
+            },
+            'network': {
+                def: 'A complication of threads, twine or cords united at certain distances, forming meshes, interstices or open space between the knots or intersections; reticulated or decussated work. [Webster]', // 1828
+                ex: 'The network being down for the umpteenth time, the fishermen resumed their task of hauling in the day’s catch.'
             }
         }
     };
