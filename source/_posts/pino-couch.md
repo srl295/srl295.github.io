@@ -8,13 +8,19 @@ s: pino-couch
 date: 2017-06-02 14:55:40
 ---
 
-
-
 [![latest on npm](https://badge.fury.io/js/pino-couch.svg)](https://www.npmjs.com/package/pino-couch)
 
 Today I’m pleased to release [pino-couch](https://www.npmjs.com/package/pino-couch). You can find it on GitHub under [https://github.com/IBM/pino-couch](https://github.com/IBM/pino-couch).
 
 This little module is a [transport](https://github.com/pinojs/pino/blob/master/docs/transports.md#transports) which lets you capture your [pino](https://github.com/pinojs/pino) logs into any [CouchDB](https://couchdb.apache.org) database.
+
+## Why pino?
+
+* Speed: I haven’t independently tested the [benchmarks](https://github.com/pinojs/pino#benchmarks), but I really like logging that doesn’t slow down the application. I want to be able to sprinkle logging generously in the application without slowing it down.
+
+* Simplicity: Take a look at the example below. We go from logging to the console, to logging in a database. The configuration and execution of log processing is entirely _outside_ of the application.
+
+* Sticker: Because it has a logo that looks nice on a hex sticker? OK, not really. But [@matteocollina](https://twitter.com/matteocollina) presented this logger so effectively at NodeSummit, I asked for a sticker. Today, I’m glad to give something back to the community.
 
 ## Taking it for a spin
 
@@ -38,7 +44,7 @@ pino.info({ msg: "Hey, check out these versions", versions: require('process').v
 pino.trace('ALL THE DETAILS');
 ```
 
-With the nice [pino API]() you have lots of options for emitting logs.
+With the nice [pino API](https://github.com/pinojs/pino/blob/master/docs/API.md) you have lots of options for emitting logs.
 
 ```js
 $ node index.js 
@@ -47,7 +53,7 @@ $ node index.js
 {"pid":54534,"hostname":"filfla.local","level":30,"time":1496436803979,"msg":"Hey, check out these versions","versions":{"http_parser":"2.7.0","node":"8.0.0","v8":"5.8.283.41","uv":"1.11.0","zlib":"1.2.11","ares":"1.10.1-DEV","modules":"57","openssl":"1.0.2k","icu":"59.1","unicode":"9.0","cldr":"31.0.1","tz":"2017b"},"v":1}
 ```
 
-Notice the `trace()` details were below the current level, so were omitted. 
+Notice the `trace()` details were below the current [level](https://github.com/pinojs/pino/blob/master/docs/API.md#level), so were omitted. 
 This is detailed, but not super readable. If you are running something from the commadn line, the `pino` global utility tidies up the output nicely—in color, even, if your console supports it.
 
 ```
