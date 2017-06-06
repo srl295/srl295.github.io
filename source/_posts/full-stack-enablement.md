@@ -24,11 +24,11 @@ Coordination is key. Finding and communicating with the right people is often at
 
 **Encoding**
 
-A critical step is of course [Unicode](http://unicode.org) encoding, but that is only the first step. Also, there can be (through no fault of anyone’s) a long gap between the first contact with a user community and the publication of a Unicode version supporting that language, not to mention other steps. 
+A critical step is of course [Unicode][unicode] encoding, but that is only the first step. Also, there can be (through no fault of anyone’s) a long gap between the first contact with a user community and the publication of a Unicode version supporting that language, not to mention other steps. The [Script Encoding Initiative][sei] at UC Berkeley works closely with language communities working to encode their scripts in Unicode. 
 
-In the course of the encoding process, a lot of information is gathered which is relevant to other steps, such as, grammatical considerations, best practices around font and layout support, etc.
+In the course of the encoding process, a lot of information is gathered which is relevant to other steps such as grammatical considerations and best practices around font and layout support.
 
-- Standardizing of the script (ideally/typically this happens before Unicode inclusion, but sometimes this can hold up Unicode inclusion, or be an ongoing challenge if it is incomplete after Unicode inclusion.  (perhaps this should be in its own category before “Encoding.”  Standardization of the script, as well as the orthography, are very helpful for digital life in general, as a standardized orthography helps “search” to work well, for example.  
+- Standardizing of the script ideally/typically happens before Unicode inclusion, but sometimes this can hold up Unicode inclusion, or be an ongoing challenge if it is incomplete after Unicode inclusion.  Standardization of the script, as well as the orthography, are very helpful for digital vitality in general, as a standardized orthography helps “search” to work well, for example.  
 
 
 **Font**
@@ -37,7 +37,7 @@ Martin Raymond recommends to: _“…split drawing [of the] glyphs from making t
 
 In other words, the critical _initial_ step is to get the correct glyphs from the user community.
 
-Note that there are fonts for different purposes:  aesthetic, low resolution, small devices, etc.
+Note that there is a need for fonts for different purposes:  aesthetic, low resolution, small devices.
 
 **Layout**
 
@@ -53,8 +53,8 @@ Support through W3C’s Layout & Typography project:  [https://www.w3.org/Inter
 **Input**
 * Keyboard
   - Virtual keyboards for mobile devices
-  - managing repertoire (Unihan, etc)
-  - Transliteration standard into Latin   
+  - Managing repertoire (Unihan, etc)
+  - Transliteration standard into Latin script (This is helpful for input when a keyboard supporting the target script is unavailable.) 
 
 **Locale Data**
 
@@ -72,11 +72,11 @@ Support through W3C’s Layout & Typography project:  [https://www.w3.org/Inter
 - Community translation of sites (Various OSS/commercial items which support crowdsourced data…)
 - Commercial translation environments such as [Globalization Pipeline](https://developer.ibm.com/open/openprojects/ibm-bluemix-globalization-pipeline/)
 
-**Advanced NLP**
+**Advanced NLP (Natural Language Processing)**
 
-(Might be worth mentioning that the development of much NLP applications requires large digital corpora, the collection of which is a project in itself.  Even when corpora are collected, say through web crawling, when they are not available publicly, other developers cannot benefit from them as a resource.)
+The development of many NLP applications requires large digital corpora, the collection of which is a project in itself.  Even when corpora are collected, say through web crawling, when they are not available publicly, other developers cannot benefit from them as a resource. Therefore, a freely available repository of digital resources in a target language, to which contributors can add, is an ideal first step for the following efforts.
 
-- OCR… 
+- OCR
 - Spell checking
 - Auto-correction, Auto-suggestion, Auto-fill
 - Parsing & Stemming (helps search to happen with related terms)
@@ -98,20 +98,27 @@ This means going beyond:
 
 **ICANN / IDN support**
 
-Support for a language within top-level domains will allow an important level of localization online that breaks from the historically Latin-only top level domains and reflects the truly international nature of the Internet.
+Support for a script within top-level domains allows an important level of localization online that breaks from the historically Latin-only top level domains and reflects the truly international nature of the Internet. [ICANN][idns] has made significant progress in this area, and is currently in the process of working with language communities to define rules for using many new scripts in TLDs (top level domains).
 
 **Computer programming language in mother tongue**
 
-While this may seem a far-fetched dream today, the fact that programming languages are in English is a barrier to the full use of digital tools by much of the world’s population.  This might be the final frontier for the internationalization/localization of digital technologies. “[قلب][qalb]” is an example of a programming language entirely Arabic.
+While this may seem a far-fetched dream today, the fact that programming languages are in English is a barrier to the full use of digital tools by much of the world’s population.  This might be the final frontier for the internationalization/localization of digital technologies. “[قلب][qalb]” is an example of a programming language entirely in Arabic.
 
 **References**
 
 - [CLDR][cldr] and [CLDR Minimal Data for New Locales][cldrminimaldata]
+- [ICANN: IDNS][idns] (see also [Introduction to IDNs][idnsintro])
 - [ScriptSource][scriptsource]
+- [Script Encoding Initiative][sei]
+- [Unicode][unicode]
 - [W3C International and Typography][w3clayout]
 
+[unicode]: http://unicode.org
 [cldr]: http://cldr.unicode.org
 [cldrminimaldata]: http://cldr.unicode.org/index/cldr-spec/minimaldata
 [scriptsource]: http://scriptsource.org
 [w3clayout]: https://www.w3.org/International/layout
 [qalb]: https://en.wikipedia.org/wiki/Qalb_(programming_language)
+[sei]: http://linguistics.berkeley.edu/sei/index.html
+[idnsintro]: http://idnworldreport.eu/introduction-to-idns/
+[idns]: http://www.icann.org/en/resources/idn
