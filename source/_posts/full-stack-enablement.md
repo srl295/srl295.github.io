@@ -8,7 +8,7 @@ tags:
 ---
 
 
-_This has been a working document for a while. I am publishing it here so that it can serve for more public discussion. Thank you to contributors:  Anshuman Pandey, Martin Raymond, Isabelle Zaugg, and others who have discussed these items over the years._
+_This has been a working document for a while. I am publishing it here so that it can serve for more public discussion. Thank you to Co-authors:  Anshuman Pandey, Isabelle Zaugg. Also thanks to others have discussed these items over the years such as Martin Raymond._
 
 {% asset_img stackbooks.jpg "a “full stack” of resources" %}
 
