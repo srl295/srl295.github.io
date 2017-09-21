@@ -2,6 +2,9 @@
 title: The Promise that Never Returned
 s: promise-never-returned
 tags:
+ - node
+ - javascript
+ - promises
 ---
 
 
