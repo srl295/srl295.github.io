@@ -1,10 +1,11 @@
 ---
 title: The Promise that Never Returned
-s: promise-never-returned
 tags:
- - node
- - javascript
- - promises
+  - node
+  - javascript
+  - promises
+s: promise-never-returned
+date: 2017-09-21 19:12:50
 ---
 
 
