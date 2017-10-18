@@ -9,8 +9,13 @@ To see the latest blog posts, visit the [archives](https://srl295.github.io/arch
 * Social: [LinkedIn](http://www.linkedin.com/in/srloomis) [Twitter: @srl295](http://twitter.com/srl295) [Github: @srl295](https://github.com/srl295) [openhub](https://www.openhub.net/accounts/srl295) [keybase](https://keybase.io/srl295)
 * Projects: [ICU](http://icu-project.org) ([me](https://ssl.icu-project.org/trac/wiki/Srl)) | [CLDR](http://unicode.org/cldr) | [ULI-TC Chair](http://unicode.org/uli) | [Unicode-TC rep](http://unicode.org) | [Globalization Pipeline](https://developer.ibm.com/open/ibm-bluemix-globalization-pipeline-service/)
 * See my [dev story](https://developer.ibm.com/open/stevens-dev-story/)
+* “My script is encoded in Unicode… now what?” — see my article on [Full Stack Enablement](https://srl295.github.io/2017/06/06/full-stack-enablement/)
 
 # Presentations
+
+## 2017
+* Oct 2: JavaOne
+   * [BOF 4226: Harfbuzz in JDK 9 (JEP 258)](https://www.dropbox.com/s/ndkm55wsa6qieh9/BOF4226.pdf?dl=0) - San Francisco
 
 ## 2016
 * Nov 1-3: [40th IUC Conference](http://www.unicodeconference.org/program.htm) Santa Clara
