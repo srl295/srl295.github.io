@@ -33,7 +33,9 @@ In the course of the encoding process, a lot of information is gathered which is
 
 **Font**
 
-Martin Raymond recommends to: _“…split drawing [of the] glyphs from making the fonts work. Anyone can draw the glyphs, realize that font designers will work later to connect attachment points etc. later.”_
+From Martin Raymond:
+> One recommendation is to split the drawing of the glyphs from the more technical aspects of font design. Someone familiar with the writing can draw the letter shapes and pass them on to a font designer to develop the font.
+
 
 In other words, the critical _initial_ step is to get the correct glyphs from the user community.
 
