@@ -14,6 +14,10 @@ To see the latest blog posts, visit the [archives](https://srl295.github.io/arch
 # Presentations
 
 ## 2017
+* Nov 1: FEISGILTT@LocWorld35: ULI/XLIFF [slides](https://cdn.rawgit.com/srl295/srl295-slides/2017-11-01-feisgiltt-uli/index.html) | [pdf](https://www.dropbox.com/s/se7qaswihxu8l0u/ULI%20%40%20FEISGILTT2017.pdf?dl=0)
+* IUC41
+    - Putting ICU to Work [pdf](https://www.dropbox.com/s/wxmzmwsgxkkopm1/MonS3T3%20-%20Putting%20ICU%20to%20Work.pdf?dl=0)
+    - `Intl` as in Internationalization [pdf](https://www.dropbox.com/s/8tj7pzorv6ir9z2/Tue%20S5T2%20Loomis%20Intl%20as%20in%20Internationalization.pdf?dl=0) 
 * Oct 2: JavaOne
    * [BOF 4226: Harfbuzz in JDK 9 (JEP 258)](https://www.dropbox.com/s/ndkm55wsa6qieh9/BOF4226.pdf?dl=0) - San Francisco
 
