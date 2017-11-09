@@ -37,6 +37,10 @@
             'network': {
                 def: 'A complication of threads, twine or cords united at certain distances, forming meshes, interstices or open space between the knots or intersections; reticulated or decussated work. [Webster]', // 1828
                 ex: 'The network being down for the umpteenth time, the fishermen resumed their task of hauling in the day’s catch.'
+            },
+            'cookbook': {
+                def: 'A bound set of instructions for preparing food.',
+                ex: 'The chef knew that the updated cookbook would prove invaluable, and so went to check it out.'
             }
         }
     };
