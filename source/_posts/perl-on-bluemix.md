@@ -1,6 +1,8 @@
 ---
 title: Perl on Bluemix
-tags: bluemix
+tags:
+- bluemix
+- perl
 date: 2016-05-02 16:17:14
 ---
 
