@@ -10,13 +10,15 @@ tags:
 
 _This has been a working document for a while. I am publishing it here so that it can serve for more public discussion. Thank you to Co-authors:  Anshuman Pandey, Isabelle Zaugg. Also thanks to others have discussed these items over the years such as Martin Raymond._
 
+> **Edit 2018-07-10** I have added some further references at the end.
+
 {% asset_img stackbooks.jpg "a “full stack” of resources" %}
 
 **Introduction**
 
 There are a lot of steps to be taken in order to ensure that a language is fully supported. The objective of this document is to collect the steps needed and begin to plan how to accomplish them for particular languages. The intent is for this to serve as a guide to language community members and other interested parties in how to improve the support for a particular language.
 
-The diagram below shows languages in one axis, and the “stack” of support tasks on the other. 
+The diagram below shows languages in one axis, and the “stack” of support tasks on the other. **Edit:** See [W3C’s Language matrix][w3cmatrix] for a great example detailed matrix.
 
 {% asset_img support.png "Language vs the “Support Stack”" %}
 
@@ -47,6 +49,8 @@ Determine if layout requirements are “complex” or not. (See the “shaping r
 
 Support through W3C’s Layout & Typography project:  [https://www.w3.org/International/layout][w3clayout]
   - From website:  “The W3C needs to make sure that the text layout and typographic needs of scripts and languages around the world are built in to technologies such as HTML, CSS, SVG, etc. so that Web pages and eBooks can look and behave as people expect around the world.”
+
+The [text-rendering tests][textrenderingtests] can be useful to determine if OpenType font rendering is correct.
 
 **OS-level support**
 - Desktop support
@@ -108,12 +112,14 @@ While this may seem a far-fetched dream today, the fact that programming languag
 
 **References**
 
-- [CLDR][cldr] and [CLDR Minimal Data for New Locales][cldrminimaldata]
+- [Unicode CLDR][cldr] and [CLDR Minimal Data for New Locales][cldrminimaldata]
 - [ICANN: IDNS][idns] (see also [Introduction to IDNs][idnsintro])
 - [ScriptSource][scriptsource]
 - [Script Encoding Initiative][sei]
+- [Unicode Text Rendering Tests][textrenderingtests]
 - [Unicode][unicode]
 - [W3C International and Typography][w3clayout]
+- [W3C International Typography Language Matrix][w3cmatrix]
 
 [unicode]: http://unicode.org
 [cldr]: http://cldr.unicode.org
@@ -124,3 +130,5 @@ While this may seem a far-fetched dream today, the fact that programming languag
 [sei]: http://linguistics.berkeley.edu/sei/index.html
 [idnsintro]: http://idnworldreport.eu/introduction-to-idns/
 [idns]: http://www.icann.org/en/resources/idn
+[w3cmatrix]: https://w3c.github.io/typography/gap-analysis/language-matrix.html#reference
+[textrenderingtests]: https://github.com/unicode-org/text-rendering-tests#supported-platforms
