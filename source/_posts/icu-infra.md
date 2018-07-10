@@ -10,12 +10,18 @@ s: icu-infra
 date: 2018-07-02 18:24:54
 ---
 
-
 Well, it’s done. As of [the end of the first half of 2018](https://time.is/2359_30_Jun_2018_in_UTC?SRL_icu-infrastructure_EOL) I have exitted the role of primary infrastructure support for [Unicode ICU](https://ssl.icu-project.org), which I have had on and off since about 2002. (ICU has been open source since 1999, and the source code has roots going back even further.)
 
 Keep your eye on https://ssl.icu-project.org for new links/instructions to the new structure. It’s not my intent to walk you through the new ICU development process, mostly because some of it is still being decided!  What I want to cover in this post is the actual migration process.
 
 {% asset_img iculogo_dev.png "ICU Development" %}
+
+
+>**Note:** In the first edition of this post, I didn't make a couple of things clear enough:
+>
+>1. **Teamwork** — I did not accomplish all of the steps below alone. Thanks to all of the ICU-TC colleagues for helping with review and engineering tasks (that are still ongoing as I write this).
+>
+>2. **I’m not done with ICU** — I remain a member of ICU-TC and I hope to actually contribute something again, now that my time isn’t spent “keeping the lights on.”
 
 # scoping the problem
 
@@ -169,6 +175,8 @@ A separate script created 20,000 empty tickets in a block, before running this c
 http://icu-project.org was already the third external web host for ICU, after [jtcsv.com](http://web.archive.org/web/20011104161753/http://www.jtcsv.com:80/) (2001 mirror) and [oss.software.ibm.com/icu](http://web.archive.org/web/20040209035756/oss.software.ibm.com/icu) (2004 mirror).
 
 In 2006 I migrated ICU from cvs and [JitterBug](https://www.samba.org/jitterbug/) to svn and trac. So yes, we've done this before!
+
+{% asset_img icubugtracking.png "ICU Trac logo by Syn Wee" %}
 
 JitterBug (which I also customized extensively and added new report CGIs to) had a very simple hierarchical file structure which was very hackable. Since trac used a sqlite database, I wrote source to read this file structure and emit SQL to recreate the bugs in the new form.
 
