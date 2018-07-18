@@ -12,12 +12,13 @@ date: 2018-07-02 18:24:54
 
 Well, it’s done. As of [the end of the first half of 2018](https://time.is/2359_30_Jun_2018_in_UTC?SRL_icu-infrastructure_EOL) I have exitted the role of primary infrastructure support for [Unicode ICU](https://ssl.icu-project.org), which I have had on and off since about 2002. (ICU has been open source since 1999, and the source code has roots going back even further.)
 
-Keep your eye on https://ssl.icu-project.org for new links/instructions to the new structure. It’s not my intent to walk you through the new ICU development process, mostly because some of it is still being decided!  What I want to cover in this post is the actual migration process.
+What I want to cover in this post is the actual migration process- see the ICU site for specifics about how to use the ICU repository and bug system. **Note2** Here is a link to Unicode’s [official blog post.](http://blog.unicode.org/2018/07/icu-moves-to-github-and-jira.html) 
+
 
 {% asset_img iculogo_dev.png "ICU Development" %}
 
 
->**Note:** In the first edition of this post, I didn't make a couple of things clear enough:
+>**Note 1:** In the first edition of this post, I didn't make a couple of things clear enough:
 >
 >1. **Teamwork** — I did not accomplish all of the steps below alone. Thanks to all of the ICU-TC colleagues for helping with review and engineering tasks (that are still ongoing as I write this).
 >
