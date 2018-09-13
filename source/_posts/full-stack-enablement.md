@@ -18,9 +18,14 @@ _This has been a working document for a while. I am publishing it here so that i
 
 There are a lot of steps to be taken in order to ensure that a language is fully supported. The objective of this document is to collect the steps needed and begin to plan how to accomplish them for particular languages. The intent is for this to serve as a guide to language community members and other interested parties in how to improve the support for a particular language.
 
-The diagram below shows languages in one axis, and the “stack” of support tasks on the other. **Edit:** See [W3C’s Language matrix][w3cmatrix] for a great example detailed matrix.
+***Metrics***
+
+The diagram below shows languages in one axis, and the “stack” of support tasks on the other. 
 
 {% asset_img support.png "Language vs the “Support Stack”" %}
+
+- Typographic support matrix: [W3C’s Language matrix][w3cmatrix]
+- Locale support matrix: [CLDR Coverage][cldrcoverage]
 
 Coordination is key. Finding and communicating with the right people is often at least as difficult as the technical aspects.  [ScriptSource][scriptsource] can be a good “central hub” to collect/publish information and needs for a user community.
 
@@ -120,6 +125,7 @@ While this may seem a far-fetched dream today, the fact that programming languag
 - [Unicode][unicode]
 - [W3C International and Typography][w3clayout]
 - [W3C International Typography Language Matrix][w3cmatrix]
+- [CLDR Coverage Map][cldrcoverage]
 
 [unicode]: http://unicode.org
 [cldr]: http://cldr.unicode.org
@@ -132,3 +138,4 @@ While this may seem a far-fetched dream today, the fact that programming languag
 [idns]: http://www.icann.org/en/resources/idn
 [w3cmatrix]: https://w3c.github.io/typography/gap-analysis/language-matrix.html#reference
 [textrenderingtests]: https://github.com/unicode-org/text-rendering-tests#supported-platforms
+[cldrcoverage]:https://www.unicode.org/cldr/charts/latest/supplemental/locale_coverage.html
