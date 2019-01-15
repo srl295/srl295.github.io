@@ -8,7 +8,7 @@ To see the latest blog posts, visit the [archives](https://srl295.github.io/arch
 * Sr Software Engineer, [IBM Global Foundations Technology Team](http://ibm.com/software/globalization/)
 * Social: [LinkedIn](http://www.linkedin.com/in/srloomis) [Twitter: @srl295](http://twitter.com/srl295) [Github: @srl295](https://github.com/srl295) [openhub](https://www.openhub.net/accounts/srl295) [keybase](https://keybase.io/srl295)
 * Projects: [ICU](http://icu-project.org) ([me](https://ssl.icu-project.org/trac/wiki/Srl)) | [CLDR](http://unicode.org/cldr) | [ULI-TC Chair](http://unicode.org/uli) | [Unicode-TC rep](http://unicode.org) | [Globalization Pipeline](https://developer.ibm.com/open/ibm-bluemix-globalization-pipeline-service/)
-* See my [dev story](https://developer.ibm.com/open/stevens-dev-story/)
+<!-- * See my [dev story](https://developer.ibm.com/open/stevens-dev-story/) -->
 * “My script is encoded in Unicode… now what?” — see my article on [Full Stack Enablement](https://srl295.github.io/2017/06/06/full-stack-enablement/)
 
 # Presentations
@@ -61,10 +61,34 @@ To see the latest blog posts, visit the [archives](https://srl295.github.io/arch
 `E409 8B78 AFC9 4394 F3F4  9AA9 0399 6C7C 83F1 2F11` also [keybase](https://keybase.io/srl295)
 
 # Badges
-* I am acclaim certified as a [Node.js contributor](https://www.youracclaim.com/badges/5cc821b1-11ac-43ff-a9b1-92d17b37b625/public_url)!
+
+<span data-iframe-width="150" data-iframe-height="270" data-share-badge-id="5cc821b1-11ac-43ff-a9b1-92d17b37b625"></span><span data-iframe-width="150" data-iframe-height="270" data-share-badge-id="707dc8a9-31e4-438b-933b-889240b3b82d"></span>
+<script type="text/javascript">
+(function() {
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = '//cdn.youracclaim.com/assets/utilities/embed.js';
+    var o = document.getElementsByTagName('script')[0];
+    o.parentNode.insertBefore(s, o);
+    })();
+</script>
+<script type="text/javascript">
+(function() {
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = '//cdn.youracclaim.com/assets/utilities/embed.js';
+    var o = document.getElementsByTagName('script')[0];
+    o.parentNode.insertBefore(s, o);
+    })();
+</script>
+
 
 [![OpenHub](https://www.openhub.net/accounts/9247/widgets/account_detailed.gif)](https://www.openhub.net/accounts/9247?ref=Detailed)
-[![Stack Exchange](https://stackexchange.com/users/flair/c1970b3f26b54398bc7b033048c7a2f0.png)](http://stackoverflow.com/users/185799/steven-r-loomis)
 
+<a href="https://stackexchange.com/users/62556">
+<img src="https://stackexchange.com/users/flair/62556.png" width="208" height="58" alt="profile for Steven R. Loomis on Stack Exchange, a network of free, community-driven Q&amp;A sites" title="profile for Steven R. Loomis on Stack Exchange, a network of free, community-driven Q&amp;A sites">
+</a>
 # Recent Posts
 See the sidebar or click [Archives](/archives) to view other blog posts.
