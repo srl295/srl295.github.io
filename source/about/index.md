@@ -62,7 +62,7 @@ To see the latest blog posts, visit the [archives](https://srl295.github.io/arch
 
 # Badges
 
-<span data-iframe-width="150" data-iframe-height="270" data-share-badge-id="5cc821b1-11ac-43ff-a9b1-92d17b37b625"></span><span data-iframe-width="150" data-iframe-height="270" data-share-badge-id="707dc8a9-31e4-438b-933b-889240b3b82d"></span>
+<span data-iframe-width="150" data-iframe-height="270" data-share-badge-id="5cc821b1-11ac-43ff-a9b1-92d17b37b625"></span><span data-iframe-width="150" data-iframe-height="270" data-share-badge-id="707dc8a9-31e4-438b-933b-889240b3b82d"></span><span data-iframe-width="150" data-iframe-height="270" data-share-badge-id="bf2ec404-d9c7-4ac6-946f-6ac5dac9599f"></span>
 <script type="text/javascript">
 (function() {
     var s = document.createElement('script');
@@ -73,16 +73,7 @@ To see the latest blog posts, visit the [archives](https://srl295.github.io/arch
     o.parentNode.insertBefore(s, o);
     })();
 </script>
-<script type="text/javascript">
-(function() {
-    var s = document.createElement('script');
-    s.type = 'text/javascript';
-    s.async = true;
-    s.src = '//cdn.youracclaim.com/assets/utilities/embed.js';
-    var o = document.getElementsByTagName('script')[0];
-    o.parentNode.insertBefore(s, o);
-    })();
-</script>
+
 
 
 [![OpenHub](https://www.openhub.net/accounts/9247/widgets/account_detailed.gif)](https://www.openhub.net/accounts/9247?ref=Detailed)
