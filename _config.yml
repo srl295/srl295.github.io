@@ -108,3 +108,7 @@ marked:
   breaks: false
   smartLists: true
   smartypants: false
+
+# redirect the old 'about' page
+alias:
+  about/index.html: index.html
