@@ -112,3 +112,6 @@ marked:
 # redirect the old 'about' page
 alias:
   about/index.html: index.html
+
+tagTwitter:
+  id: srl295
