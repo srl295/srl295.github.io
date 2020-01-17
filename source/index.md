@@ -62,7 +62,7 @@ To see the latest blog posts, visit the [archives](https://srl295.github.io/arch
 
 # Badges
 
-<span data-iframe-width="150" data-iframe-height="270" data-share-badge-id="5cc821b1-11ac-43ff-a9b1-92d17b37b625"></span><span data-iframe-width="150" data-iframe-height="270" data-share-badge-id="707dc8a9-31e4-438b-933b-889240b3b82d"></span><span data-iframe-width="150" data-iframe-height="270" data-share-badge-id="bf2ec404-d9c7-4ac6-946f-6ac5dac9599f"></span>
+<span data-iframe-width="150" data-iframe-height="270" data-share-badge-id="5cc821b1-11ac-43ff-a9b1-92d17b37b625" ></span><span data-iframe-width="150" data-iframe-height="270" data-share-badge-id="707dc8a9-31e4-438b-933b-889240b3b82d" ></span><span data-iframe-width="150" data-iframe-height="270" data-share-badge-id="bf2ec404-d9c7-4ac6-946f-6ac5dac9599f" ></span><span data-iframe-width="150" data-iframe-height="270" data-share-badge-id="4fc9a0a9-e733-4eac-ada4-30136d336646"></span>
 <script type="text/javascript">
 (function() {
     var s = document.createElement('script');
