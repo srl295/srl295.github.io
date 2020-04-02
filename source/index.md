@@ -81,5 +81,8 @@ To see the latest blog posts, visit the [archives](https://srl295.github.io/arch
 <a href="https://stackexchange.com/users/62556">
 <img src="https://stackexchange.com/users/flair/62556.png" width="208" height="58" alt="profile for Steven R. Loomis on Stack Exchange, a network of free, community-driven Q&amp;A sites" title="profile for Steven R. Loomis on Stack Exchange, a network of free, community-driven Q&amp;A sites">
 </a>
+
+<iframe src="https://www.worldcommunitygrid.org/getDynamicImage.do?memberName=srloomis&mnOn=true&stat=1&imageNum=3&rankOn=false&projectsOn=false&special=true&link=1&memberId=412209" frameborder="0" name="di" scrolling="no" width="125px" height="176px"></iframe>
+
 # Recent Posts
 See the sidebar or click [Archives](/archives) to view other blog posts.
