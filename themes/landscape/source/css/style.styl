@@ -87,3 +87,20 @@ if sidebar is left
 
 if sidebar
   @import "_partial/sidebar"
+
+@media print
+  header#header
+    display: none !important
+  time
+    display: none !important
+  div.article-inner
+    border: none !important
+    box-shadow: none !important
+  section#comments
+    display: none !important
+  aside
+    display: none !important
+  footer
+    display: none !important
+  .article
+    margin-top: none !important
