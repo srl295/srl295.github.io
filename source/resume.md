@@ -203,6 +203,14 @@ Provided Macintosh application consulting, troubleshooting. Among other projects
 
 UI development and testing for a HyperCard-based (HyperTalk langauge) car information kiosk, guiding users through vehicle selections based on user preference. Extensive integration with XCMDs and XFCNs.
 
+## Patents
+
+- [US 6,233,622 B1](http://patft1.uspto.gov/netacgi/nph-Parser?patentnumber=6233622) - Adapter and handler framework for web server extensions.
+
+- [US 9,063,636](http://patft1.uspto.gov/netacgi/nph-Parser?patentnumber=9063636) - Management of input methods
+
+- _Patent Applied For, Pending_ [US20180329960A1](https://patents.google.com/patent/US20180329960) - Dynamic expression sticker management
+
 -----
 
 {% qrcode "git.io/srl295" alt:"git.io/srl295" title:"git.io/srl295" myqrcode %}
