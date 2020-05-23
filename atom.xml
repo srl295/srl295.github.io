@@ -86,9 +86,9 @@ the brain of the sender to the brain of the recipient.&lt;/p&gt;
     </summary>
     
     
-      <category term="icu" scheme="https://srl295.github.io/tags/icu/"/>
-    
       <category term="node" scheme="https://srl295.github.io/tags/node/"/>
+    
+      <category term="icu" scheme="https://srl295.github.io/tags/icu/"/>
     
       <category term="scm" scheme="https://srl295.github.io/tags/scm/"/>
     
