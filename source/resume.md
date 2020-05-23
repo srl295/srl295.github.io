@@ -95,6 +95,23 @@ and Africa.
 underlying cloud translation services through v1.0 to
 UAT
 
+### 2016-Present: Globalization Pipeline
+
+Background: Globalization Pipeline is a Translation-as-a-Service software offering which is in the IBM Cloud (aka Bluemix) catalog.
+
+Responsibilities:
+
+- Evaluated and implemented Cloudant (apache couchdb) based data store subsystem, including custom backup facility
+- Interfaced with IBM's Translation Service Centers, as developer of an integration agent
+managing XLIFF-based human post editing (Node.js).
+- Deployment of New Relic based monitoring and alerting
+- Driving adoption of Slack for team communication and automated application notification
+- Participated in onboarding of Globalization Pipeline users
+- Developed Node.js based SDK and client ( `gp-js-client` and `gp-js-cli` )
+- Developed custom integration solutions based on team translation data requirements
+- Developed Openwhisk-based translation connector
+- Gave internal and external presentations to showcase the Globalization Pipeline, including a co-keynote at Fluent
+
 #### 2013-present: Node.js
 
 <!--
@@ -154,7 +171,7 @@ Responsibilities:
 language support, particularly with respect to minority languages
 - Conference presentation and discussions
 
-#### Unicode Consortium
+#### Unicode Consortium (2012-Present)
 
 - Unicode Localization Interoperability (ULI-TC/SC) chair
 - IBM's primary representative to Unicode and to INCITS JTC1/L2/SC2 USNB
