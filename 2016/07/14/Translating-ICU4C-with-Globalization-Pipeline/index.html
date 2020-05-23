@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>Translating ICU4C with Globalization Pipeline | Steven R. Loomis</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="DisclaimerThis is a work in progress. If you read to the end, you’ll see we almost reached our goal here.  BackgroundI work on ICU4C (the premier C/C++ library for Unicode support). And I work on Glob">
+<meta name="keywords" content="globalizationpipeline,icu,wip">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Translating ICU4C with Globalization Pipeline">
+<meta property="og:url" content="https://srl295.github.io/2016/07/14/Translating-ICU4C-with-Globalization-Pipeline/index.html">
+<meta property="og:site_name" content="Steven R. Loomis">
+<meta property="og:description" content="DisclaimerThis is a work in progress. If you read to the end, you’ll see we almost reached our goal here.  BackgroundI work on ICU4C (the premier C/C++ library for Unicode support). And I work on Glob">
+<meta property="og:locale" content="en-US">
+<meta property="og:image" content="https://srl295.github.io/2016/07/14/Translating-ICU4C-with-Globalization-Pipeline/uploadeng.png">
+<meta property="og:updated_time" content="2020-05-22T00:10:18.487Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Translating ICU4C with Globalization Pipeline">
+<meta name="twitter:description" content="DisclaimerThis is a work in progress. If you read to the end, you’ll see we almost reached our goal here.  BackgroundI work on ICU4C (the premier C/C++ library for Unicode support). And I work on Glob">
+<meta name="twitter:image" content="https://srl295.github.io/2016/07/14/Translating-ICU4C-with-Globalization-Pipeline/uploadeng.png">
+<meta name="twitter:creator" content="@srl295">
+  
+    <link rel="alternate" href="/atom.xml" title="Steven R. Loomis" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-70353707-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+    <meta name="google-site-verification" content="sbLStvzF9g9-7JUTpZDHcWb0XO3ztnCYqUHzwLENBxs">
+  
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Steven R. Loomis</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/resume.html">Resume</a>
+        
+          <a class="main-nav-link" href="/">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <a id="nav-print-btn" class="nav-icon" href="javascript:window.print()" title="print"></a>
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://srl295.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Translating-ICU4C-with-Globalization-Pipeline" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/14/Translating-ICU4C-with-Globalization-Pipeline/" class="article-date">
+  <time datetime="2016-07-14T23:57:01.000Z" itemprop="datePublished">2016-07-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Translating ICU4C with Globalization Pipeline
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Disclaimer"><a href="#Disclaimer" class="headerlink" title="Disclaimer"></a>Disclaimer</h1><p>This is a work in progress. If you read to the end, you’ll see we
+<em>almost</em> reached our goal here. </p>
+<h1 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h1><p>I work on <a href="http://icu-project.org" target="_blank" rel="noopener">ICU4C</a> (the premier C/C++ library for Unicode support).
+And I work on <a href="https://developer.ibm.com/open/ibm-bluemix-globalization-pipeline-service/" target="_blank" rel="noopener">Globalization Pipeline</a>.
+These two haven’t really crossed paths… until now.</p>
+<h1 id="What-we’ll-do"><a href="#What-we’ll-do" class="headerlink" title="What we’ll do"></a>What we’ll do</h1><p>This blog will cover how to use the Globalization Pipeline to translate
+<code>uconv</code>, one of ICU’s sample command line apps. We&#39;ll be translating the resource
+files you can see in <a href="http://bugs.icu-project.org/trac/browser/icu/trunk/source/extra/uconv/resources" target="_blank" rel="noopener"><code>source/extra/uconv/resources</code></a></p>
+<h1 id="Gathering-the-tools"><a href="#Gathering-the-tools" class="headerlink" title="Gathering the tools"></a>Gathering the tools</h1><ul>
+<li><p>First, <a href="http://site.icu-project.org/download" target="_blank" rel="noopener">Download ICU4C</a> source code (as a tarball or from the SVN repository) and compile it. See its readme for more details.</p>
+</li>
+<li><p>Now, set up Globalization Pipeline. See our <a href="https://github.com/IBM-Bluemix/gp-common#quick-start-guide" target="_blank" rel="noopener">Quick Start Guide</a>
+for getting your Globalization Pipeline instance created and set up. </p>
+<ul>
+<li><p>In the GP dashboard, create a bundle named <code>uconv</code>. Select which languages you want to translate into, but don’t upload any strings.  Click Save.</p>
+</li>
+<li><p>Also from the Bluemix dashboard, get the service credentials for your service.  Save these in a file called <code>mycreds.json</code> that should look like the
+example in <a href="https://github.com/IBM-Bluemix/gp-java-tools/blob/master/gp-cli.md#command-reference" target="_blank" rel="noopener">this document</a>.</p>
+</li>
+</ul>
+</li>
+<li><p>We’ll also need the <code>gp-cli</code> java tool, so download the latest jar from <a href="https://github.com/IBM-Bluemix/gp-java-tools/releases" target="_blank" rel="noopener">gp-java-tools</a>.</p>
+</li>
+</ul>
+<h1 id="Into-the-Pipeline"><a href="#Into-the-Pipeline" class="headerlink" title="Into the Pipeline"></a>Into the Pipeline</h1><p>Now, let&#39;s get some translated content </p>
+<ul>
+<li><code>cd</code> <a href="http://bugs.icu-project.org/trac/browser/icu/trunk/source/extra/uconv/resources/" target="_blank" rel="noopener"><code>source/extra/uconv/resources</code></a></li>
+</ul>
+<p>Hm. These files are in icu4c resource format, which isn&#39;t (yet?) supported by Globalization Pipeline… directly. Let&#39;s try an interim step.</p>
+<ul>
+<li><code>genrb -x root root.txt</code></li>
+<li><code>genrb -x fr fr.txt</code></li>
+</ul>
+<p>Now we have <code>root.xlf</code> and <code>fr.xlf</code> (for good measure).</p>
+<p>Here&#39;s a snippet of <code>root.xlf</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;group id = &quot;root&quot; restype = &quot;x-icu-table&quot;&gt;</span><br><span class="line">    &lt;trans-unit id = &quot;U_BUFFER_OVERFLOW_ERROR&quot; resname = &quot;U_BUFFER_OVERFLOW_ERROR&quot;&gt;</span><br><span class="line">        &lt;source&gt;Buffer overflow&lt;/source&gt;</span><br><span class="line">    &lt;/trans-unit&gt;</span><br><span class="line">    …</span><br></pre></td></tr></table></figure>
+
+<p>OK. The <code>gp-cli</code> tool says it handles XLIFF as a file format. Let&#39;s get that set up.</p>
+<ul>
+<li><code>java -jar gp-cli-1.1.0.jar import -b uconv -f root.xlf -l en -t xliff -j mycreds.json</code></li>
+</ul>
+<p>Note that we use the language tag <code>en</code> for English here, while the file was originally entitled <code>root</code>.
+This is because Globalization Pipeline works with the explicit source language, whereas for ICU, <code>root</code>
+is what will be consulted as a fallback if no other languages are available.</p>
+<p>It says it uploaded… but let’s check in the Globalization Pipeline dashboard:</p>
+<img src="/2016/07/14/Translating-ICU4C-with-Globalization-Pipeline/uploadeng.png" title="English content uploaded">
+
+<p>OK! That’s great.  Browsing over to the other 
+language translations, we can see that the MT engines are hard
+at work. However, we happen to already have some French translations
+in the ICU source base. We&#39;ll upload this, to overwrite some of the Machine-translated
+entries for French:</p>
+<ul>
+<li><code>java -jar gp-cli-1.1.0.jar import -b uconv -f fr.xlf -l fr -t xliff -j mycreds.json</code></li>
+</ul>
+<p>Great. Now we have some human translated content as well. We can
+now correct, upload/download content in the dashboard until we are
+happy with the translations there.</p>
+<h1 id="Out-of-the-Pipeline"><a href="#Out-of-the-Pipeline" class="headerlink" title="Out of the Pipeline"></a>Out of the Pipeline</h1><p>OK, now for the next step- getting those translations back into ICU4C.</p>
+<p>We can list the bundle status from the command line:</p>
+<ul>
+<li><code>java -jar gp-cli-1.1.0.jar show-bundle -b uconv -j mycreds.json</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;sourceLanguage&quot;: &quot;en&quot;,</span><br><span class="line">  &quot;targetLanguages&quot;: [</span><br><span class="line">    &quot;de&quot;,</span><br><span class="line">    &quot;es&quot;,</span><br><span class="line">    &quot;fr&quot;,</span><br><span class="line">    &quot;it&quot;,</span><br><span class="line">    &quot;ja&quot;,</span><br><span class="line">    &quot;ko&quot;,</span><br><span class="line">    &quot;pt-BR&quot;,</span><br><span class="line">    &quot;zh-Hans&quot;,</span><br><span class="line">    &quot;zh-Hant&quot;</span><br><span class="line">  ],</span><br><span class="line">  &quot;readOnly&quot;: false,</span><br><span class="line">  &quot;updatedBy&quot;: &quot;…srloomis@us.ibm.com&quot;,</span><br><span class="line">  &quot;updatedAt&quot;: &quot;2016-07-14T15:22:40.233-07&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Now, we’ll download the files in XLIFF format again:</p>
+<ul>
+<li><code>java -jar gp-cli-1.1.0.jar export -b uconv -f fr.xlf -l fr -t xliff -j mycreds.json</code></li>
+<li><code>java -jar gp-cli-1.1.0.jar export -b uconv -f es.xlf -l es -t xliff -j mycreds.json</code></li>
+<li><code>java -jar gp-cli-1.1.0.jar export -b uconv -f de.xlf -l de -t xliff -j mycreds.json</code></li>
+<li><code>java -jar gp-cli-1.1.0.jar export -b uconv -f zh.xlf -l zh-Hans -t xliff -j mycreds.json</code></li>
+</ul>
+<p>… and so on. Repeat for each language you wish to download. Note that we’ve used <code>zh</code> for Chinese instead of <code>zh-Hans</code>.</p>
+<p>OK, we have XLIFF format. How to convert it to ICU format? <code>genrb</code> only writes XLIFF, it can’t read it.</p>
+<h1 id="And-back-again…-almost"><a href="#And-back-again…-almost" class="headerlink" title="And back again… almost."></a>And back again… almost.</h1><p>We need the XLIFF2ICU Converter as is noted <a href="http://userguide.icu-project.org/locale/resources#TOC-Using-XLIFF-for-Localization" target="_blank" rel="noopener">here</a>.</p>
+<p>To build it, at present, this worked for me:</p>
+<ul>
+<li>download <a href="http://site.icu-project.org/download" target="_blank" rel="noopener">ICU4J</a> source (yes, J)</li>
+<li>run <code>ant xliff</code> from the top level</li>
+<li>you will end up with an <code>out/xliff/lib/xliff.jar</code> </li>
+</ul>
+<p>Still with me? Head back to the <code>uconv/resources</code> directory, and now run:</p>
+<ul>
+<li><code>java -jar xliff.jar  -s . -d . fr.xlf</code></li>
+</ul>
+<p>And that brings us to… </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Processing file: ./fr.xlf</span><br><span class="line">The XLIFF document is invalid, please check it first: </span><br><span class="line">Line 3, Column 81</span><br><span class="line">Error: cvc-elt.1: No se ha encontrado la declaración del elemento &apos;xliff&apos;.</span><br></pre></td></tr></table></figure>
+
+<p>Hrm.  Seems like the XLIFF output isn&#39;t quite ready to be consumed.
+I <a href="https://github.com/IBM-Bluemix/gp-java-tools/issues/5" target="_blank" rel="noopener">filed a bug</a> on this,
+of course.</p>
+<h1 id="Plan-B"><a href="#Plan-B" class="headerlink" title="Plan B "></a>Plan B </h1><p>We&#39;re so close… let&#39;s see what we can do.
+What if we fetch the data in JSON format, and then hack up something
+to convert it to ICU format? It might suffice for this blog post.</p>
+<p>Let&#39;s run the fetches again, but get JSON this time:</p>
+<ul>
+<li><code>java -jar gp-cli-1.1.0.jar export -b uconv -f fr.json -l fr -t json -j mycreds.json</code>
+…</li>
+</ul>
+<p>Now, run the following <a href="https://nodejs.org" target="_blank" rel="noopener">Node.js</a> script over the JSON files:</p>
+<ul>
+<li><code>node js2icu.js fr.json es.json …</code></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// js2icu.js</span></span><br><span class="line"><span class="keyword">const</span> fs=<span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">const</span> args = process.argv.slice(<span class="number">2</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> args) &#123;</span><br><span class="line">    <span class="keyword">const</span> f = args[i];</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'# read '</span> + f);</span><br><span class="line">    <span class="keyword">const</span> loc = f.split(<span class="string">'.'</span>)[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">const</span> json = <span class="built_in">JSON</span>.parse(fs.readFileSync(f));</span><br><span class="line">    <span class="keyword">var</span> s = <span class="string">'\ufeff// -*- Coding: utf-8; -*-\n//auto converted\n'</span> + loc + <span class="string">'\n&#123;\n'</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> k <span class="keyword">in</span> json) &#123;</span><br><span class="line">        s = s + <span class="string">'   '</span> + k + <span class="string">' &#123; "'</span>  + json[k].replace(<span class="regexp">/"/g</span>,<span class="string">'\\"'</span>) + <span class="string">'" &#125;\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    s = s + <span class="string">'&#125;\n'</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'# wrote '</span> + loc + <span class="string">'.txt'</span>);</span><br><span class="line">    fs.writeFileSync(loc+<span class="string">'.txt'</span>, s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>You should be the proud owner of <code>.txt</code> files matching all of the languages you are using.</p>
+<p>We&#39;re almost there. 
+Let&#39;s go up and build <code>uconv</code>:</p>
+<ul>
+<li><code>cd ..</code> </li>
+</ul>
+<p>Now edit <code>resfiles.mk</code> and change the <code>RESSRC</code> line to reference the new translations:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RESSRC = $(RESOURCESDIR)$(FILESEPCHAR)root.txt $(RESOURCESDIR)$(FILESEPCHAR)fr.txt $(RESOURCESDIR)$(FILESEPCHAR)es.txt $(RESOURCESDIR)$(FILESEPCHAR)zh.txt</span><br></pre></td></tr></table></figure>
+
+<p>Build <code>uconv</code>…</p>
+<ul>
+<li><code>make</code></li>
+</ul>
+<h1 id="Done"><a href="#Done" class="headerlink" title="Done"></a>Done</h1><p>Let’s test it. I know <code>uwmsg.o</code> isn&#39;t really utf-8, that&#39;s why this is a test.</p>
+<ul>
+<li><code>env LC_ALL=es ./../../bin/uconv -f utf-8 &lt; uwmsg.o</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">La conversión a Unicode de página de códigos falló en posición de byte de entrada de 0. Bytes: Error de cf: El carácter ilegal encontró La conversión a Unicode de página de códigos falló en posición de byte de entrada de 1. ……</span><br></pre></td></tr></table></figure>
+
+<p>Looks like we have a (more) translated <code>uconv</code> now.
+Some of the messages don’t quite work correctly due to ICU4C message conventions.
+Perhaps we will investigate this in the future.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://srl295.github.io/2016/07/14/Translating-ICU4C-with-Globalization-Pipeline/" data-id="ckahgbgaq00026vta6wquyt13" class="article-share-link">Share</a>
+      
+        <a href="https://srl295.github.io/2016/07/14/Translating-ICU4C-with-Globalization-Pipeline/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/globalizationpipeline/">globalizationpipeline</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/icu/">icu</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wip/">wip</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/07/25/shibboleth/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          source shibboleth
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/05/02/perl-on-bluemix/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Perl on Bluemix</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bluemix/">bluemix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dvcs/">dvcs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/g11n/">g11n</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/globalizationpipeline/">globalizationpipeline</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/i18n/">i18n</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/icu/">icu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/icu4c/">icu4c</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kibana/">kibana</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/locales/">locales</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/opensource/">opensource</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/perl/">perl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pino/">pino</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/promises/">promises</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scm/">scm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sketch/">sketch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unicode/">unicode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wip/">wip</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/bluemix/" style="font-size: 10px;">bluemix</a> <a href="/tags/dvcs/" style="font-size: 10px;">dvcs</a> <a href="/tags/g11n/" style="font-size: 13.33px;">g11n</a> <a href="/tags/globalizationpipeline/" style="font-size: 20px;">globalizationpipeline</a> <a href="/tags/i18n/" style="font-size: 10px;">i18n</a> <a href="/tags/icu/" style="font-size: 13.33px;">icu</a> <a href="/tags/icu4c/" style="font-size: 10px;">icu4c</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/kibana/" style="font-size: 10px;">kibana</a> <a href="/tags/locales/" style="font-size: 10px;">locales</a> <a href="/tags/node/" style="font-size: 16.67px;">node</a> <a href="/tags/opensource/" style="font-size: 10px;">opensource</a> <a href="/tags/perl/" style="font-size: 13.33px;">perl</a> <a href="/tags/pino/" style="font-size: 10px;">pino</a> <a href="/tags/promises/" style="font-size: 10px;">promises</a> <a href="/tags/scm/" style="font-size: 13.33px;">scm</a> <a href="/tags/sketch/" style="font-size: 10px;">sketch</a> <a href="/tags/unicode/" style="font-size: 16.67px;">unicode</a> <a href="/tags/wip/" style="font-size: 10px;">wip</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/01/16/sketch-how-text-works/">Sketch - how text works</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/09/git-twofer/">git twofer</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/02/icu-infra/">ICU Infrastructure Migration</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/21/promise-never-returned/">The Promise that Never Returned</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/06/full-stack-enablement/">Full Stack Language Enablement</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Steven R. Loomis<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> 
+      
+      <span class="retrodefinition" id="rdfooter"><b class="rdkey"></b>: <span class="rddef"></span><a href="/2017/02/07/literate-programmers/"><sup>?</sup></a> <i class="rdex"></i>
+      </span>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/resume.html" class="mobile-nav-link">Resume</a>
+  
+    <a href="/" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'srl295';
+  
+  var disqus_url = 'https://srl295.github.io/2016/07/14/Translating-ICU4C-with-Globalization-Pipeline/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/retrodefinitions.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>Fallbacks in ICU4C Converters | Steven R. Loomis</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Unicode’s ICU version 59 is well underway at this point. While ideally everything would use Unicode, there still remains many systems — and much content — that is in non-Unicode encodings. For this re">
+<meta name="keywords" content="icu4c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fallbacks in ICU4C Converters">
+<meta property="og:url" content="https://srl295.github.io/2017/02/02/icu4c-fallbacks/index.html">
+<meta property="og:site_name" content="Steven R. Loomis">
+<meta property="og:description" content="Unicode’s ICU version 59 is well underway at this point. While ideally everything would use Unicode, there still remains many systems — and much content — that is in non-Unicode encodings. For this re">
+<meta property="og:locale" content="en-US">
+<meta property="og:updated_time" content="2020-05-22T00:10:18.506Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Fallbacks in ICU4C Converters">
+<meta name="twitter:description" content="Unicode’s ICU version 59 is well underway at this point. While ideally everything would use Unicode, there still remains many systems — and much content — that is in non-Unicode encodings. For this re">
+<meta name="twitter:creator" content="@srl295">
+  
+    <link rel="alternate" href="/atom.xml" title="Steven R. Loomis" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-70353707-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+    <meta name="google-site-verification" content="sbLStvzF9g9-7JUTpZDHcWb0XO3ztnCYqUHzwLENBxs">
+  
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Steven R. Loomis</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/resume.html">Resume</a>
+        
+          <a class="main-nav-link" href="/">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <a id="nav-print-btn" class="nav-icon" href="javascript:window.print()" title="print"></a>
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://srl295.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-icu4c-fallbacks" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/02/icu4c-fallbacks/" class="article-date">
+  <time datetime="2017-02-03T00:05:26.000Z" itemprop="datePublished">2017-02-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Fallbacks in ICU4C Converters
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Unicode’s <a href="http://icu-project.org" target="_blank" rel="noopener">ICU</a> version 59 is well underway at this point. While ideally everything would use Unicode, there still remains many systems — and much content — that is in non-Unicode encodings. For this reason, ICU, in both the C/C++ and the Java flavors, has rich support for codepage conversion.</p>
+<p>One of many great features in ICU is the <a href="http://userguide.icu-project.org/conversion/converters#TOC-Error-Callbacks" target="_blank" rel="noopener">callback support</a>. A lot can go wrong during codepage conversion, but in ICU, you can control what happens during exceptional situations.</p>
+<p>Let’s try a simple sample. By the way, see the end of this post for hints on compiling the samples.</p>
+<h1 id="Substitute-Always"><a href="#Substitute-Always" class="headerlink" title="Substitute, Always"></a>Substitute, Always</h1><p>Our task is to convert <code>black-bird</code> (but with a <code>U+00AD</code>, “Soft Hyphen” in between the two words) to ASCII.</p>
+<figure class="highlight cpp"><figcaption><span>substituteTest-0.cpp</span><a href="/downloads/code/substituteTest-0.cpp">view raw</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unicode/utypes.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unicode/ustdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unicode/ucnv.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> <span class="comment">/*argc*/</span>, <span class="keyword">const</span> <span class="keyword">char</span> * <span class="comment">/*argv*/</span> [])</span> </span>{</span><br><span class="line">    UErrorCode status=U_ZERO_ERROR;</span><br><span class="line"></span><br><span class="line">    <span class="function">LocalUConverterPointer <span class="title">cnv</span><span class="params">(ucnv_open(<span class="string">"us-ascii"</span>, &amp;status))</span></span>;</span><br><span class="line">    <span class="keyword">if</span>(U_FAILURE(status)) {</span><br><span class="line">        u_printf(<span class="string">"Error opening: %s\n"</span>, u_errorName(status));</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="function">UnicodeString <span class="title">str</span><span class="params">(<span class="string">"black-bird"</span>)</span></span>;</span><br><span class="line">    str.setCharAt(<span class="number">5</span>, <span class="number">0x00AD</span>); <span class="comment">// soft hyphen</span></span><br><span class="line">    <span class="keyword">const</span> UChar *uch = str.getTerminatedBuffer();</span><br><span class="line">    u_printf(<span class="string">"Input String: %S length %d\n"</span>, uch, str.length());</span><br><span class="line"></span><br><span class="line">    <span class="keyword">char</span> bytes[<span class="number">1024</span>];</span><br><span class="line">    <span class="keyword">int32_t</span> bytesWritten =</span><br><span class="line">     ucnv_fromUChars(cnv.getAlias(), bytes, <span class="number">1024</span>, uch, <span class="number">-1</span>, &amp;status);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(U_FAILURE(status)) {</span><br><span class="line">        u_printf(<span class="string">"Error converting: %s\n"</span>, u_errorName(status));</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    u_printf(<span class="string">"Converted %d bytes\n"</span>, bytesWritten);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int32_t</span> i=<span class="number">0</span>; i&lt;bytesWritten; i++) {</span><br><span class="line">        u_printf(<span class="string">"\\x%02X "</span>, bytes[i]&amp;<span class="number">0xFF</span>);</span><br><span class="line">    }</span><br><span class="line">    u_printf(<span class="string">"\n"</span>);</span><br><span class="line">    <span class="comment">// try to print it out on the console</span></span><br><span class="line">    bytes[bytesWritten]=<span class="number">0</span>; <span class="comment">// terminate it first</span></span><br><span class="line">    <span class="built_in">puts</span>(bytes);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">// LocalUConverterPointer will cleanup cnv</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure> 
+
+<p>Output:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input String: black­bird length 10</span><br><span class="line">Converted 9 bytes</span><br><span class="line">\x62 \x6C \x61 \x63 \x6B \x62 \x69 \x72 \x64 </span><br><span class="line">blackbird</span><br></pre></td></tr></table></figure>
+
+<p>Hm. Ten characters in, nine out. What happened?  Well, <code>U+00AD</code> is not a part of ASCII. ASCII is a seven bit encoding, thus only maps code points <code>\x00</code> through <code>\x7F</code> inclusively. Furthermore, <code>U+00AD</code> is <a href="http://www.unicode.org/glossary/#default_ignorable" target="_blank" rel="noopener">Default Ignorable</a>, and as of ICU 54.1 (2014) in <a href="http://bugs.icu-project.org/trac/ticket/10551" target="_blank" rel="noopener">#10551</a>, the soft hyphen can just be dropped.</p>
+<p>But what if, for some reason, you don’t want the soft hyphen dropped? The pre ICU 54.1 behavior can be brought back easily with a custom call back.  So, roll up your collective sleeves, and:</p>
+<figure class="highlight cpp"><figcaption><span>alwaysSubstitute.h</span><a href="/downloads/code/alwaysSubstitute.h">view raw</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// © 2016 and later: Unicode, Inc. and others.</span></span><br><span class="line"><span class="comment">// License &amp; terms of use: http://www.unicode.org/copyright.html</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unicode/ucnv.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unicode/ucnv_err.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unicode/ucnv_cb.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * This is a modified version of ICU’s UCNV_FROM_U_CALLBACK_SUBSTITUTE</span></span><br><span class="line"><span class="comment"> * it unconditionally substitutes on irregular codepoints.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * Usage:</span></span><br><span class="line"><span class="comment"> *   ucnv_setFromUCallBack(c, UCNV_FROM_U_CALLBACK_SUBSTITUTE_ALWAYS, NULL, NULL, NULL, &amp;status);</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">U_CAPI <span class="keyword">void</span>    U_EXPORT2</span><br><span class="line">UCNV_FROM_U_CALLBACK_SUBSTITUTE_ALWAYS (</span><br><span class="line">				 <span class="keyword">const</span> <span class="keyword">void</span> *context,</span><br><span class="line">				 UConverterFromUnicodeArgs *fromArgs,</span><br><span class="line">				 <span class="keyword">const</span> UChar* codeUnits,</span><br><span class="line">				 <span class="keyword">int32_t</span> length,</span><br><span class="line">				 UChar32 codePoint,</span><br><span class="line">				 UConverterCallbackReason reason,</span><br><span class="line">				 UErrorCode * err)</span><br><span class="line">{</span><br><span class="line">    (<span class="keyword">void</span>)codeUnits;</span><br><span class="line">    (<span class="keyword">void</span>)length;</span><br><span class="line">    <span class="keyword">if</span> (reason &lt;= UCNV_IRREGULAR) {</span><br><span class="line">      *err = U_ZERO_ERROR;</span><br><span class="line">	  ucnv_cbFromUWriteSub(fromArgs, <span class="number">0</span>, err);</span><br><span class="line">      <span class="comment">/* else the caller must have set the error code accordingly. */</span></span><br><span class="line">    }</span><br><span class="line">    <span class="comment">/* else ignore the reset, close and clone calls. */</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure> 
+
+<p>If we <code>#include</code> this little header, and set it on the converter before we convert…</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">LocalUConverterPointer <span class="title">cnv</span><span class="params">(ucnv_open(<span class="string">"us-ascii"</span>, &amp;status))</span></span>;</span><br><span class="line">ucnv_setFromUCallBack(cnv.getAlias(), UCNV_FROM_U_CALLBACK_SUBSTITUTE_ALWAYS, <span class="literal">NULL</span>, <span class="literal">NULL</span>, <span class="literal">NULL</span>, &amp;status);</span><br><span class="line">…</span><br></pre></td></tr></table></figure>
+
+<p>… we get the following result:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input String: black­bird length 10</span><br><span class="line">Converted 10 bytes</span><br><span class="line">\x62 \x6C \x61 \x63 \x6B \x1A \x62 \x69 \x72 \x64 </span><br><span class="line">black?bird</span><br></pre></td></tr></table></figure>
+
+<p>Great! Now, we are getting <code>\x1A</code> (ASCII SUB). It works.</p>
+<h1 id="When-missing-goes-missing"><a href="#When-missing-goes-missing" class="headerlink" title="When missing goes missing"></a>When missing goes missing</h1><p>A related question to the above has to do with converting from codepage to Unicode. That’s a better direction anyway. Convert to Unicode and stay there! One can hope. In any event…</p>
+<p>For this task, we will convert <code>0x61, 0x80, 0x94, 0x4c, 0xea, 0xe5</code> from Shift-JIS to Unicode.</p>
+<figure class="highlight cpp"><figcaption><span>substituteTest-2.cpp</span><a href="/downloads/code/substituteTest-2.cpp">view raw</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unicode/utypes.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unicode/ustdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unicode/ucnv.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> <span class="comment">/*argc*/</span>, <span class="keyword">const</span> <span class="keyword">char</span> * <span class="comment">/*argv*/</span> [])</span> </span>{</span><br><span class="line">    UErrorCode status=U_ZERO_ERROR;</span><br><span class="line"></span><br><span class="line">    <span class="function">LocalUConverterPointer <span class="title">cnv</span><span class="params">(ucnv_open(<span class="string">"shift-jis"</span>, &amp;status))</span></span>;</span><br><span class="line">    <span class="keyword">if</span>(U_FAILURE(status)) {</span><br><span class="line">        u_printf(<span class="string">"Error opening: %s\n"</span>, u_errorName(status));</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">define</span> NRBYTES 6</span></span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">uint8_t</span> bytes[NRBYTES] = { <span class="number">0x61</span>, <span class="number">0x80</span>, <span class="number">0x94</span>, <span class="number">0x4c</span>, <span class="number">0xea</span>, <span class="number">0xe5</span> };</span><br><span class="line"></span><br><span class="line">    u_printf(<span class="string">"Input Bytes: length %d\n"</span>, NRBYTES);</span><br><span class="line"></span><br><span class="line">    <span class="meta">#<span class="meta-keyword">define</span> NRUCHARS 50</span></span><br><span class="line">    UChar uchars[NRUCHARS];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int32_t</span> ucharsRead =</span><br><span class="line">     ucnv_toUChars(cnv.getAlias(), uchars, NRUCHARS, (<span class="keyword">const</span> <span class="keyword">char</span>*)bytes, NRBYTES, &amp;status);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(U_FAILURE(status)) {</span><br><span class="line">        u_printf(<span class="string">"Error converting: %s\n"</span>, u_errorName(status));</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    u_printf(<span class="string">"Converted %d uchars\n"</span>, ucharsRead);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int32_t</span> i=<span class="number">0</span>; i&lt;ucharsRead; i++) {</span><br><span class="line">        u_printf(<span class="string">"U+%04X "</span>, uchars[i]);</span><br><span class="line">    }</span><br><span class="line">    u_printf(<span class="string">"\n"</span>);</span><br><span class="line">    <span class="comment">// try to print it out on the console</span></span><br><span class="line">    u_printf(<span class="string">"Or string: '%S'\n"</span>, uchars);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">// LocalUConverterPointer will cleanup cnv</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure> 
+
+<p>Output:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input Bytes: length 6</span><br><span class="line">Converted 4 uchars</span><br><span class="line">U+0061 U+001A U+732B U+FFFD </span><br><span class="line">Or string: &apos;a猫�&apos;</span><br></pre></td></tr></table></figure>
+
+<p>So, the letter &quot;a&quot; byte <code>\x61</code> turned into <code>U+0061</code>, and then we have an illegal byte <code>\x80</code> which turned into <code>U+001A</code>. Next, the valid sequence <code>\x94 \x4c</code> turns into U+732B which is 猫 (“cat”). Finally, the unmapped sequence <code>\xea \xe5</code> turns into <code>U+FFFD</code>.  Notice that the single byte illegal sequence turned into (SUB, U+001A), but the two byte sequence turned into <code>U+FFFD</code>. This is discussed somewhat <a href="http://unicode.org/reports/tr22/#Dual_Substitution_Handling" target="_blank" rel="noopener">here</a>.</p>
+<p>So far so good?</p>
+<p>But what if you actually want U+FFFD as the substitution character for both sequences? This would be unexpected, but perhaps you have code that is particularly looking for <code>U+FFFD</code>s.  We can write a similar callback:</p>
+<figure class="highlight cpp"><figcaption><span>alwaysFFFD.h</span><a href="/downloads/code/alwaysFFFD.h">view raw</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// © 2016 and later: Unicode, Inc. and others.</span></span><br><span class="line"><span class="comment">// License &amp; terms of use: http://www.unicode.org/copyright.html</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unicode/ucnv.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unicode/ucnv_err.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unicode/ucnv_cb.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">const</span> UChar kFFFD[] = { <span class="number">0xFFFD</span> };</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * This is a modified version of ICU’s UCNV_TO_U_CALLBACK_SUBSTITUTE</span></span><br><span class="line"><span class="comment"> * it unconditionally substitutes U+FFFD.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * Usage:</span></span><br><span class="line"><span class="comment"> *   ucnv_setToUCallBack(c, UCNV_TO_U_CALLBACK_SUBSTITUTE_FFFD, NULL, NULL, NULL, &amp;status);</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">U_CAPI <span class="keyword">void</span>    U_EXPORT2</span><br><span class="line">UCNV_TO_U_CALLBACK_SUBSTITUTE_FFFD (</span><br><span class="line">                 <span class="keyword">const</span> <span class="keyword">void</span> *context,</span><br><span class="line">                 UConverterToUnicodeArgs *toArgs,</span><br><span class="line">                 <span class="keyword">const</span> <span class="keyword">char</span>* codeUnits,</span><br><span class="line">                 <span class="keyword">int32_t</span> length,</span><br><span class="line">                 UConverterCallbackReason reason,</span><br><span class="line">                 UErrorCode * err)</span><br><span class="line">{</span><br><span class="line">    (<span class="keyword">void</span>)codeUnits;</span><br><span class="line">    (<span class="keyword">void</span>)length;</span><br><span class="line">    <span class="keyword">if</span> (reason &lt;= UCNV_IRREGULAR)</span><br><span class="line">    {</span><br><span class="line">		*err = U_ZERO_ERROR;</span><br><span class="line">		ucnv_cbToUWriteUChars(toArgs, kFFFD, <span class="number">1</span>, <span class="literal">NULL</span>, err);</span><br><span class="line">		<span class="comment">// see ucnv_cbToUWriteSub()</span></span><br><span class="line">    }</span><br><span class="line">    <span class="comment">/* else ignore the reset, close and clone calls. */</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure> 
+
+<p>Let’s hook it up, as before:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">LocalUConverterPointer <span class="title">cnv</span><span class="params">(ucnv_open(<span class="string">"shift-jis"</span>, &amp;status))</span></span>;</span><br><span class="line">ucnv_setToUCallBack(cnv.getAlias(), UCNV_TO_U_CALLBACK_SUBSTITUTE_FFFD, <span class="literal">NULL</span>, <span class="literal">NULL</span>, <span class="literal">NULL</span>, &amp;status);</span><br><span class="line">…</span><br></pre></td></tr></table></figure>
+
+<p>And drumroll please…</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input Bytes: length 6</span><br><span class="line">Converted 4 uchars</span><br><span class="line">U+0061 U+FFFD U+732B U+FFFD </span><br><span class="line">Or string: &apos;a�猫�&apos;</span><br></pre></td></tr></table></figure>
+
+<p>Garbage out never looked so good… </p>
+<hr>
+<h1 id="Building-or-nothing-up-my-sleeve"><a href="#Building-or-nothing-up-my-sleeve" class="headerlink" title="Building (or, nothing-up-my-sleeve)"></a>Building (or, nothing-up-my-sleeve)</h1><p>To build these little snippets, I recommend the shell script <a href="http://source.icu-project.org/repos/icu/trunk/tools/scripts/icurun" target="_blank" rel="noopener">icurun</a></p>
+<p>If ICU is already installed in your appropriate paths, (visible to <code>pkg-config</code> or at least <code>icu-config</code>), you can simply run:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">icurun some-great-app.cpp</span><br></pre></td></tr></table></figure>
+
+<p>… and icurun will compile and run a one-off.</p>
+<p>If, however, you’ve built ICU yourself in some directory, you can instead use:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">icurun -i path/to/your/icu some-great-app.cpp</span><br></pre></td></tr></table></figure>
+
+<p>… where <code>path/to/you/icu</code> is the full path to an ICU build or install directory.</p>
+<p>If you are on windows… well, there isn’t a powershell version yet. Contributions welcome!</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://srl295.github.io/2017/02/02/icu4c-fallbacks/" data-id="ckahgbgbb000f6vtakhje4org" class="article-share-link">Share</a>
+      
+        <a href="https://srl295.github.io/2017/02/02/icu4c-fallbacks/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/icu4c/">icu4c</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/02/07/literate-programmers/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Literate Programmers
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/01/06/g11n-pipeline-ios/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Globalization Pipeline for iOS</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bluemix/">bluemix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dvcs/">dvcs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/g11n/">g11n</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/globalizationpipeline/">globalizationpipeline</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/i18n/">i18n</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/icu/">icu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/icu4c/">icu4c</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kibana/">kibana</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/locales/">locales</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/opensource/">opensource</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/perl/">perl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pino/">pino</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/promises/">promises</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scm/">scm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sketch/">sketch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unicode/">unicode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wip/">wip</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/bluemix/" style="font-size: 10px;">bluemix</a> <a href="/tags/dvcs/" style="font-size: 10px;">dvcs</a> <a href="/tags/g11n/" style="font-size: 13.33px;">g11n</a> <a href="/tags/globalizationpipeline/" style="font-size: 20px;">globalizationpipeline</a> <a href="/tags/i18n/" style="font-size: 10px;">i18n</a> <a href="/tags/icu/" style="font-size: 13.33px;">icu</a> <a href="/tags/icu4c/" style="font-size: 10px;">icu4c</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/kibana/" style="font-size: 10px;">kibana</a> <a href="/tags/locales/" style="font-size: 10px;">locales</a> <a href="/tags/node/" style="font-size: 16.67px;">node</a> <a href="/tags/opensource/" style="font-size: 10px;">opensource</a> <a href="/tags/perl/" style="font-size: 13.33px;">perl</a> <a href="/tags/pino/" style="font-size: 10px;">pino</a> <a href="/tags/promises/" style="font-size: 10px;">promises</a> <a href="/tags/scm/" style="font-size: 13.33px;">scm</a> <a href="/tags/sketch/" style="font-size: 10px;">sketch</a> <a href="/tags/unicode/" style="font-size: 16.67px;">unicode</a> <a href="/tags/wip/" style="font-size: 10px;">wip</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/01/16/sketch-how-text-works/">Sketch - how text works</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/09/git-twofer/">git twofer</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/02/icu-infra/">ICU Infrastructure Migration</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/21/promise-never-returned/">The Promise that Never Returned</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/06/full-stack-enablement/">Full Stack Language Enablement</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Steven R. Loomis<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> 
+      
+      <span class="retrodefinition" id="rdfooter"><b class="rdkey"></b>: <span class="rddef"></span><a href="/2017/02/07/literate-programmers/"><sup>?</sup></a> <i class="rdex"></i>
+      </span>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/resume.html" class="mobile-nav-link">Resume</a>
+  
+    <a href="/" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'srl295';
+  
+  var disqus_url = 'https://srl295.github.io/2017/02/02/icu4c-fallbacks/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/retrodefinitions.js"></script>
+
+  </div>
+</body>
+</html>

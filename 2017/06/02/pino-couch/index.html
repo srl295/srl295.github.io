@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>Announcing 🌲 pino-couch | Steven R. Loomis</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Today I’m pleased to release pino-couch. You can find it on GitHub under https://github.com/IBM/pino-couch. This little module is a transport which lets you capture your pino logs into any CouchDB da">
+<meta name="keywords" content="node,pino,opensource">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Announcing 🌲 pino-couch">
+<meta property="og:url" content="https://srl295.github.io/2017/06/02/pino-couch/index.html">
+<meta property="og:site_name" content="Steven R. Loomis">
+<meta property="og:description" content="Today I’m pleased to release pino-couch. You can find it on GitHub under https://github.com/IBM/pino-couch. This little module is a transport which lets you capture your pino logs into any CouchDB da">
+<meta property="og:locale" content="en-US">
+<meta property="og:image" content="https://badge.fury.io/js/pino-couch.svg">
+<meta property="og:image" content="https://srl295.github.io/2017/06/02/pino-couch/createdb.png">
+<meta property="og:image" content="https://srl295.github.io/2017/06/02/pino-couch/permissdb.png">
+<meta property="og:image" content="https://srl295.github.io/2017/06/02/pino-couch/readdb.png">
+<meta property="og:image" content="https://srl295.github.io/2017/06/02/pino-couch/pinohex.jpg">
+<meta property="og:updated_time" content="2020-05-22T00:10:18.507Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Announcing 🌲 pino-couch">
+<meta name="twitter:description" content="Today I’m pleased to release pino-couch. You can find it on GitHub under https://github.com/IBM/pino-couch. This little module is a transport which lets you capture your pino logs into any CouchDB da">
+<meta name="twitter:image" content="https://badge.fury.io/js/pino-couch.svg">
+<meta name="twitter:creator" content="@srl295">
+  
+    <link rel="alternate" href="/atom.xml" title="Steven R. Loomis" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-70353707-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+    <meta name="google-site-verification" content="sbLStvzF9g9-7JUTpZDHcWb0XO3ztnCYqUHzwLENBxs">
+  
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Steven R. Loomis</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/resume.html">Resume</a>
+        
+          <a class="main-nav-link" href="/">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <a id="nav-print-btn" class="nav-icon" href="javascript:window.print()" title="print"></a>
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://srl295.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-pino-couch" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/02/pino-couch/" class="article-date">
+  <time datetime="2017-06-02T21:55:40.000Z" itemprop="datePublished">2017-06-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Announcing 🌲 pino-couch
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://www.npmjs.com/package/pino-couch" target="_blank" rel="noopener"><img src="https://badge.fury.io/js/pino-couch.svg" alt="latest on npm"></a></p>
+<p>Today I’m pleased to release <a href="https://www.npmjs.com/package/pino-couch" target="_blank" rel="noopener">pino-couch</a>. You can find it on GitHub under <a href="https://github.com/IBM/pino-couch" target="_blank" rel="noopener">https://github.com/IBM/pino-couch</a>.</p>
+<p>This little module is a <a href="https://github.com/pinojs/pino/blob/master/docs/transports.md#transports" target="_blank" rel="noopener">transport</a> which lets you capture your <a href="https://github.com/pinojs/pino" target="_blank" rel="noopener">pino</a> logs into any <a href="https://couchdb.apache.org" target="_blank" rel="noopener">CouchDB</a> database.</p>
+<h2 id="Why-pino"><a href="#Why-pino" class="headerlink" title="Why pino?"></a>Why pino?</h2><ul>
+<li><p>Speed: I haven’t independently tested the <a href="https://github.com/pinojs/pino#benchmarks" target="_blank" rel="noopener">benchmarks</a>, but I really like logging that doesn’t slow down the application. I want to be able to sprinkle logging generously in the application without slowing it down.</p>
+</li>
+<li><p>Simplicity: Take a look at the example below. We go from logging to the console, to logging in a database. The configuration and execution of log processing is entirely <em>outside</em> of the application.</p>
+</li>
+<li><p>Sticker: Because it has a logo that looks nice on a hex sticker? OK, not really. But <a href="https://twitter.com/matteocollina" target="_blank" rel="noopener">@matteocollina</a> presented this logger so effectively at NodeSummit, I asked for a sticker. Today, I’m glad to give something back to the community.</p>
+</li>
+</ul>
+<h2 id="Taking-it-for-a-spin"><a href="#Taking-it-for-a-spin" class="headerlink" title="Taking it for a spin"></a>Taking it for a spin</h2><h3 id="First-steps-with-pino"><a href="#First-steps-with-pino" class="headerlink" title="First steps with pino"></a>First steps with pino</h3><p>Let’s do a quick demo here, with a simple app that emits some logs:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ cd somewhere</span><br><span class="line">$ npm init -q -y</span><br><span class="line">$ npm install --save pino</span><br></pre></td></tr></table></figure>
+
+<p>And for <code>index.js</code>:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> pino = <span class="built_in">require</span>(<span class="string">'pino'</span>)();</span><br><span class="line">pino.error(<span class="string">'Something bad happened!'</span>);</span><br><span class="line">pino.warn(&#123; <span class="attr">iToldYou</span>: [ <span class="string">'once'</span>, <span class="string">'twice'</span>, <span class="string">'thrice'</span> ]&#125;);</span><br><span class="line">pino.info(&#123; <span class="attr">msg</span>: <span class="string">"Hey, check out these versions"</span>, <span class="attr">versions</span>: <span class="built_in">require</span>(<span class="string">'process'</span>).versions &#125;);</span><br><span class="line">pino.trace(<span class="string">'ALL THE DETAILS'</span>);</span><br></pre></td></tr></table></figure>
+
+<p>With the nice <a href="https://github.com/pinojs/pino/blob/master/docs/API.md" target="_blank" rel="noopener">pino API</a> you have lots of options for emitting logs.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ node index.js </span><br><span class="line">&#123;<span class="string">"pid"</span>:<span class="number">54534</span>,<span class="string">"hostname"</span>:<span class="string">"filfla.local"</span>,<span class="string">"level"</span>:<span class="number">50</span>,<span class="string">"time"</span>:<span class="number">1496436803976</span>,<span class="string">"msg"</span>:<span class="string">"Something bad happened!"</span>,<span class="string">"v"</span>:<span class="number">1</span>&#125;</span><br><span class="line">&#123;<span class="string">"pid"</span>:<span class="number">54534</span>,<span class="string">"hostname"</span>:<span class="string">"filfla.local"</span>,<span class="string">"level"</span>:<span class="number">40</span>,<span class="string">"time"</span>:<span class="number">1496436803979</span>,<span class="string">"iToldYou"</span>:[<span class="string">"once"</span>,<span class="string">"twice"</span>,<span class="string">"thrice"</span>],<span class="string">"v"</span>:<span class="number">1</span>&#125;</span><br><span class="line">&#123;<span class="string">"pid"</span>:<span class="number">54534</span>,<span class="string">"hostname"</span>:<span class="string">"filfla.local"</span>,<span class="string">"level"</span>:<span class="number">30</span>,<span class="string">"time"</span>:<span class="number">1496436803979</span>,<span class="string">"msg"</span>:<span class="string">"Hey, check out these versions"</span>,<span class="string">"versions"</span>:&#123;<span class="string">"http_parser"</span>:<span class="string">"2.7.0"</span>,<span class="string">"node"</span>:<span class="string">"8.0.0"</span>,<span class="string">"v8"</span>:<span class="string">"5.8.283.41"</span>,<span class="string">"uv"</span>:<span class="string">"1.11.0"</span>,<span class="string">"zlib"</span>:<span class="string">"1.2.11"</span>,<span class="string">"ares"</span>:<span class="string">"1.10.1-DEV"</span>,<span class="string">"modules"</span>:<span class="string">"57"</span>,<span class="string">"openssl"</span>:<span class="string">"1.0.2k"</span>,<span class="string">"icu"</span>:<span class="string">"59.1"</span>,<span class="string">"unicode"</span>:<span class="string">"9.0"</span>,<span class="string">"cldr"</span>:<span class="string">"31.0.1"</span>,<span class="string">"tz"</span>:<span class="string">"2017b"</span>&#125;,<span class="string">"v"</span>:<span class="number">1</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Notice the <code>trace()</code> details were below the current <a href="https://github.com/pinojs/pino/blob/master/docs/API.md#level" target="_blank" rel="noopener">level</a>, so were omitted. 
+This is detailed, but not super readable. If you are running something from the commadn line, the <code>pino</code> global utility tidies up the output nicely—in color, even, if your console supports it.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g pino</span><br><span class="line">$ node index.js | pino</span><br><span class="line">[2017-06-02T20:56:12.125Z] ERROR (56035 on filfla.local): Something bad happened!</span><br><span class="line">[2017-06-02T20:56:12.128Z] WARN (56035 on filfla.local): </span><br><span class="line">    iToldYou: [</span><br><span class="line">      &quot;once&quot;,</span><br><span class="line">      &quot;twice&quot;,</span><br><span class="line">      &quot;thrice&quot;</span><br><span class="line">    ]</span><br><span class="line">[2017-06-02T20:56:12.128Z] INFO (56035 on filfla.local): Hey, check out these versions</span><br><span class="line">    versions: &#123;</span><br><span class="line">      &quot;http_parser&quot;: &quot;2.7.0&quot;,</span><br><span class="line">      &quot;node&quot;: &quot;8.0.0&quot;,</span><br><span class="line">      &quot;v8&quot;: &quot;5.8.283.41&quot;,</span><br><span class="line">      &quot;uv&quot;: &quot;1.11.0&quot;,</span><br><span class="line">      &quot;zlib&quot;: &quot;1.2.11&quot;,</span><br><span class="line">      &quot;ares&quot;: &quot;1.10.1-DEV&quot;,</span><br><span class="line">      &quot;modules&quot;: &quot;57&quot;,</span><br><span class="line">      &quot;openssl&quot;: &quot;1.0.2k&quot;,</span><br><span class="line">      &quot;icu&quot;: &quot;59.1&quot;,</span><br><span class="line">      &quot;unicode&quot;: &quot;9.0&quot;,</span><br><span class="line">      &quot;cldr&quot;: &quot;31.0.1&quot;,</span><br><span class="line">      &quot;tz&quot;: &quot;2017b&quot;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Persistence-without-Perspiration-Relax"><a href="#Persistence-without-Perspiration-Relax" class="headerlink" title="Persistence without Perspiration: Relax!"></a>Persistence without Perspiration: Relax!</h3><p>Here’s where <code>pino-couch</code> comes in. I’m going to set up a <a href="Cloudant">https://cloudant.com</a> database
+to store these logs (as I do in production), but you can also use a local or any other <code>couchdb</code> instance (as I do when developing locally).</p>
+<ul>
+<li>First, create a database</li>
+</ul>
+<img src="/2017/06/02/pino-couch/createdb.png">
+
+<ul>
+<li>Next, give appropriate permissions.</li>
+</ul>
+<p><code>pino-couch</code> only needs to write to the database, it doesn’t need to read. Click the <em>Permissions</em> tab, then <em>Generate API Key</em>.  Choose only the <code>_writer</code> column for our new API key.</p>
+<img src="/2017/06/02/pino-couch/permissdb.png">
+
+<p>That’s actually it for configuration.</p>
+<ul>
+<li>Start up our app, but using <code>pino-couch</code>.   Use the <em>APIKEY</em> and <em>PASSWORD</em> that were generated above. And of course, your own <em>ACCOUNT</em>.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g pino-couch</span><br><span class="line">$ node index.js | pino-couch -U https://APIKEY:PASSWORD@ACCOUNT.cloudant.com -d slogging | pino</span><br><span class="line">[2017-06-02T21:16:22.511Z] ERROR (68283 on filfla.local): Something bad happened!</span><br><span class="line">( etc… )</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>The output is about the same.  We chained on a <code>| pino</code> at the end to keep the output human-readable— that&#39;s optional.</li>
+</ul>
+<p>Let’s take a look at the Cloudant dashboard again:</p>
+<img src="/2017/06/02/pino-couch/readdb.png">
+
+<p>There’s our data!</p>
+<h2 id="So-now-what"><a href="#So-now-what" class="headerlink" title="So now what?"></a>So now what?</h2><p>Here are a couple of things you might do with your new logging pipeline:</p>
+<h3 id="Write-a-clever-design-document-to-mine-your-app-logs-for-important-stuff"><a href="#Write-a-clever-design-document-to-mine-your-app-logs-for-important-stuff" class="headerlink" title="Write a clever design document to mine your app logs for important stuff."></a>Write a clever design document to mine your app logs for important stuff.</h3><p>Even something as simple as the following will get you timestamp-ordered documents.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> (<span class="params">doc</span>) </span>&#123;</span><br><span class="line">    emit([<span class="keyword">new</span> <span class="built_in">Date</span>(doc.time).toISOString(),doc._id], doc.msg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Note that besides the <code>time</code> field with epoch time, <code>hostname</code> contains the current hostname. This is really useful for distinguishing logs from among a cluster of servers.</p>
+<h3 id="Ingest-the-data-into-Elasticsearch-Kibana"><a href="#Ingest-the-data-into-Elasticsearch-Kibana" class="headerlink" title="Ingest the data into Elasticsearch/Kibana"></a>Ingest the data into Elasticsearch/Kibana</h3><p>We’ve done this with great success. We were already pulling from another Cloudant DB, so it was easy to add the application logs.</p>
+<p>And of course:</p>
+<h3 id="Relax"><a href="#Relax" class="headerlink" title="Relax"></a>Relax</h3><img src="/2017/06/02/pino-couch/pinohex.jpg" title="🌲: +1!">
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://srl295.github.io/2017/06/02/pino-couch/" data-id="ckahgbgbg000m6vta6o986xai" class="article-share-link">Share</a>
+      
+        <a href="https://srl295.github.io/2017/06/02/pino-couch/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/opensource/">opensource</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pino/">pino</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/06/06/full-stack-enablement/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Full Stack Language Enablement
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/17/translating-kibana/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Translating Kibana with the Globalization Pipeline</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bluemix/">bluemix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dvcs/">dvcs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/g11n/">g11n</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/globalizationpipeline/">globalizationpipeline</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/i18n/">i18n</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/icu/">icu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/icu4c/">icu4c</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kibana/">kibana</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/locales/">locales</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/opensource/">opensource</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/perl/">perl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pino/">pino</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/promises/">promises</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scm/">scm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sketch/">sketch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unicode/">unicode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wip/">wip</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/bluemix/" style="font-size: 10px;">bluemix</a> <a href="/tags/dvcs/" style="font-size: 10px;">dvcs</a> <a href="/tags/g11n/" style="font-size: 13.33px;">g11n</a> <a href="/tags/globalizationpipeline/" style="font-size: 20px;">globalizationpipeline</a> <a href="/tags/i18n/" style="font-size: 10px;">i18n</a> <a href="/tags/icu/" style="font-size: 13.33px;">icu</a> <a href="/tags/icu4c/" style="font-size: 10px;">icu4c</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/kibana/" style="font-size: 10px;">kibana</a> <a href="/tags/locales/" style="font-size: 10px;">locales</a> <a href="/tags/node/" style="font-size: 16.67px;">node</a> <a href="/tags/opensource/" style="font-size: 10px;">opensource</a> <a href="/tags/perl/" style="font-size: 13.33px;">perl</a> <a href="/tags/pino/" style="font-size: 10px;">pino</a> <a href="/tags/promises/" style="font-size: 10px;">promises</a> <a href="/tags/scm/" style="font-size: 13.33px;">scm</a> <a href="/tags/sketch/" style="font-size: 10px;">sketch</a> <a href="/tags/unicode/" style="font-size: 16.67px;">unicode</a> <a href="/tags/wip/" style="font-size: 10px;">wip</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/01/16/sketch-how-text-works/">Sketch - how text works</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/09/git-twofer/">git twofer</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/02/icu-infra/">ICU Infrastructure Migration</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/21/promise-never-returned/">The Promise that Never Returned</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/06/full-stack-enablement/">Full Stack Language Enablement</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Steven R. Loomis<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> 
+      
+      <span class="retrodefinition" id="rdfooter"><b class="rdkey"></b>: <span class="rddef"></span><a href="/2017/02/07/literate-programmers/"><sup>?</sup></a> <i class="rdex"></i>
+      </span>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/resume.html" class="mobile-nav-link">Resume</a>
+  
+    <a href="/" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'srl295';
+  
+  var disqus_url = 'https://srl295.github.io/2017/06/02/pino-couch/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/retrodefinitions.js"></script>
+
+  </div>
+</body>
+</html>
