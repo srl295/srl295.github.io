@@ -15,6 +15,7 @@ with an emphasis on internationalization.
 - [{% fa_inline github fab %} @srl295](https://github.com/srl295)
 - [{% fa_inline link fas %} git.io/srl295](https://srl295.github.io)
 - [{% fa_inline linkedin fab %} linkedin.com/in/srloomis](https://www.linkedin.com/in/srloomis)
+- [{% fa_inline stack-overflow fab %} Stack Exchange](https://stackexchange.com/users/62556/steven-r-loomis)
 
 ## Qualifications
 
