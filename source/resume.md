@@ -3,12 +3,10 @@ title: Steven R. Loomis • Code Sculptor
 date: 2020-05-22 00:00:00
 ---
 
-## Objective
+### Objective
 
 To work on software projects which make a difference for real users,
 with an emphasis on internationalization.
-
-## Coordinates
 
 - {% fa_inline globe-africa fas %} Location: San José, California, USA 
 - [{% fa_inline clock fas %} Timezone: Pacific Time](https://time.is/PT)
@@ -17,7 +15,6 @@ with an emphasis on internationalization.
 - [{% fa_inline github fab %} @srl295](https://github.com/srl295)
 - [{% fa_inline link fas %} git.io/srl295](https://srl295.github.io)
 - [{% fa_inline linkedin fab %} linkedin.com/in/srloomis](https://www.linkedin.com/in/srloomis)
-
 
 ## Qualifications
 
@@ -50,20 +47,15 @@ Visual Studio Code, emacs, Microsoft MSVC 4 through Visual Studio 2014+, Symante
 
 ### Tools
 
-**Cloud**: Docker, Kubernetes, Cloud Foundry, OpenWhisk/IBM Cloud Functions, IBM Cloud CLI, Hashicorp Vault
-
-**CI/CD**: Jenkins, Travis, GitHub Actions
-
-**Misc**: Jira, Trac, ZenHub, 1Password
+- **Cloud**: Docker, Kubernetes, Cloud Foundry, OpenWhisk/IBM Cloud Functions, IBM Cloud CLI, Hashicorp Vault
+- **CI/CD**: Jenkins, Travis, GitHub Actions
+- **Misc**: Jira, Trac, ZenHub, 1Password
 
 ## Experience
 
 ### IBM Corporate Globalization (1998—present)
 
-
 - Providing internal-facing globalization-related consulting services across the IBM Corporation as well as external-facing to clients in multiple sectors, including US Federal, large multinational corporations especially in the finance sector. Part of the team executing on the complete relationship from RfP phase through completion.
-
-
 
 #### 2020-present: OpenWhisk adoption lead
 
@@ -205,38 +197,18 @@ Worked on Maltese Language localization, advocacy, and standardization activitie
 
 ### 1993-1997: Software Engineer,  Taligent Inc., Cupertino, California. (A wholly-owned subsidiary of IBM from 1997 end)
 
-Worked on a crossfunctional bidirectional text handling and layout project for Arabic and Hebrew enablement in a major web browser.
+**Bidi Browser**: Worked on a small team to provide Arabic and Hebrew enablement in a major web browser (1996)
 
-Initiated concept, and with team designed, implemented, shipped, and supported Taligent WebRunner Server Works, a set of C++ frameworks that provide an abstraction for writing Web server-side dynamic content across multiple operating systems and Web Server plug in mechanisms. (CGI/NSAPI/ICAPI/ISAPI) US Patent #6,233,622
+**WebRunner Server Works**: Designed, developed, supported Taligent WebRunner Server Works, C++ and Java frameworks providing an early abstraction for server-side dynamic content independent of operating systems and server plug-in mechanisms such as CGI/NSAPI/ICAPI/ISAPI. US Patent #6,233,622.  Re-imagined as Server Works for Java, an extension of the Java Servlet API.
 
-Designed Server Works for Java, an extension of The Sun Servlet API.
+My contributions included: Initial concept, URL handling and tests (RFC 1808), integration with existing Web Servers, Sample Code and technical support. Represented Taligent and IBM in a product review for a major magazine. Staffed a kiosk at trade shows demonstrating the WebRunner Server Works packages.
 
-My specific contributions for Server Works for Java include:
-URL parsing/encoding, and an extensive RFC 1808 test suite
-Integration with existing Web Servers
-Sample Code and newsgroup/email based technical support
+**CommonPoint Messaging Frameworks**: Developed interfaces and tests for low-level POP3 and SMTP code.
 
-Represented Taligent and IBM in a product review for a major magazine, and also staffed a kiosk at trade shows demonstrating the WebRunner Server Works packages and discussing specific needs with potential customers.
+**Media/Distributed Communications Group**: Implemented CORBA IDL parser, designed and implemented service broker, port mapper, and service starter (the Primary Object Directory).
+Contributor to CommonPoint communications and service access frameworks including TCP/IP protocols on AIX.
 
-Assisted in the implementation of the CommonPoint messaging frameworks. I was primarily involved with the low-level POP3 and SMTP code.
-
-Implemented CORBA IDL parser.
-
-Implemented a service broker, port mapper, and service starter (the Primary Object Directory) for CommonPoint.
-Assisted in further design work for the CommonPoint communications and service access frameworks, especially those related to the TCP/IP protocols.
-
-Worked on maintainance for TCP/IP communications frameworks implementations for CommonPoint for AIX.
-
-Build and integration support for the Taligent communications group on the Macintosh.
-
-Maintained a 'lab' for the Distributed Communications group, including extensive unofficial technical support. (MacOS applications and configuration/AIX/Solaris/Ethernet hardware)
-
-Departmental webmaster, Media/Distributed Communications
-
-Wrote many tools to solve problems that came up, often web-related issues, including a C++ HTMLizer, URL Chat for internal link sharing, a GUI implementation of ‘tail’ for logfile viewing in MacOS, and a facility for communications channel performance testing.
-
-Unofficially assisted IT and other groups with various technical issues, including security, email, web page updates and problems, and so on.
-
+Build and pre-build integration support. (MacOS/MPW and TalOS.) Maintained the 'lab', including extensive unofficial technical support, including MacOS applications and configuration/AIX/Solaris/Ethernet hardware/security. Departmental webmaster (1993). Tools support including C++ HTMLizer, URL Chat for internal link sharing, a GUI ‘tail’ for build logfile viewing (MacOS), and a facility for communications channel performance testing.
 
 ### 1992-1993: Instructor, The Kings Academy, Los Altos, California
 
@@ -323,7 +295,7 @@ Working on experimental AX.25 socket bindings for Node.js. Contributed code impr
 - firewall requirements, implementation, and maintenance.
 - docker-based FreePBX (Asterix SIP/s) installation for home telephony.
 - Bulletin Board (BBS) software design and implementation
-- Network cabling, installation, support. Physical layers through high level applications: 10/100/1000baseT, 10base2, 802.11b/g/n wireless, AppleTalk, Farallon PhoneNet. Network Analyzer operation.
+- Network cabling, installation, support. Physical layers through high level applications: 10/100/1000baseT, 10base2, PoE, Mikrotik router management, 802.11b/g/n wireless, AppleTalk, Farallon PhoneNet. Network Analyzer operation.
 
 #### Other projects
 
@@ -337,6 +309,8 @@ Working on experimental AX.25 socket bindings for Node.js. Contributed code impr
 - Gravitational simulations
 - Music engraving using Finale and LilyPond
 - LaTeX/XeTeX: Sermons, Unicode proposals, and two larger (100+ page) book projects (a Christian education book, and a historical family memoir)
+- Soldering (learning SMT).
+- Arduino/ESP8266/Raspberry Pi/BeagleBone hardware experiments with robotics and environmental sensors.
 
 -----
 
