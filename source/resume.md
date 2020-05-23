@@ -335,6 +335,8 @@ Working on experimental AX.25 socket bindings for Node.js. Contributed code impr
 - SQL-based chatroom 'bot'
 - AOL-IM plugin implementing Eliza
 - Gravitational simulations
+- Music engraving using Finale and LilyPond
+- LaTeX/XeTeX: Sermons, Unicode proposals, and two larger (100+ page) book projects (a Christian education book, and a historical family memoir)
 
 -----
 
