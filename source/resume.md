@@ -5,7 +5,7 @@ date: 2020-05-22 00:00:00
 
 ### Objective
 
-To work on software projects which make a difference for real users,
+ To work on software projects which make a difference for real users,
 with an emphasis on internationalization.
 
 - {% fa_inline globe-africa fas %} Location: San José, California, USA 
@@ -31,7 +31,7 @@ with an emphasis on internationalization.
 
 - **Native/Bilingual**: C/C++, Java, JavaScript (Node.js, browser, embedded), HTML/CSS, gnumake
 - **Full Professional Proficiency**: gnumake, bash, XML/XLIFF
-- **Professional Working**: sql
+- **Professional Working**: sql, Vue, jQuery
 - **Limited Working/Conversational**: sed, TeX/LaTeX/XeTeX
 - **Elementary**: python, PostScript, 6502
 - **I can order lunch in**: perl, php, 8080
@@ -48,7 +48,7 @@ Visual Studio Code, emacs, Microsoft MSVC 4 through Visual Studio 2014+, Symante
 
 ### Tools
 
-- **Cloud**: Docker, Kubernetes, Cloud Foundry, OpenWhisk/IBM Cloud Functions, IBM Cloud CLI, Hashicorp Vault
+- **Cloud**: Docker, Kubernetes, Cloud Foundry, OpenWhisk/IBM Cloud Functions, IBM Cloud CLI, Hashicorp Vault, Cloudant, Kafka, S3
 - **CI/CD**: Jenkins, Travis, GitHub Actions
 - **Misc**: Jira, Trac, ZenHub, 1Password
 
