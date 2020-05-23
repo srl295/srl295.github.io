@@ -97,6 +97,7 @@ managing XLIFF-based human post editing (Node.js).
 - Developed custom integration solutions based on team translation data requirements
 - Developed Openwhisk-based translation connector
 - Gave internal and external presentations to showcase the Globalization Pipeline, including a co-keynote at Fluent
+- Architectural and development support to Elastic Kibana globalization and integration with Globalization Pipeline
 
 #### 2013-present: Node.js
 
