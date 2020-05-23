@@ -61,10 +61,8 @@ Visual Studio Code, emacs, Microsoft MSVC 4 through Visual Studio 2014+, Symante
 
 - Responsible for driving adoption of OpenWhisk-based
 serverless architecture and best practices throughout the G11n Team
-
 - Developed sample applications and detailed developer
 guidance.
-
 - Drove interlock with serverless platform owners
 and engaged with OpenWhisk open source community
 to find answers, solve problems, and even contribute
@@ -73,16 +71,11 @@ back to the open source solutions.
 #### 2019-2020: Project Manager, G11n Tech Team
 
 - Took over a project team in mid-cycle on short notice.
-
 - Organized sprint plans
-
 - Responsible for communicating with stakeholders as to progress
 and bringing closure on requirements
-
-- Scope of project management role continued to expand
-to include development teams in Asia, North America, Europe
+- Scope of project management role included development teams in Asia, North America, Europe
 and Africa.
-
 - Saw the completion of a flagship web app and
 underlying cloud translation services through v1.0 to
 UAT
@@ -114,16 +107,12 @@ Role: Core Collaborator, CTC/TSC member, WG leader, WG member
 
 - Drove `Intl` (ICU-based) feature enablement “on by default”
 in Node.js v0.12
-
 - Engaged with IBM, RedHat stakeholders to continously
 support and refine internationalization availability, configuration
 options. Provided support via internal Slack channels, external
 GitHub issues and IRC.
-
 - Continued to support the [`full-icu`](https://www.npmjs.com/package/full-icu) npm module, which has over 100,000 weekly downloads.
-
 - Node TSC member (2015)
-
 - Started the Intl WG, and member of successor i18n WG
 
 #### 1997-present: International Components for Unicode
@@ -172,11 +161,11 @@ language support, particularly with respect to minority languages
 
 #### OASIS
 
-- Participate in XLIFF-TC, and XLIFF-OMOS-TC
+- Participated in XLIFF-TC, and XLIFF-OMOS-TC
 
 #### ECMA
 
-- Participate in ECMA262 (JavaScript) and contributor to ECMA402 (I18n)
+- Participated in ECMA262 (JavaScript) and contributor to ECMA402 (I18n)
 
 #### 2006-2016: Sun (Oracle) Java Liason
 
