@@ -127,6 +127,11 @@ As Technical Lead, I am responsible for representing IBM’s interests and that 
 
 Highlights:
 
+- C test framework
+- Automated testing design and maintenance
+- Automated release system maintenance
+- Calendar and Locale related classes (C++)
+- Implemented the ULI-TC segmentation exception break iterator
 - jitterbug/cvs to trac/svn (2006)
 - trac/svn to GitHub/Jira (2018)
 - Initiated effort to transition ICU to the Unicode Consortium
@@ -140,6 +145,29 @@ Source Repository, Defect Tracking, Development Process tools support: Engineere
 #### 2002-present: Common Locale Data Repository
 
 Role: founding member of TC, design, tooling, infrastructure
+
+Responsibilities:
+
+- Developed the Survey Tool, which is used to collect linguistic data
+- Infrastructure: 2019 migration from trac/svn to JIRA/GitHub
+- Engaged with linguistic communities to collect and improve the status of
+language support, particularly with respect to minority languages
+- Conference presentation and discussions
+
+#### Unicode Consortium
+
+- Unicode Localization Interoperability (ULI-TC/SC) chair
+- IBM's primary representative to Unicode and to INCITS JTC1/L2/SC2 USNB
+- Participate and contribute to UTC meetings and Unicode technical standards
+- Assist in infrastructure and development concerns
+
+#### OASIS
+
+- Participate in XLIFF-TC, and XLIFF-OMOS-TC
+
+#### ECMA
+
+- Participate in ECMA262 (JavaScript) and contributor to ECMA402 (I18n)
 
 #### 2006-2016: Sun (Oracle) Java Liason
 
@@ -159,7 +187,9 @@ Worked on Maltese Language localization, advocacy, and standardization activitie
 (Note: continued on a LOA basis with IBM during this time.)
 
 ### 1993-1997: Software Engineer,  Taligent Inc., Cupertino, California. (A wholly-owned subsidiary of IBM from 1997 end)
-Worked on a crossfunctional bidirectional text handling and layout project for Arabic and Hebrew enablement in a web server.
+
+Worked on a crossfunctional bidirectional text handling and layout project for Arabic and Hebrew enablement in a major web browser.
+
 Initiated concept, and with team designed, implemented, shipped, and supported Taligent WebRunner Server Works, a set of C++ frameworks that provide an abstraction for writing Web server-side dynamic content across multiple operating systems and Web Server plug in mechanisms. (CGI/NSAPI/ICAPI/ISAPI) US Patent #6,233,622
 
 Designed Server Works for Java, an extension of The Sun Servlet API.
@@ -172,6 +202,8 @@ Sample Code and newsgroup/email based technical support
 Represented Taligent and IBM in a product review for a major magazine, and also staffed a kiosk at trade shows demonstrating the WebRunner Server Works packages and discussing specific needs with potential customers.
 
 Assisted in the implementation of the CommonPoint messaging frameworks. I was primarily involved with the low-level POP3 and SMTP code.
+
+Implemented CORBA IDL parser.
 
 Implemented a service broker, port mapper, and service starter (the Primary Object Directory) for CommonPoint.
 Assisted in further design work for the CommonPoint communications and service access frameworks, especially those related to the TCP/IP protocols.
@@ -193,6 +225,8 @@ Unofficially assisted IT and other groups with various technical issues, includi
 
 Instructed Junior and Senior High School Students in fundamental programming using the BASIC and 6502 assembly languages.
 
+Developed and supported “AuntieEm”/Mac6502/asm - 6502 emulator (Apple ][ environment), with assembler. For MacOS and UNIX.
+
 Set up computer lab with Windows 3.1, and PromiseLAN network. Provided Technical support for the lab.
 
 ### 1990: Consultant to Color Blend Painting, San Carlos, California
@@ -210,6 +244,80 @@ UI development and testing for a HyperCard-based (HyperTalk langauge) car inform
 - [US 9,063,636](http://patft1.uspto.gov/netacgi/nph-Parser?patentnumber=9063636) - Management of input methods
 
 - _Patent Applied For, Pending_ [US20180329960A1](https://patents.google.com/patent/US20180329960) - Dynamic expression sticker management
+
+## Education
+
+Degrees:
+
+- 2014: Bachelor of Arts, Computer Science, Thomas Edison State University (Trenton, New Jersey)
+- 1999: Associate in Arts, Interdisciplinary Studies, De Anza College (Cupertino, California)
+
+Coursework:
+
+- 2001: Windows 2000 Certification, University of Malta (Tal-Qroqq, Malta, Europe)
+- 1993: C++, West Valley College (Saratoga, California)
+- 1989: C, Foothill College (Los Altos, California)
+
+Awards:
+
+- 2009: Unicode Bulldog Award for contributions to ICU and CLDR
+
+## Linguistic Protocols
+
+i.e. human language skills:
+
+- `en-US` (American English): Fully Proficient.
+- `es-US` (US Spanish / español estadounidense): Able to read and, mostly, hear. Can perform complex OS installations in Spanish. (Completed the first-year college course plus self study.)
+- `ja` (Japanese): Some conversational training and experience, but I need to check the equivalent of stackoverflow for most tasks. Some recognition of Kanji/Han characters.
+- `grc` (Ancient Greek): Some reading skills
+- `mt` (Maltese): Some conversational skill.
+
+Familiar, with low levels of comprehension, with a wide variety of scripts and their distinctions: Arabic, Hebrew, Cyrillic (Russian), Devanagari (Hindi) and neighbors, Syriac (Assyrian), Japanese and Chinese ideographs.
+
+Interested in Braille (limited skill) and sign languages.
+
+## Other Experience
+
+### Reformed Heritage Church (Hanover Presbytery) of San José, California
+
+#### 2014—present: Elder
+
+Responsible for shepherding ministries/pastoral care, education including leadership training, and periodic sermon preparation.
+
+#### 2008—2014: Deacon
+
+Responsible for charitable distributions in support of needs, financial counseling, as well as support of ministry needs.
+
+#### 2009—2015: Treasurer (CFO)
+
+Responsible for tracking income and expenses, payroll, records management, and bank interaction.
+Drove improvements to forms and policies around best practices. Drove migration from shrinkwrap QuickBooks to QuickBooks Online. Managed education sessions for onboarding of additional treasury team members.
+
+### Personal Projects
+
+#### Amateur Radio: US General Class License (including 5 wpm Morse Code).
+Working on experimental AX.25 socket bindings for Node.js. Contributed code improvements to LinPac, an AX.25 terminal application. Managed the Packet Radio tent for WVARA Amateur Radio Field Day.
+
+#### 1990—present: UNIX at home.
+
+- UUCP, SMTP, POP, IMAP, HTTP/S, SSH/SSL configuration and management. 
+- multi-tenant virtual hosting
+- network performance analysis and troubleshooting
+- firewall requirements, implementation, and maintenance.
+- docker-based FreePBX (Asterix SIP/s) installation for home telephony.
+- Bulletin Board (BBS) software design and implementation
+- Network cabling, installation, support. Physical layers through high level applications: 10/100/1000baseT, 10base2, 802.11b/g/n wireless, AppleTalk, Farallon PhoneNet. Network Analyzer operation.
+
+#### Other projects
+
+- custom MacOS WDEF development
+- HTML Color Picker (Mac)
+- Tetris and Asteroids game clones
+- rule-based MIDI “music” generation
+- Ports to MacOS: gnuchess, sokoban, xwator, t_tris
+- SQL-based chatroom 'bot'
+- AOL-IM plugin implementing Eliza
+- Gravitational simulations
 
 -----
 
