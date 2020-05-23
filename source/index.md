@@ -3,7 +3,8 @@ title: about
 date: 2038-01-19 03:14:08
 ---
 
-To see the latest blog posts, visit the [archives](https://srl295.github.io/archives/).
+- Also see: [resume](./resume.html)
+- To see the latest blog posts, visit the [archives](https://srl295.github.io/archives/).
 
 * Sr Software Engineer, [IBM Global Foundations Technology Team](http://ibm.com/software/globalization/)
 * Social: [LinkedIn](http://www.linkedin.com/in/srloomis) [Twitter: @srl295](http://twitter.com/srl295) [Github: @srl295](https://github.com/srl295) [openhub](https://www.openhub.net/accounts/srl295) [keybase](https://keybase.io/srl295)
