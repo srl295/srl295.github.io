@@ -1,12 +1,12 @@
 ---
 title: Steven R. Loomis • Code Sculptor
-date: 2020-05-22 00:00:00
+date: 2020-05-25 00:00:00
 ---
 
 ### Objective
 
- To work on software projects which make a difference for real users,
-with an emphasis on internationalization.
+ To work on software projects which make a difference
+for real users, with an emphasis on internationalization.
 
 - {% fa_inline globe-africa fas %} Location: San José, California, USA 
 - [{% fa_inline clock fas %} Timezone: Pacific Time](https://time.is/PT)
@@ -48,9 +48,9 @@ Visual Studio Code, emacs, Microsoft MSVC 4 through Visual Studio 2014+, Symante
 
 ### Tools
 
-- **Cloud**: Docker, Kubernetes, Cloud Foundry, OpenWhisk/IBM Cloud Functions, IBM Cloud CLI, Hashicorp Vault, Cloudant, Kafka, S3
-- **CI/CD**: Jenkins, Travis, GitHub Actions
-- **Misc**: Jira, Trac, ZenHub, 1Password
+- **Cloud**: Docker, Kubernetes, Cloud Foundry, OpenWhisk/IBM Cloud Functions, Cloudant, Kafka, S3
+- **CI/CD**: Jenkins, Travis, GitHub Actions, Artifactory, IBM Cloud CLI, Hashicorp Vault
+- **Team**: Jira, Trac, ZenHub, 1Password
 
 ## Experience
 
@@ -81,11 +81,13 @@ and Africa.
 underlying cloud translation services through v1.0 to
 UAT
 
-### 2016-Present: Globalization Pipeline
+#### 2016-Present: G11n Tech Team
 
 Background: Globalization Pipeline is a Translation-as-a-Service software offering which is in the IBM Cloud (aka Bluemix) catalog.
 
 Responsibilities:
+
+##### Globalization Pipeline
 
 - Evaluated and implemented Cloudant (apache couchdb) based data store subsystem, including custom backup facility
 - Interfaced with IBM's Translation Service Centers, as developer of an integration agent
@@ -98,6 +100,12 @@ managing XLIFF-based human post editing (Node.js).
 - Developed Openwhisk-based translation connector
 - Gave internal and external presentations to showcase the Globalization Pipeline, including a co-keynote at Fluent
 - Architectural and development support to Elastic Kibana globalization and integration with Globalization Pipeline
+
+##### GTech Microservices
+
+- Part of team designing and architecting microservice-based XLIFF translation pipeline services
+- Responsible for Human Post Editing microservice in Java (Spring Boot)
+- Responsible for build engineering of CI/CD processes for building and testing the microservices and API orchestrator. 
 
 #### 2013-present: Node.js
 
@@ -150,8 +158,7 @@ Responsibilities:
 
 - Developed the Survey Tool, which is used to collect linguistic data
 - Infrastructure: 2019 migration from trac/svn to JIRA/GitHub
-- Engaged with linguistic communities to collect and improve the status of
-language support, particularly with respect to minority languages
+- Engaged with linguistic communities to collect and improve the status of language support, particularly with respect to minority languages.
 - Conference presentation and discussions
 
 #### Unicode Consortium (2012-Present)
@@ -247,14 +254,14 @@ Awards:
 i.e. human language skills:
 
 - `en-US` (American English): Fully Proficient.
-- `es-US` (US Spanish / español estadounidense): Able to read and, mostly, hear. Can perform complex OS installations in Spanish. (Completed the first-year college course plus self study.)
-- `ja` (Japanese): Some conversational training and experience, but I need to check the equivalent of stackoverflow for most tasks. Some recognition of Kanji/Han characters.
-- `grc` (Ancient Greek): Some reading skills
+- `es-US` (US Spanish / español estadounidense): Able to read and, mostly, hear. Can perform complex OS installations in Spanish. (Elementary Spanish course, 9 Semester Hours plus self study)
+- `ja` (Japanese): Some conversational training (4 Semester Hours) and experience, but I need to check the equivalent of stackoverflow for most tasks. Some recognition of Kanji/Han characters.
+- `grc` (Koine Greek): Some reading skill
 - `mt` (Maltese): Some conversational skill.
 
 Familiar, with low levels of comprehension, with a wide variety of scripts and their distinctions: Arabic, Hebrew, Cyrillic (Russian), Devanagari (Hindi) and neighbors, Syriac (Assyrian), Japanese and Chinese ideographs.
 
-Interested in Braille (limited skill) and sign languages.
+Interested in Braille (limited skill) and sign languages. Some experience and much interest in linguistics/computational linguistics via IBM Translation projects, ICU/CLDR and the UTC/Unicode Script Ad Hoc.
 
 ## Other Experience
 
