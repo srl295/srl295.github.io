@@ -1,6 +1,6 @@
 ---
 title: Steven R. Loomis • Code Sculptor
-date: 2020-05-25 00:00:00
+date: 2020-05-26 00:00:00
 ---
 
 ### Objective
@@ -51,6 +51,7 @@ Visual Studio Code, emacs, Microsoft MSVC 4 through Visual Studio 2014+, Symante
 - **Cloud**: Docker, Kubernetes, Cloud Foundry, OpenWhisk/IBM Cloud Functions, Cloudant, Kafka, S3
 - **CI/CD**: Jenkins, Travis, GitHub Actions, Artifactory, IBM Cloud CLI, Hashicorp Vault
 - **Team**: Jira, Trac, ZenHub, 1Password
+- **Insights**: New Relic, Prometheus, Grafana
 
 ## Experience
 
@@ -85,14 +86,22 @@ UAT
 
 Background: Globalization Pipeline is a Translation-as-a-Service software offering which is in the IBM Cloud (aka Bluemix) catalog.
 
+##### GTech Microservices
+
 Responsibilities:
 
+- Part of team designing and architecting microservice-based XLIFF translation pipeline services
+- Responsible for Human Post Editing microservice in Java (Spring Boot)
+- Responsible for build engineering of CI/CD processes for building and testing the microservices and API orchestrator. 
+
 ##### Globalization Pipeline
+
+Responsibilities:
 
 - Evaluated and implemented Cloudant (apache couchdb) based data store subsystem, including custom backup facility
 - Interfaced with IBM's Translation Service Centers, as developer of an integration agent
 managing XLIFF-based human post editing (Node.js).
-- Deployment of New Relic based monitoring and alerting
+- Deployment of New Relic based monitoring and alerting, including custom synthetics and APM integration.
 - Driving adoption of Slack for team communication and automated application notification
 - Participated in onboarding of Globalization Pipeline users
 - Developed Node.js based SDK and client ( `gp-js-client` and `gp-js-cli` )
@@ -100,12 +109,6 @@ managing XLIFF-based human post editing (Node.js).
 - Developed Openwhisk-based translation connector
 - Gave internal and external presentations to showcase the Globalization Pipeline, including a co-keynote at Fluent
 - Architectural and development support to Elastic Kibana globalization and integration with Globalization Pipeline
-
-##### GTech Microservices
-
-- Part of team designing and architecting microservice-based XLIFF translation pipeline services
-- Responsible for Human Post Editing microservice in Java (Spring Boot)
-- Responsible for build engineering of CI/CD processes for building and testing the microservices and API orchestrator. 
 
 #### 2013-present: Node.js
 
@@ -295,12 +298,14 @@ Working on experimental AX.25 socket bindings for Node.js. Contributed code impr
 #### 1990—present: UNIX at home.
 
 - UUCP, SMTP, POP, IMAP, HTTP/S, SSH/SSL configuration and management. 
-- multi-tenant virtual hosting
-- network performance analysis and troubleshooting
+- multi-tenant virtual hosting.
+- network performance analysis and troubleshooting.
 - firewall requirements, implementation, and maintenance.
 - docker-based FreePBX (Asterix SIP/s) installation for home telephony.
-- Bulletin Board (BBS) software design and implementation
+- Bulletin Board (BBS) software design and implementation.
 - Network cabling, installation, support. Physical layers through high level applications: 10/100/1000baseT, 10base2, PoE, Mikrotik router management, 802.11b/g/n wireless, AppleTalk, Farallon PhoneNet. Network Analyzer operation.
+- Home monitoring with Prometheus (including custom exporters), Grafana.
+- FreeNAS deployed with RAID for robust storage. Custom scripts for off-site backup.
 
 #### Other projects
 
