@@ -178,9 +178,10 @@ Responsibilities:
 
 #### 2006-2016: Sun (Oracle) Java Liason
 
-Role: Liaison with the Java2D group at Oracle (previously Sun Microsystems), Santa Clara in regards to complex text layout and bidirectional text processing areas of the Java environment. 
+Role: Liaison with the Java2D group at Oracle (previously Sun Microsystems), Santa Clara in regards to complex text layout and bidirectional text processing areas of the Java environment.
 
 Responsibilities:
+
 - BiDi functionality
 - Integration and support of the ICU layout engine
 - Spearheaded project to integrate tha HarfBuzz layout engine (completed in JDK/Java 9)
@@ -231,6 +232,12 @@ UI development and testing for a HyperCard-based (HyperTalk langauge) car inform
 - [US 9,063,636](http://patft1.uspto.gov/netacgi/nph-Parser?patentnumber=9063636) - Management of input methods
 
 - _Patent Applied For, Pending_ [US20180329960A1](https://patents.google.com/patent/US20180329960) - Dynamic expression sticker management
+
+## Awards
+
+- IBM Eminence and Excellence (2015, 2016)
+- IBM Open Source Engagement (2015, 2016, 2017, 2019)
+- IBM Manager’s Choice (2014, 2015, 2016, 2017, 2019)
 
 ## Education
 
