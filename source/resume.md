@@ -127,6 +127,7 @@ GitHub issues and IRC.
 - Continued to support the [`full-icu`](https://www.npmjs.com/package/full-icu) npm module, which has over 100,000 weekly downloads.
 - Node TSC member (2015)
 - Started the Intl WG, and member of successor i18n WG
+- Built a tool to simplify npm authentication to our internal npm repository for ci/cd
 
 #### 1997-present: International Components for Unicode
 
