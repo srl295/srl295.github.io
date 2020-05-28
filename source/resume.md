@@ -36,15 +36,11 @@ for real users, with an emphasis on internationalization.
 - **Elementary**: python, PostScript, 6502
 - **I can order lunch in**: perl, php, 8080
 
-### Environments
-
-Visual Studio Code, emacs, Microsoft MSVC 4 through Visual Studio 2014+, Symantec Café, Gnu GCC, Eclipse, IBM CMVC, IBM VisualAge for C++, IBM CSet++ for AIX, Apple ProjectBuilder/XCode, Metrowerks CodeWarrior for Mac and BeOS, Apple MPW shell, PlatformIO
-
 ### Platforms
 
 **Mainframe/Handheld**: MacOS/MacOSX, GNU/Linux (Slackware, RedHat, Debian, Mandrake, Ubuntu, NixOS), Microsoft Windows 10 through 3.1, AIX, IBM i (OS400), IBM z (z/OS), Solaris/Illumos, NeXT, PalmOS, Coherent, IRIX, A/UX, CTIX, HP/UX, BeOS/Haiku, FreeBSD, Taligent CommonPoint, Newton, Apple ][ DOS, MS-DOS, OS/2
 
-**Embedded**: Microchip PIC16F84, Arduino (Atmel AVR), Raspberry Pi, BeagleBone (TI OMAP3530), Tessel, ESP8266, Espruino
+**Embedded**: Microchip PIC16F84, Arduino (Atmel AVR), Raspberry Pi, BeagleBone (TI OMAP3530), Tessel, ESP8266 (PlatformIO), Espruino
 
 ### Tools
 
@@ -52,6 +48,7 @@ Visual Studio Code, emacs, Microsoft MSVC 4 through Visual Studio 2014+, Symante
 - **CI/CD**: Jenkins, Travis, GitHub Actions, Artifactory, IBM Cloud CLI, Hashicorp Vault
 - **Team**: Jira, Trac, ZenHub, 1Password
 - **Insights**: New Relic, Prometheus, Grafana
+- **Edit**: VS Code, Emacs, Eclipse
 
 ## Experience
 
