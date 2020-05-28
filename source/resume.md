@@ -1,6 +1,6 @@
 ---
 title: Steven R. Loomis • Code Sculptor
-date: 2020-05-26 00:00:00
+date: 2020-05-28 00:00:00
 ---
 
 ### Objective
@@ -49,6 +49,7 @@ for real users, with an emphasis on internationalization.
 - **Team**: Jira, Trac, ZenHub, 1Password
 - **Insights**: New Relic, Prometheus, Grafana
 - **Edit**: VS Code, Emacs, Eclipse
+- **Web**: Servlets/J2EE, Express, basic Vue.js
 
 ## Experience
 
