@@ -86,15 +86,15 @@ the brain of the sender to the brain of the recipient.&lt;/p&gt;
     </summary>
     
     
-      <category term="node" scheme="https://srl295.github.io/tags/node/"/>
-    
       <category term="icu" scheme="https://srl295.github.io/tags/icu/"/>
+    
+      <category term="unicode" scheme="https://srl295.github.io/tags/unicode/"/>
+    
+      <category term="node" scheme="https://srl295.github.io/tags/node/"/>
     
       <category term="scm" scheme="https://srl295.github.io/tags/scm/"/>
     
       <category term="perl" scheme="https://srl295.github.io/tags/perl/"/>
-    
-      <category term="unicode" scheme="https://srl295.github.io/tags/unicode/"/>
     
   </entry>
   
