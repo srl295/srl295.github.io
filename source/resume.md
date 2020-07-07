@@ -53,11 +53,11 @@ for real users, with an emphasis on internationalization.
 
 ## Experience
 
-### IBM Corporate Globalization (1998—present)
+### IBM Corporate Globalization (1998—2020)
 
 - Providing internal-facing globalization-related consulting services across the IBM Corporation as well as external-facing to clients in multiple sectors, including US Federal, large multinational corporations especially in the finance sector. Part of the team executing on the complete relationship from RfP phase through completion.
 
-#### 2020-present: OpenWhisk adoption lead
+#### 2020-2020: OpenWhisk adoption lead
 
 - Responsible for driving adoption of OpenWhisk-based
 serverless architecture and best practices throughout the G11n Team
@@ -80,7 +80,7 @@ and Africa.
 underlying cloud translation services through v1.0 to
 UAT
 
-#### 2016-Present: G11n Tech Team
+#### 2016-2020: G11n Tech Team
 
 Background: Globalization Pipeline is a Translation-as-a-Service software offering which is in the IBM Cloud (aka Bluemix) catalog.
 
@@ -108,7 +108,7 @@ managing XLIFF-based human post editing (Node.js).
 - Gave internal and external presentations to showcase the Globalization Pipeline, including a co-keynote at Fluent
 - Architectural and development support to Elastic Kibana globalization and integration with Globalization Pipeline
 
-#### 2013-present: Node.js
+#### 2013-2020: Node.js
 
 <!--
 First Node comment: https://github.com/nodejs/node-v0.x-archive/issues/4689#issuecomment-22204220
@@ -127,7 +127,7 @@ GitHub issues and IRC.
 - Started the Intl WG, and member of successor i18n WG
 - Built a tool to simplify npm authentication to our internal npm repository for ci/cd
 
-#### 1997-present: International Components for Unicode
+#### 1997-2020: International Components for Unicode
 
 Role: IBM’s Technical Lead for ICU for C/C++, Technical Committee Member
 
@@ -152,7 +152,7 @@ Involved in many aspects of project. In charge of build and release issues. Emph
 
 Source Repository, Defect Tracking, Development Process tools support: Engineered the ICU team's transition from CVS and Jitterbug to Subversion and trac. Designed and implemented custom python plugin modules to support ticket/changeset integration and to provide a review process. Provide extensive testing and maintenance.
 
-#### 2002-present: Common Locale Data Repository
+#### 2002-2020: Common Locale Data Repository
 
 Role: founding member of TC, design, tooling, infrastructure
 
@@ -163,7 +163,7 @@ Responsibilities:
 - Engaged with linguistic communities to collect and improve the status of language support, particularly with respect to minority languages.
 - Conference presentation and discussions
 
-#### Unicode Consortium (2012-Present)
+#### Unicode Consortium (2012-2020)
 
 - Unicode Localization Interoperability (ULI-TC/SC) chair
 - IBM's primary representative to Unicode and to INCITS JTC1/L2/SC2 USNB
@@ -180,7 +180,7 @@ Responsibilities:
 
 #### 2006-2016: Sun (Oracle) Java Liason
 
-Role: Liaison with the Java2D group at Oracle (previously Sun Microsystems), Santa Clara in regards to complex text layout and bidirectional text processing areas of the Java environment.
+Role: Liaison between IBM and the Java2D group at Oracle (previously Sun Microsystems), Santa Clara in regards to complex text layout and bidirectional text processing areas of the Java environment.
 
 Responsibilities:
 
@@ -188,7 +188,7 @@ Responsibilities:
 - Integration and support of the ICU layout engine
 - Spearheaded project to integrate tha HarfBuzz layout engine (completed in JDK/Java 9)
 
-### 2001: University of Malta
+### 2001 (Jan-Dec): University of Malta
 
 Systems Engineer, Department of Computer Science and Artificial Intelligence, University of Malta (Europe).
 
