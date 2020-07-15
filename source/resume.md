@@ -127,7 +127,7 @@ GitHub issues and IRC.
 - Started the Intl WG, and member of successor i18n WG
 - Built a tool to simplify npm authentication to our internal npm repository for ci/cd
 
-#### 1997-present: International Components for Unicode
+#### 1998-present: International Components for Unicode
 
 Role: IBM’s Technical Lead for ICU for C/C++, Technical Committee Member
 
@@ -196,7 +196,9 @@ Worked on Maltese Language localization, advocacy, and standardization activitie
 
 (Note: continued on a LOA basis with IBM during this time.)
 
-### 1993-1997: Software Engineer,  Taligent Inc., Cupertino, California. (A wholly-owned subsidiary of IBM from 1997 end)
+### 1993-1997: Software Engineer,  Taligent Inc., Cupertino, California.
+
+_On Jan 1, 1997, Taligent became a wholly-owned subsidiary of IBM. At the end of 1997, I transitioned to IBM._
 
 **Bidi Browser**: Worked on a small team to provide Arabic and Hebrew enablement in a major web browser (1996)
 
