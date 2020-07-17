@@ -14,7 +14,7 @@
 <meta property="og:description" content="I’m a 2nd generation IBMer, from back when this meant “I’ve Been Moved.”">
 <meta property="og:locale" content="en-US">
 <meta property="og:image" content="https://srl295.github.io/2020/07/16/srl-next/gp-icon.png">
-<meta property="og:updated_time" content="2020-07-17T06:57:52.452Z">
+<meta property="og:updated_time" content="2020-07-17T15:03:31.080Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="srl.next">
 <meta name="twitter:description" content="I’m a 2nd generation IBMer, from back when this meant “I’ve Been Moved.”">
@@ -114,7 +114,7 @@ ga('send', 'pageview');
 
 <p>Fast forward to 1993. I knew that <a href="https://en.wikipedia.org/wiki/Taligent" target="_blank" rel="noopener">Taligent</a> (also where my father was at that time) was working on a new OS of some kind, but that’s all I knew. (<a href="https://en.wikipedia.org/wiki/Taligent#Pink_system" target="_blank" rel="noopener">Pink</a>). I just wanted to write some games for it<sup>*</sup>, and that needed an NDA. Instead of an NDA, I got a job: an internship, using my bran-new C++ skills.</p>
 <p>Trying to do pre-build integration on an amazingly complex subsystem which somehow meshed with a dozen other subsystems was an interesting challenge, to say the least! (There were multi core builds all right—one keyboard and ADB mouse per core.)</p>
-<p>I learned a lot about how to, and sometimes how <em>not</em> to, design OO systems, rubbing shoulders (and trading bug reports) with the best in the industry. Learned a lot, launched a lot of Nerf™ product, accidentally burned an OID (sorry)! … and, shipped some good features and even products.</p>
+<p>I learned a lot about how to, and sometimes how <em>not</em> to, design OO systems, rubbing shoulders (and trading bug reports) with the best in the industry. Learned a lot, launched a lot of Nerf™ product, accidentally burned an OID (sorry)! … and, shipped some good features and even products.  I also received plenty of constructive criticism.</p>
 <p>I think my first job title was &quot;Technical Specialist&quot;, probably because some form needed a title. Since the Apple tradition of design-your-own-businesscard was followed, I styled this as “TechnoSpecialist.”  Later I graduated to Software Engineer or something, so I wrote “Code Sculptor.” I had in mind the idea of those who brought a certain <em>craft</em> to the field—Wozniak, Hertzfield, Atkinson, and so on.</p>
 <p>I also ran into something called Unicode. I discovered it quite by accident.  I still was trying to make some kind of game, but I decided (since I was in the NetComm group) to write a networked chat program. Sounds simple enough.  The base text class was called <a href="http://cortex.p.gen.nz/taligent/Docs/classes/TStandardText.html" target="_blank" rel="noopener">TStandardText</a>. To my surprise and annoyance, when I <a href="http://cortex.p.gen.nz/taligent/Docs/classes/TStandardText.html#operator_OUT__OUT_=" target="_blank" rel="noopener">streamed</a> a TStandardText (using <code>operator&gt;&gt;=</code> of course!), the other side received a bunch of NULLs (<code>\0x00</code>). A null, then a letter, a null, then another letter. And finally, TWO nulls to end it. For example, streaming <code>ABC</code> showed up on the wire not as ABC but as</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\x00 \x41 \x00 \x42 \x00 \x43 \x00 \x00</span><br></pre></td></tr></table></figure>
@@ -139,7 +139,7 @@ ga('send', 'pageview');
 
 <p>Learning about translation, actually using XLIFF, has been great. But, I found less and less time to work on core globalization. I had a short stint trying out the Project Management role, and also worked to bring OpenWhisk adoption up to speed in our group.</p>
 <p>I mentioned being a 2nd generation IBMer.  Not only that, I’m a second generation occupant of the same tower at the San Jos&eacute; site that my father was in (not concurrently).</p>
-<p>One of our kids had said years back, “I want to help you work on Bluemix someday!” Well, Bluemix is now the <a href="https://cloud.ibm.com" target="_blank" rel="noopener">IBM Cloud</a> (go check it out!). That would be a third generation. I’m still proud to be an IBMer. However, come this Tuesday—right on the schedule that was presented to me—I won&#39;t be.</p>
+<p>~23 years is a long time. One of our kids had said years back, “I want to help you work on Bluemix someday!” Well, Bluemix is now the <a href="https://cloud.ibm.com" target="_blank" rel="noopener">IBM Cloud</a> (go check it out!). That would be a third generation. I’m still proud to be an IBMer. However, come this Tuesday—right on the schedule that was presented to me—I won&#39;t be.</p>
 <hr>
 <p>So what&#39;s next? Starting that same Tuesday, I&#39;m going the independent contractor route. And my first contract is a short term one with <strong>Unicode itself</strong>, to work on <strong>CLDR</strong>!</p>
 <p>So yes, I suppose the tweet above may count as a subtweet. CLDR is extremely important to how humans use computers in
@@ -155,7 +155,7 @@ their very own language and culture today, and I am excited to jump back in. Wha
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://srl295.github.io/2020/07/16/srl-next/" data-id="ckcpvf471000pkxtaw8cx26xb" class="article-share-link">Share</a>
+      <a data-url="https://srl295.github.io/2020/07/16/srl-next/" data-id="ckcqcrxo7000qmvtaomvlru6e" class="article-share-link">Share</a>
       
         <a href="https://srl295.github.io/2020/07/16/srl-next/#disqus_thread" class="article-comment-link">Comments</a>
       
