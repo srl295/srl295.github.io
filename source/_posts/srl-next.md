@@ -16,7 +16,7 @@ Fast forward to 1993. I knew that [Taligent](https://en.wikipedia.org/wiki/Talig
 
 Trying to do pre-build integration on an amazingly complex subsystem which somehow meshed with a dozen other subsystems was an interesting challenge, to say the least! (There were multi core builds all right—one keyboard and ADB mouse per core.)
 
-I learned a lot about how to, and sometimes how _not_ to, design OO systems, rubbing shoulders (and trading bug reports) with the best in the industry. Learned a lot, launched a lot of Nerf™ product, accidentally burned an OID (sorry)! … and, shipped some good features and even products.
+I learned a lot about how to, and sometimes how _not_ to, design OO systems, rubbing shoulders (and trading bug reports) with the best in the industry. Learned a lot, launched a lot of Nerf™ product, accidentally burned an OID (sorry)! … and, shipped some good features and even products.  I also received plenty of constructive criticism.
 
 I think my first job title was "Technical Specialist", probably because some form needed a title. Since the Apple tradition of design-your-own-businesscard was followed, I styled this as “TechnoSpecialist.”  Later I graduated to Software Engineer or something, so I wrote “Code Sculptor.” I had in mind the idea of those who brought a certain _craft_ to the field—Wozniak, Hertzfield, Atkinson, and so on.
 
@@ -62,7 +62,7 @@ Learning about translation, actually using XLIFF, has been great. But, I found l
 
 I mentioned being a 2nd generation IBMer.  Not only that, I’m a second generation occupant of the same tower at the San Jos&eacute; site that my father was in (not concurrently).
 
-One of our kids had said years back, “I want to help you work on Bluemix someday!” Well, Bluemix is now the [IBM Cloud](https://cloud.ibm.com) (go check it out!). That would be a third generation. I’m still proud to be an IBMer. However, come this Tuesday—right on the schedule that was presented to me—I won't be.
+~23 years is a long time. One of our kids had said years back, “I want to help you work on Bluemix someday!” Well, Bluemix is now the [IBM Cloud](https://cloud.ibm.com) (go check it out!). That would be a third generation. I’m still proud to be an IBMer. However, come this Tuesday—right on the schedule that was presented to me—I won't be.
 
 -----
 
