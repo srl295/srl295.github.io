@@ -61,6 +61,8 @@ date: 2038-01-19 03:14:08
 # GPG
 `E409 8B78 AFC9 4394 F3F4  9AA9 0399 6C7C 83F1 2F11` also [keybase](https://keybase.io/srl295)
 
+code signing key: `9B08542ECB6788156825743D0084ECF5826FD20C`
+
 # Badges
 
 <span data-iframe-width="150" data-iframe-height="270" data-share-badge-id="5cc821b1-11ac-43ff-a9b1-92d17b37b625" ></span><span data-iframe-width="150" data-iframe-height="270" data-share-badge-id="707dc8a9-31e4-438b-933b-889240b3b82d" ></span><span data-iframe-width="150" data-iframe-height="270" data-share-badge-id="bf2ec404-d9c7-4ac6-946f-6ac5dac9599f" ></span><span data-iframe-width="150" data-iframe-height="270" data-share-badge-id="4fc9a0a9-e733-4eac-ada4-30136d336646"></span>
