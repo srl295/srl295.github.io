@@ -3,16 +3,23 @@ title: about
 date: 2038-01-19 03:14:08
 ---
 
-- Also see: [resume](./resume.html)
+# Me
+
+i18n code sculptor • I _“work on software projects which make a difference for real people, with an emphasis on internationalization”_
+
+- Details and contact info: [**résumé**](./resume.html)
 - To see the latest blog posts, visit the [archives](https://srl295.github.io/archives/).
 
-* Sr Software Engineer, [IBM Global Foundations Technology Team](http://ibm.com/software/globalization/)
-* Social: [LinkedIn](http://www.linkedin.com/in/srloomis) [Twitter: @srl295](http://twitter.com/srl295) [Github: @srl295](https://github.com/srl295) [openhub](https://www.openhub.net/accounts/srl295) [keybase](https://keybase.io/srl295)
-* Projects: [ICU](http://icu-project.org) ([me](https://ssl.icu-project.org/trac/wiki/Srl)) | [CLDR](http://unicode.org/cldr) | [ULI-TC Chair](http://unicode.org/uli) | [Unicode-TC rep](http://unicode.org) | [Globalization Pipeline](https://developer.ibm.com/open/ibm-bluemix-globalization-pipeline-service/)
-<!-- * See my [dev story](https://developer.ibm.com/open/stevens-dev-story/) -->
+* Social: [LinkedIn](http://www.linkedin.com/in/srloomis) | [Twitter: @srl295](http://twitter.com/srl295) | [Github: @srl295](https://github.com/srl295) | [openhub](https://www.openhub.net/accounts/srl295) | [keybase](https://keybase.io/srl295)
+* Projects: [ICU](http://icu-project.org) ([me](https://ssl.icu-project.org/trac/wiki/Srl)) | [CLDR](http://unicode.org/cldr) | [Past ULI-TC Chair](http://unicode.org/uli) | [Past Unicode-TC rep](http://unicode.org) 
+
 * “My script is encoded in Unicode… now what?” — see my article on [Full Stack Enablement](https://srl295.github.io/2017/06/06/full-stack-enablement/)
 
 # Presentations
+
+## 2020 
+
+- Meet me (virtually) at the [44th Int’l & Unicode Conference](https://www.unicodeconference.org/) October 14-16, 2020
 
 ## 2017
 * Nov 1: FEISGILTT@LocWorld35: ULI/XLIFF [slides](https://cdn.rawgit.com/srl295/srl295-slides/2017-11-01-feisgiltt-uli/index.html) | [pdf](https://www.dropbox.com/s/se7qaswihxu8l0u/ULI%20%40%20FEISGILTT2017.pdf?dl=0)

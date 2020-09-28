@@ -1,15 +1,15 @@
 ---
-title: Steven R. Loomis • Code Sculptor
-date: 2020-05-28 00:00:00
+title: Steven R. Loomis • i18n Code Sculptor
+date: 2020-09-28 00:00:00
 ---
 
 ### Objective
 
  To work on software projects which make a difference
-for real users, with an emphasis on internationalization.
+for real people, with an emphasis on internationalization.
 
-- {% fa_inline globe-africa fas %} Location: San José, California, USA 
-- [{% fa_inline clock fas %} Timezone: Pacific Time](https://time.is/PT)
+- {% fa_inline globe-africa fas %} Location: Texas, USA 
+- [{% fa_inline clock fas %} Timezone: Central Time](https://time.is/CT)
 - [{% fa_inline envelope fas %} srl295@gmail.com](mailto:srl295@gmail.com)
 - [{% fa_inline twitter fab %} @srl295](https://twitter.com/srl295)
 - [{% fa_inline github fab %} @srl295](https://github.com/srl295)
@@ -52,6 +52,11 @@ for real users, with an emphasis on internationalization.
 - **Web**: Servlets/J2EE, Express, basic Vue.js
 
 ## Experience
+
+### Independent Contractor (2020-)
+
+- Currently contracting with [The Unicode Consortium](https://www.unicode.org) to improve the [CLDR](https://www.unicode.org/cldr) project’s infrastructure. Focus areas include continuous integration and deployment, modernization and paying down tech debt, and developer documentation.
+Environments and tools include Java/Eclipse, Node.js, Maven, and Github Actions.
 
 ### IBM Corporate Globalization (1998—2020)
 
