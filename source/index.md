@@ -66,7 +66,7 @@ i18n code sculptor • I _“work on software projects which make a difference 
 * My old [Connections](https://www-304.ibm.com/connections/profiles/html/profileView.do?userid=1200008EFG&lang=en_us) page is now gone. Hopefully everything was moved over.
 
 # GPG
-`E409 8B78 AFC9 4394 F3F4  9AA9 0399 6C7C 83F1 2F11` also [keybase](https://keybase.io/srl295)
+<!-- `E409 8B78 AFC9 4394 F3F4  9AA9 0399 6C7C 83F1 2F11` also [keybase](https://keybase.io/srl295) -->
 
 code signing key: `9B08542ECB6788156825743D0084ECF5826FD20C`
 
