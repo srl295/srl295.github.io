@@ -1,6 +1,6 @@
 ---
 title: Steven R. Loomis • i18n Code Sculptor
-date: 2020-09-28 00:00:00
+date: 2021-01-15 00:00:00
 ---
 
 ### Objective
@@ -240,7 +240,7 @@ UI development and testing for a HyperCard-based (HyperTalk langauge) car inform
 
 - [US 9,063,636](http://patft1.uspto.gov/netacgi/nph-Parser?patentnumber=9063636) - Management of input methods
 
-- _Patent Applied For, Pending_ [US20180329960A1](https://patents.google.com/patent/US20180329960) - Dynamic expression sticker management
+- [US 10,810,211 B2](http://patft1.uspto.gov/netacgi/nph-Parser?patentnumber=10810211) - Dynamic expression sticker management
 
 ## Awards
 
