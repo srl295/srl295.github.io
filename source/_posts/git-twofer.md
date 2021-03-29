@@ -2,7 +2,7 @@
 title: git twofer
 s: git-twofer
 date: 2019-09-09 09:36:01
-tags:
+tags: git
 ---
 
 A couple of useful `git` commands. (Meaning: _writing this down so that I don’t forget it!_)
