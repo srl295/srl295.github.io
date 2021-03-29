@@ -3,15 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>Tag: dvcs | Steven R. Loomis</title>
+  <title>git twofer, again | Steven R. Loomis</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Steven R. Loomis">
-<meta property="og:url" content="https://srl295.github.io/tags/dvcs/index.html">
+  <meta name="description" content="Time for another twofer on git. As I wrote in the last twofer:  A couple of useful git commands. (Meaning: writing this down so that I don’t forget it!)  Of course, I did end up forgetting even that I">
+<meta name="keywords" content="git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git twofer, again">
+<meta property="og:url" content="https://srl295.github.io/2021/03/29/git-twofer-2/index.html">
 <meta property="og:site_name" content="Steven R. Loomis">
+<meta property="og:description" content="Time for another twofer on git. As I wrote in the last twofer:  A couple of useful git commands. (Meaning: writing this down so that I don’t forget it!)  Of course, I did end up forgetting even that I">
 <meta property="og:locale" content="en-US">
+<meta property="og:updated_time" content="2021-03-29T18:40:14.149Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Steven R. Loomis">
+<meta name="twitter:title" content="git twofer, again">
+<meta name="twitter:description" content="Time for another twofer on git. As I wrote in the last twofer:  A couple of useful git commands. (Meaning: writing this down so that I don’t forget it!)  Of course, I did end up forgetting even that I">
 <meta name="twitter:creator" content="@srl295">
   
     <link rel="alternate" href="/atom.xml" title="Steven R. Loomis" type="application/atom+xml">
@@ -80,40 +85,91 @@ ga('send', 'pageview');
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/07/25/shibboleth/" class="archive-article-date">
-  <time datetime="2016-07-25T23:28:15.000Z" itemprop="datePublished">Jul 25</time>
+        <section id="main"><article id="post-git-twofer-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/03/29/git-twofer-2/" class="article-date">
+  <time datetime="2021-03-29T18:54:38.000Z" itemprop="datePublished">2021-03-29</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/07/25/shibboleth/">source shibboleth</a>
+    <h1 class="article-title" itemprop="name">
+      git twofer, again
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Time for another twofer on git. As I wrote in the <a href="/2019/09/09/git-twofer/" title="last twofer">last twofer</a>:</p>
+<blockquote>
+<p>A couple of useful <code>git</code> commands. (Meaning: <em>writing this down so that I don’t forget it!</em>)</p>
+</blockquote>
+<p>Of course, I did end up forgetting <em>even that I had posted it to the blog</em>.  Oh well.</p>
+<p>These two are going to be given in the form of custom aliases.  You can add the following to your <code>~/.gitconfig</code> file or update the <code>[alias]</code> section of it exists.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[alias]</span></span><br><span class="line">    ingredients = diff-tree --no-commit-id --name-only -r</span><br><span class="line">    columbo = commit --amend --date=now</span><br></pre></td></tr></table></figure>
 
+<h2 id="ingredients"><a href="#ingredients" class="headerlink" title="ingredients"></a>ingredients</h2><p><em>What’s inside?</em> That’s always something I ask myself when contemplating a grocery store purchase. I find myself asking the same question when I’m about to rattle off <code>git commit ; git push -f HEAD:prod</code> and deploy some hopefully-tested code—or, at least send it off for PR review.</p>
+<p><code>git diff-tree --no-commit-id --name-only -r</code> fits the bill… try it out:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git ingredients HEAD     # What's on the latest commit that I'm about to push?</span><br><span class="line"><span class="meta">$</span> git ingredients fe4b8570 # What's on some specific commit?</span><br></pre></td></tr></table></figure>
+
+<p><code>git ingredients</code>  shows you a simple list of all of the files changed in the specific commit.</p>
+<h2 id="columbo"><a href="#columbo" class="headerlink" title="columbo"></a>columbo</h2><p>“…Just one more thing.” Before Job’s famous keynote-ender, there was <a href="https://en.wikipedia.org/wiki/Columbo" target="_blank" rel="noopener">Peter Falk</a>.</p>
+<p>Anyway, sometimes you think you’re done with a commit… but there’s just one more thing. A test you forgot to run. Whitespace. Rewrite the whole thing—it’s up to you.</p>
+<p><code>git commit amend</code> takes whatever is staged for commit, and merges it into the HEAD commit. Type it often enough, and an alias is in order.  And just one more thing—if you just use <code>amend</code>, you will end up <em>retaining</em> the original date and time.  Me, I like to bump the date to the time I last touched it.</p>
+<ul>
+<li><p><code>git columbo</code> will commit the currently staged files (if any), and give you the opportunity to edit the commit message.</p>
+</li>
+<li><p><code>git columbo -m &#39;fix all the things&#39;</code> lets you specify that message from the command line</p>
+</li>
+<li><p><code>git columbo somefile.p</code> will only commit <code>somefile.p</code> among all the available files</p>
+</li>
+<li><p><code>git columbo -a</code> One more thing: All the things! Commit everything you’ve changed.</p>
+</li>
+<li><p>I also run <code>git columbo -S</code> sometimes if I decide I want to sign the commit.</p>
+</li>
+</ul>
+<p>Credit here goes to the tweet/thread below. I added the <code>--date=now</code> part.</p>
+<div class="twitter-wrapper"><blockquote class="twitter-tweet"><a href="https://twitter.com/ceejbot/status/1128092331616301056" target="_blank" rel="noopener"></a></blockquote></div><script async defer src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://srl295.github.io/2021/03/29/git-twofer-2/" data-id="ckmuxqqck000b0tf0rwip0xbt" class="article-share-link">Share</a>
+      
+        <a href="https://srl295.github.io/2021/03/29/git-twofer-2/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/07/16/srl-next/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">srl.next</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
 </section>
         
           <aside id="sidebar">
@@ -210,11 +266,13 @@ ga('send', 'pageview');
 <script>
   var disqus_shortname = 'srl295';
   
+  var disqus_url = 'https://srl295.github.io/2021/03/29/git-twofer-2/';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
