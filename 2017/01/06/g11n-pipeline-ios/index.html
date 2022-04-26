@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>Globalization Pipeline for iOS | Steven R. Loomis</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Yesterday we just tagged v1.0 of the Globalization Pipeline SDK for iOS. What can an iOS client do? Well, let’s build a simple app and find out. Starting OutFirst, I’ll launch XCode 8 and create a new">
+<meta name="keywords" content="globalizationpipeline">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Globalization Pipeline for iOS">
+<meta property="og:url" content="https://srl295.github.io/2017/01/06/g11n-pipeline-ios/index.html">
+<meta property="og:site_name" content="Steven R. Loomis">
+<meta property="og:description" content="Yesterday we just tagged v1.0 of the Globalization Pipeline SDK for iOS. What can an iOS client do? Well, let’s build a simple app and find out. Starting OutFirst, I’ll launch XCode 8 and create a new">
+<meta property="og:locale" content="en-US">
+<meta property="og:image" content="https://srl295.github.io/2017/01/06/g11n-pipeline-ios/00_title.png">
+<meta property="og:image" content="https://srl295.github.io/2017/01/06/g11n-pipeline-ios/01_singleview.png">
+<meta property="og:image" content="https://srl295.github.io/2017/01/06/g11n-pipeline-ios/02_framework.png">
+<meta property="og:image" content="https://srl295.github.io/2017/01/06/g11n-pipeline-ios/03_linked.png">
+<meta property="og:image" content="https://srl295.github.io/2017/01/06/g11n-pipeline-ios/04_buildphase.png">
+<meta property="og:image" content="https://srl295.github.io/2017/01/06/g11n-pipeline-ios/05_controls.png">
+<meta property="og:image" content="https://srl295.github.io/2017/01/06/g11n-pipeline-ios/06_wired.png">
+<meta property="og:image" content="https://srl295.github.io/2017/01/06/g11n-pipeline-ios/07_dcut.png">
+<meta property="og:image" content="https://srl295.github.io/2017/01/06/g11n-pipeline-ios/10_service.png">
+<meta property="og:image" content="https://srl295.github.io/2017/01/06/g11n-pipeline-ios/11_instance.png">
+<meta property="og:image" content="https://srl295.github.io/2017/01/06/g11n-pipeline-ios/12_bundle.png">
+<meta property="og:image" content="https://srl295.github.io/2017/01/06/g11n-pipeline-ios/14_api.png">
+<meta property="og:image" content="https://srl295.github.io/2017/01/06/g11n-pipeline-ios/20_bueno.png">
+<meta property="og:updated_time" content="2020-05-22T00:10:18.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Globalization Pipeline for iOS">
+<meta name="twitter:description" content="Yesterday we just tagged v1.0 of the Globalization Pipeline SDK for iOS. What can an iOS client do? Well, let’s build a simple app and find out. Starting OutFirst, I’ll launch XCode 8 and create a new">
+<meta name="twitter:image" content="https://srl295.github.io/2017/01/06/g11n-pipeline-ios/00_title.png">
+<meta name="twitter:creator" content="@srl295">
+  
+    <link rel="alternate" href="/atom.xml" title="Steven R. Loomis" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-70353707-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+    <meta name="google-site-verification" content="sbLStvzF9g9-7JUTpZDHcWb0XO3ztnCYqUHzwLENBxs">
+  
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Steven R. Loomis</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/resume.html">Resume</a>
+        
+          <a class="main-nav-link" href="/">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <a id="nav-print-btn" class="nav-icon" href="javascript:window.print()" title="print"></a>
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://srl295.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-g11n-pipeline-ios" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/06/g11n-pipeline-ios/" class="article-date">
+  <time datetime="2017-01-07T01:59:34.000Z" itemprop="datePublished">2017-01-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Globalization Pipeline for iOS
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Yesterday we just tagged v1.0 of the <a href="https://github.com/IBM-Bluemix/gp-ios-client" target="_blank" rel="noopener">Globalization Pipeline SDK for iOS</a>. What can an iOS client do? Well, let’s build a simple app and find out.</p>
+<h1 id="Starting-Out"><a href="#Starting-Out" class="headerlink" title="Starting Out"></a>Starting Out</h1><p>First, I’ll launch XCode 8 and create a new workspace.</p>
+<p>While that is launching, I’ll warn you that your author is only a recent graduate of the Swift playground, who once deployed some toy apps to a then-new iPhone 3GS. So, it’s been a while. Any suggestions for improvement are welcome. The actual SDK, however, was a team effort.</p>
+<p>Today’s app will be a color mixer, to help artists mix their colors. You know, red and blue makes purple, and so on.</p>
+<img src="/2017/01/06/g11n-pipeline-ios/00_title.png">
+
+
+<p>I will name the workspace <code>gp-ios-color-mixer</code>, and create a new single view app called <code>GP Color Mixer</code>.  To simplify things, for now, I disable the checkbox “automatically manage signing.”</p>
+<img src="/2017/01/06/g11n-pipeline-ios/01_singleview.png">
+
+<p>I want to include the new <a href="https://github.com/IBM-Bluemix/gp-ios-client" target="_blank" rel="noopener">SDK</a>. I’ll use <a href="https://github.com/Carthage/Carthage" target="_blank" rel="noopener">Carthage</a> to install it. Since I already have <a href="https://brew.sh" target="_blank" rel="noopener">Homebrew</a> installed, I only need to do</p>
+<pre><code>$ brew install carthage</code></pre><p>Now I need a <code>Cartfile</code> that mentions the SDK. So I create one at the same level as my XCode project, containing:</p>
+<pre><code>github &quot;IBM-Bluemix/gp-ios-client&quot;</code></pre><p>Following the Carthage instructions, I next run</p>
+<pre><code>$ carthage update</code></pre><p>which results in </p>
+<pre><code>*** Fetching gp-ios-client
+*** Checking out gp-ios-client at &quot;v1.0&quot;
+*** xcodebuild output can be found in /var/folders/j9/yn_32djn36x4d4c2mvcr1kgm0000gn/T/carthage-xcodebuild.p2nKN2.log
+*** Building scheme &quot;GPSDK&quot; in TestFramework.xcworkspace</code></pre><p>So far so good.  Looking in the Finder, I now have <code>GPSDK.framework</code> right where I expect. </p>
+<img src="/2017/01/06/g11n-pipeline-ios/02_framework.png">
+
+<p>I’ll add it under “Linked frameworks and Libraries”.</p>
+<img src="/2017/01/06/g11n-pipeline-ios/03_linked.png">
+
+<p>We also need to make sure the framework is available at runtime. To do that, we add a build phase with a one-line script: <code>/usr/local/bin/carthage copy-frameworks</code> with a single input file -  <code>$(SRCROOT)/Carthage/Build/iOS/GPSDK.framework</code></p>
+<img src="/2017/01/06/g11n-pipeline-ios/04_buildphase.png">
+
+<p>Will it build? I add this to the top of my generated <code>ViewController.swift</code>:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> GPSDK</span><br></pre></td></tr></table></figure>
+
+<p>I mentioned turning off code signing, but I still ran into some odd warnings:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">A shell task (/usr/bin/xcrun codesign --force --sign - --preserve-metadata=identifier,entitlements &quot;/Users/srl/Library/Developer/Xcode/DerivedData/gp-ios-color-mixer-evyxcmilwuakdmdvxqqpmmnzisnn/Build/Products/Debug-iphonesimulator/GP Color Mixer.app/Frameworks/GPSDK.framework&quot;) failed with exit code 1:</span><br><span class="line">/Users/srl/Library/Developer/Xcode/DerivedData/gp-ios-color-mixer-evyxcmilwuakdmdvxqqpmmnzisnn/Build/Products/Debug-iphonesimulator/GP Color Mixer.app/Frameworks/GPSDK.framework: replacing existing signature</span><br><span class="line">/Users/srl/Library/Developer/Xcode/DerivedData/gp-ios-color-mixer-evyxcmilwuakdmdvxqqpmmnzisnn/Build/Products/Debug-iphonesimulator/GP Color Mixer.app/Frameworks/GPSDK.framework: resource fork, Finder information, or similar detritus not allowed</span><br><span class="line"></span><br><span class="line">Command /bin/sh failed with exit code 1</span><br></pre></td></tr></table></figure>
+
+<p>Following <a href="https://developer.apple.com/library/content/qa/qa1940/_index.html" target="_blank" rel="noopener">QA1940</a> I was able to make some progress by running <code>xattr -cr &#39;./Carthage/Build/iOS/GPSDK.framework&#39;</code>.  Now, ⌘R Run rewards me with a blank app window and no errors. Let’s write some code!</p>
+<h1 id="Applying-myself-to-the-App"><a href="#Applying-myself-to-the-App" class="headerlink" title="Applying myself to the App"></a>Applying myself to the App</h1><p>By <em>code</em>, of course, I mean a trip to the storyboard. Let&#39;s add a launch icon, because we can.</p>
+<p>Now, I add some static fields, two picker views (for the input colors), and a button for action.</p>
+<img src="/2017/01/06/g11n-pipeline-ios/05_controls.png" title="Starting to look like an app…">
+
+
+<p>I wrote <code>Color.swift</code> to handle the color mixing. It will only support mixing from three of the primary colors - Red, Yellow, Blue. Any other mixing turns into muddy brown. Playground tested, ready to go.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Color</span> : <span class="title">Int</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> red = <span class="number">0</span>, orange, yellow, green, blue, purple, muddy;</span><br><span class="line">    <span class="comment">// r+y = o, y+b = g, b+r = p</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">simpleDescription</span><span class="params">()</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">    <span class="keyword">switch</span> <span class="keyword">self</span> &#123;</span><br><span class="line">        <span class="keyword">case</span> .red:      <span class="keyword">return</span> <span class="string">"red"</span></span><br><span class="line">        <span class="keyword">case</span> .orange:   <span class="keyword">return</span> <span class="string">"orange"</span></span><br><span class="line">        <span class="keyword">case</span> .yellow:   <span class="keyword">return</span> <span class="string">"yellow"</span></span><br><span class="line">        <span class="keyword">case</span> .green:    <span class="keyword">return</span> <span class="string">"green"</span></span><br><span class="line">        <span class="keyword">case</span> .blue:     <span class="keyword">return</span> <span class="string">"blue"</span></span><br><span class="line">        <span class="keyword">case</span> .purple:   <span class="keyword">return</span> <span class="string">"purple"</span></span><br><span class="line">        <span class="keyword">case</span> .muddy:    <span class="keyword">return</span> <span class="string">"muddy brown"</span> <span class="comment">// use this if we don't know how to mix a color</span></span><br><span class="line">        <span class="comment">// should be exhaustive</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * Mix the colors, return the result</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">mix</span><span class="params">( with: Color )</span></span> -&gt; <span class="type">Color</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>( <span class="keyword">self</span> == .muddy || with == .muddy ) &#123;</span><br><span class="line">        <span class="keyword">return</span> .muddy <span class="comment">// anything + mud = mud</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>( with == <span class="keyword">self</span> ) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">self</span>  <span class="comment">// identity!</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">switch</span> <span class="keyword">self</span> &#123;</span><br><span class="line">        <span class="keyword">case</span> .red:</span><br><span class="line">            <span class="keyword">switch</span> with &#123;</span><br><span class="line">            <span class="keyword">case</span> .yellow:   <span class="keyword">return</span> .orange</span><br><span class="line">            <span class="keyword">case</span> .blue:     <span class="keyword">return</span> .purple</span><br><span class="line">            <span class="keyword">default</span>:        <span class="keyword">return</span> .muddy</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">case</span> .yellow:</span><br><span class="line">            <span class="keyword">switch</span> with &#123;</span><br><span class="line">            <span class="keyword">case</span> .red:      <span class="keyword">return</span> .orange</span><br><span class="line">            <span class="keyword">case</span> .blue:     <span class="keyword">return</span> .green</span><br><span class="line">            <span class="keyword">default</span>:        <span class="keyword">return</span> .muddy</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">case</span> .blue:</span><br><span class="line">            <span class="keyword">switch</span> with &#123;</span><br><span class="line">            <span class="keyword">case</span> .red:      <span class="keyword">return</span> .purple</span><br><span class="line">            <span class="keyword">case</span> .yellow:   <span class="keyword">return</span> .green</span><br><span class="line">            <span class="keyword">default</span>: <span class="keyword">return</span> .muddy</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">default</span>: <span class="keyword">return</span> .muddy</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Time to wire it up. We create <code>IBOutlets</code> for each of the items. And, I’ll clear the result label just to verify that things are wired up. It runs OK, good.</p>
+<img src="/2017/01/06/g11n-pipeline-ios/06_wired.png" title="Wired for sound">
+
+<p>Now, let’s set up the delegate stuff so that we can get the list of colors showing.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ViewController</span>: <span class="title">UIViewController</span>, <span class="title">UIPickerViewDelegate</span>, <span class="title">UIPickerViewDataSource</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">// …</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// pickerview stuff</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">numberOfComponents</span><span class="params">(<span class="keyword">in</span> pickerView: UIPickerView)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">pickerView</span><span class="params">(<span class="number">_</span> pickerView: UIPickerView, numberOfRowsInComponent component: Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="number">3</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> primaryColors = [ <span class="type">Color</span>.red, <span class="type">Color</span>.blue, <span class="type">Color</span>.yellow ]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">pickerView</span><span class="params">(<span class="number">_</span> pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int)</span></span> -&gt; <span class="type">String?</span> &#123;</span><br><span class="line"><span class="keyword">return</span> primaryColors[row].simpleDescription()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Hey, just a little more code and we’re feature complete!</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@IBAction</span> <span class="function"><span class="keyword">func</span> <span class="title">doMix</span><span class="params">(<span class="number">_</span> sender: <span class="keyword">Any</span>)</span></span> &#123;</span><br><span class="line"><span class="keyword">let</span> color1 = primaryColors[mixOne.selectedRow(inComponent: <span class="number">0</span>)]</span><br><span class="line"><span class="keyword">let</span> color2 = primaryColors[mixTwo.selectedRow(inComponent: <span class="number">0</span>)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> newColor = color1.mix(with: color2)</span><br><span class="line"></span><br><span class="line">resultLabel.text = newColor.simpleDescription()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<img src="/2017/01/06/g11n-pipeline-ios/07_dcut.png" title="Works in English… Ship it (just kidding)">
+
+
+<p>At least, feature complete in English.</p>
+<p>I’ll next take stock of the resource strings we need to have translated, so that we can run them through the Globalization Pipeline. I’ll call this <code>gp-color-mixer.json</code> </p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"red"</span>: <span class="string">"red"</span>,</span><br><span class="line">    <span class="attr">"orange"</span>: <span class="string">"orange"</span>,</span><br><span class="line">    <span class="attr">"yellow"</span>: <span class="string">"yellow"</span>,</span><br><span class="line">    <span class="attr">"green"</span>: <span class="string">"green"</span>,</span><br><span class="line">    <span class="attr">"blue"</span>: <span class="string">"blue"</span>,</span><br><span class="line">    <span class="attr">"purple"</span>: <span class="string">"purple"</span>,</span><br><span class="line">    <span class="attr">"muddy brown"</span>: <span class="string">"muddy brown"</span>,</span><br><span class="line">    <span class="attr">"title"</span>: <span class="string">"Color Mixer"</span>,</span><br><span class="line">    <span class="attr">"mix"</span>: <span class="string">"Mix"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Mixing-the-Blue"><a href="#Mixing-the-Blue" class="headerlink" title="Mixing the Blue"></a>Mixing the Blue</h1><p>Time to fire up <a href="https://bluemix.net" target="_blank" rel="noopener">Bluemix</a>. We are going to basically follow the <a href="https://github.com/IBM-Bluemix/gp-common#quick-start-guide" target="_blank" rel="noopener">Globalization Pipeline Quick Start Guide</a> for the this part, which I will refer to.</p>
+<img src="/2017/01/06/g11n-pipeline-ios/10_service.png">
+
+<p>First, I <a href="https://github.com/IBM-Bluemix/gp-common#1-create-a-new-globalization-pipeline-service-instance" target="_blank" rel="noopener">create an instance</a> of the Globalization Pipeline. The name you give the instance doesn’t matter here.</p>
+<img src="/2017/01/06/g11n-pipeline-ios/11_instance.png">
+
+<p>Now I create a bundle named <code>gp-color-mixer</code>. This name <em>does</em> matter, as our iOS app will use it to access the content.</p>
+<img src="/2017/01/06/g11n-pipeline-ios/12_bundle.png">
+
+<p>I’ll Upload the <code>gp-color-mixer.json</code> file above as the source English content, choosing JSON format for the upload. I pick a few languages for the target.</p>
+<p>If I view the bundle, I can see our strings there, as well as translated versions.</p>
+
+
+<p>The Globalization Pipeline offers this web UI to manage content, as well as powerful REST APIs for managing the translation workflow. I need to grant access to the iOS app so that it can <em>read</em> but not <em>modify</em> the translations.  So, switching over to the <em>API Users</em> tab…</p>
+<img src="/2017/01/06/g11n-pipeline-ios/14_api.png">
+
+<p>The result of creating the API user is that some access information is shown, something like the following:</p>
+<pre><code>API User ID: 5726d656c6f6e7761746572
+Password: aHVudGVyNDIK
+Instance ID: 77617465726d656c6f6e77617465726d
+URL: https://something.something.bluemix.net/something/something</code></pre><p>I take these and plug them into a new swift file named <code>ReaderCredentials.swift</code> like so: (this is a variant of <a href="https://github.com/IBM-Bluemix/gp-ios-client/blob/master/TestFramework/TestSDK/TestSDK/ReaderCredentials-SAMPLE.swift" target="_blank" rel="noopener">ReaderCredentials-SAMPLE.swift</a> in the SDK’s repo)</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ReaderCredentials</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">let</span> userId       = <span class="string">"5726d656c6f6e7761746572"</span>;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">let</span> password     = <span class="string">"aHVudGVyNDIK"</span>;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">let</span> instanceId   = <span class="string">"77617465726d656c6f6e77617465726d"</span>;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">let</span> url          = <span class="string">"https://something.something.bluemix.net/something/something"</span>;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">let</span> bundleId     = <span class="string">"gp-color-mixer"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>(Now, after putting my <em>actual</em> credentials in, and a brief offscreen struggle with <code>.gitignore</code>, I move on…)</p>
+<h1 id="Putting-it-all-together"><a href="#Putting-it-all-together" class="headerlink" title="Putting it all together"></a>Putting it all together</h1><p>I’m almost done.</p>
+<p>First, in the <code>ViewController.swift</code>, we initialize the GP service and start setting up a few UI items:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> gp = <span class="type">GPService</span>()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">get</span><span class="params">(key: String)</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> gp.localizedString(key, <span class="literal">nil</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">get</span><span class="params">(color: Color)</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">get</span>(key: color.simpleDescription())</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewDidLoad</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">super</span>.viewDidLoad()</span><br><span class="line"></span><br><span class="line">    resultLabel.text = <span class="string">"Loading…"</span></span><br><span class="line">    <span class="keyword">do</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> gp.initService(url: <span class="type">ReaderCredentials</span>.url,</span><br><span class="line">            instanceId: <span class="type">ReaderCredentials</span>.instanceId,</span><br><span class="line">            bundleId:   <span class="type">ReaderCredentials</span>.bundleId,</span><br><span class="line">            userId:     <span class="type">ReaderCredentials</span>.userId,</span><br><span class="line">            password:   <span class="type">ReaderCredentials</span>.password,</span><br><span class="line">            </span><br><span class="line">            languageId:<span class="literal">nil</span>,</span><br><span class="line">            alwaysLoadFromServer: <span class="literal">false</span>,</span><br><span class="line">            expireAfter: <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment">// set up strings</span></span><br><span class="line">        titleLabel.text = <span class="keyword">get</span>(key: <span class="string">"title"</span>)</span><br><span class="line">        mixButton.setTitle(<span class="keyword">get</span>(key: <span class="string">"mix"</span>), <span class="keyword">for</span>: <span class="type">UIControlState</span>.normal)</span><br><span class="line">        mixButton.titleLabel?.text = <span class="keyword">get</span>(key: <span class="string">"mix"</span>)</span><br><span class="line">        resultLabel.text = <span class="string">""</span> <span class="comment">// clear this</span></span><br><span class="line">    &#125; <span class="keyword">catch</span> <span class="type">GPService</span>.<span class="type">GPError</span>.languageNotSupported &#123;</span><br><span class="line">        resultLabel.text = (<span class="string">"This language is not supported..."</span>)</span><br><span class="line">    &#125; <span class="keyword">catch</span> <span class="type">GPService</span>.<span class="type">GPError</span>.requestServerError(<span class="keyword">let</span> errorDescription) &#123;</span><br><span class="line">        resultLabel.text = (<span class="string">"Request server error: "</span> + errorDescription)</span><br><span class="line">    &#125; <span class="keyword">catch</span> <span class="type">GPService</span>.<span class="type">GPError</span>.<span class="type">HTTPError</span>(<span class="keyword">let</span> statusCode) &#123;</span><br><span class="line">        resultLabel.text = (<span class="string">"Request server error: HTTP \(statusCode)"</span>)</span><br><span class="line">    &#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">        resultLabel.text = (<span class="string">"Other error"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Here we set up the service with our credentials. Then, we use our new <code>get(key: )</code> function to set the title and mix button’s label.</p>
+<p>There is also a <code>get(color: )</code> variant that will translate one of our <code>Color</code> objects. So we use that for the actual mixing function:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@IBAction</span> <span class="function"><span class="keyword">func</span> <span class="title">doMix</span><span class="params">(<span class="number">_</span> sender: <span class="keyword">Any</span>)</span></span> &#123;</span><br><span class="line">    …</span><br><span class="line">    resultLabel.text = <span class="keyword">get</span>(color: newColor)</span><br></pre></td></tr></table></figure>
+
+<p>Similarly, we can get the <code>UIPickerView</code> to use localized color names by using this same function:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">pickerView</span><span class="params">(<span class="number">_</span> pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int)</span></span> -&gt; <span class="type">String?</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">get</span>(color: primaryColors[row])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Looks good!</p>
+<img src="/2017/01/06/g11n-pipeline-ios/20_bueno.png" title="Now we can ship it… to the world!">
+
+
+<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><p>The iOS app will pick up changes if the translated content changes on the server. We could experiment with adding or removing languages, or updating translated keys.</p>
+<p>You can find the source code at <a href="https://github.com/srl295/gp-ios-color-mixer" target="_blank" rel="noopener">https://github.com/srl295/gp-ios-color-mixer</a>.</p>
+<p>Let me know if this works for you. This is my first post, and as I mentioned first app, in <a href="https://swift.org" target="_blank" rel="noopener">Swift</a> so that’s a milestone. And, do let me know if<code>^H^H</code> what can be done to improve the sample app.</p>
+<p>Thanks! Now go and make it global.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://srl295.github.io/2017/01/06/g11n-pipeline-ios/" data-id="cl2gfj3h50009f7f0bpqvez0i" class="article-share-link">Share</a>
+      
+        <a href="https://srl295.github.io/2017/01/06/g11n-pipeline-ios/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/globalizationpipeline/">globalizationpipeline</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/02/02/icu4c-fallbacks/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Fallbacks in ICU4C Converters
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/12/07/g11n-pipeline-1-3-0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">GP Client for JavaScript v1.3.0 released</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bluemix/">bluemix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cldr/">cldr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dvcs/">dvcs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/g11n/">g11n</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/globalizationpipeline/">globalizationpipeline</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/i18n/">i18n</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/icu/">icu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/icu4c/">icu4c</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/job/">job</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kibana/">kibana</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/locales/">locales</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/opensource/">opensource</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/perl/">perl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pino/">pino</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/promises/">promises</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scm/">scm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sketch/">sketch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unicode/">unicode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wip/">wip</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/bluemix/" style="font-size: 10px;">bluemix</a> <a href="/tags/cldr/" style="font-size: 10px;">cldr</a> <a href="/tags/dvcs/" style="font-size: 10px;">dvcs</a> <a href="/tags/g11n/" style="font-size: 12.5px;">g11n</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/globalizationpipeline/" style="font-size: 20px;">globalizationpipeline</a> <a href="/tags/i18n/" style="font-size: 10px;">i18n</a> <a href="/tags/icu/" style="font-size: 12.5px;">icu</a> <a href="/tags/icu4c/" style="font-size: 10px;">icu4c</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/job/" style="font-size: 10px;">job</a> <a href="/tags/kibana/" style="font-size: 10px;">kibana</a> <a href="/tags/locales/" style="font-size: 10px;">locales</a> <a href="/tags/node/" style="font-size: 15px;">node</a> <a href="/tags/opensource/" style="font-size: 10px;">opensource</a> <a href="/tags/perl/" style="font-size: 12.5px;">perl</a> <a href="/tags/pino/" style="font-size: 10px;">pino</a> <a href="/tags/promises/" style="font-size: 10px;">promises</a> <a href="/tags/scm/" style="font-size: 12.5px;">scm</a> <a href="/tags/sketch/" style="font-size: 10px;">sketch</a> <a href="/tags/unicode/" style="font-size: 17.5px;">unicode</a> <a href="/tags/wip/" style="font-size: 10px;">wip</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/04/26/git-twofer-3/">git twofer, the third</a>
+          </li>
+        
+          <li>
+            <a href="/2021/03/29/git-twofer-2/">git twofer, again</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/16/srl-next/">srl.next</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/16/sketch-how-text-works/">Sketch - how text works</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/09/git-twofer/">git twofer</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 Steven R. Loomis<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> 
+      
+      <span class="retrodefinition" id="rdfooter"><b class="rdkey"></b>: <span class="rddef"></span><a href="/2017/02/07/literate-programmers/"><sup>?</sup></a> <i class="rdex"></i>
+      </span>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/resume.html" class="mobile-nav-link">Resume</a>
+  
+    <a href="/" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'srl295';
+  
+  var disqus_url = 'https://srl295.github.io/2017/01/06/g11n-pipeline-ios/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/retrodefinitions.js"></script>
+
+  </div>
+</body>
+</html>

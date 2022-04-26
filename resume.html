@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>Steven R. Loomis • i18n Code Sculptor | Steven R. Loomis</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Objective To work on software projects which make a difference for real people, with an emphasis on internationalization.   Location: Texas, USA   Timezone: Central Time  srl295@gmail.com  @srl295  @s">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Steven R. Loomis • i18n Code Sculptor">
+<meta property="og:url" content="https://srl295.github.io/resume.html">
+<meta property="og:site_name" content="Steven R. Loomis">
+<meta property="og:description" content="Objective To work on software projects which make a difference for real people, with an emphasis on internationalization.   Location: Texas, USA   Timezone: Central Time  srl295@gmail.com  @srl295  @s">
+<meta property="og:locale" content="en-US">
+<meta property="og:image" content="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGkAAABpCAAAAAAc6VLmAAAA40lEQVR42u3ZQQ6EIAxAUe9/ac1sDYVfNLEwvyujyHPRlArHMY7zF+DqeShVkc4oWnP1x4VPlZaTaMaF39GfRWkzCcyv9FdSapzSFhJdd+i92ZVQqYBkX640Tru3Q2kR6ZYWNAvDpmaQj0rlJbrQ0GqEs1ypqARSMUwxsBuC1yylehKdOryHC5vSGlKqkQX/MrOm0rdSrgWFDUxznNIa0mTa9V+eLU5KVaTUmVqq23l0yqr0rZTfL+9XreZrSntJoJElbYvSDhIoTqSBUVpIAmdqYBkiP9NK5aXULvmbu6NK5aQL584j9vvhOGQAAAAASUVORK5CYII=">
+<meta property="og:updated_time" content="2021-03-29T16:49:58.420Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Steven R. Loomis • i18n Code Sculptor">
+<meta name="twitter:description" content="Objective To work on software projects which make a difference for real people, with an emphasis on internationalization.   Location: Texas, USA   Timezone: Central Time  srl295@gmail.com  @srl295  @s">
+<meta name="twitter:image" content="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGkAAABpCAAAAAAc6VLmAAAA40lEQVR42u3ZQQ6EIAxAUe9/ac1sDYVfNLEwvyujyHPRlArHMY7zF+DqeShVkc4oWnP1x4VPlZaTaMaF39GfRWkzCcyv9FdSapzSFhJdd+i92ZVQqYBkX640Tru3Q2kR6ZYWNAvDpmaQj0rlJbrQ0GqEs1ypqARSMUwxsBuC1yylehKdOryHC5vSGlKqkQX/MrOm0rdSrgWFDUxznNIa0mTa9V+eLU5KVaTUmVqq23l0yqr0rZTfL+9XreZrSntJoJElbYvSDhIoTqSBUVpIAmdqYBkiP9NK5aXULvmbu6NK5aQL584j9vvhOGQAAAAASUVORK5CYII=">
+<meta name="twitter:creator" content="@srl295">
+  
+    <link rel="alternate" href="/atom.xml" title="Steven R. Loomis" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-70353707-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+    <meta name="google-site-verification" content="sbLStvzF9g9-7JUTpZDHcWb0XO3ztnCYqUHzwLENBxs">
+  
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Steven R. Loomis</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/resume.html">Resume</a>
+        
+          <a class="main-nav-link" href="/">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <a id="nav-print-btn" class="nav-icon" href="javascript:window.print()" title="print"></a>
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://srl295.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/resume.html" class="article-date">
+  <time datetime="2021-01-15T08:00:00.000Z" itemprop="datePublished">2021-01-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Steven R. Loomis • i18n Code Sculptor
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Objective"><a href="#Objective" class="headerlink" title="Objective"></a>Objective</h3><p> To work on software projects which make a difference
+for real people, with an emphasis on internationalization.</p>
+<ul>
+<li><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="globe-africa" class="svg-inline--fa fa-globe-africa fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 496 512"><path fill="currentColor" d="M248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm160 215.5v6.93c0 5.87-3.32 11.24-8.57 13.86l-15.39 7.7a15.485 15.485 0 0 1-15.53-.97l-18.21-12.14a15.52 15.52 0 0 0-13.5-1.81l-2.65.88c-9.7 3.23-13.66 14.79-7.99 23.3l13.24 19.86c2.87 4.31 7.71 6.9 12.89 6.9h8.21c8.56 0 15.5 6.94 15.5 15.5v11.34c0 3.35-1.09 6.62-3.1 9.3l-18.74 24.98c-1.42 1.9-2.39 4.1-2.83 6.43l-4.3 22.83c-.62 3.29-2.29 6.29-4.76 8.56a159.608 159.608 0 0 0-25 29.16l-13.03 19.55a27.756 27.756 0 0 1-23.09 12.36c-10.51 0-20.12-5.94-24.82-15.34a78.902 78.902 0 0 1-8.33-35.29V367.5c0-8.56-6.94-15.5-15.5-15.5h-25.88c-14.49 0-28.38-5.76-38.63-16a54.659 54.659 0 0 1-16-38.63v-14.06c0-17.19 8.1-33.38 21.85-43.7l27.58-20.69a54.663 54.663 0 0 1 32.78-10.93h.89c8.48 0 16.85 1.97 24.43 5.77l14.72 7.36c3.68 1.84 7.93 2.14 11.83.84l47.31-15.77c6.33-2.11 10.6-8.03 10.6-14.7 0-8.56-6.94-15.5-15.5-15.5h-10.09c-4.11 0-8.05-1.63-10.96-4.54l-6.92-6.92a15.493 15.493 0 0 0-10.96-4.54H199.5c-8.56 0-15.5-6.94-15.5-15.5v-4.4c0-7.11 4.84-13.31 11.74-15.04l14.45-3.61c3.74-.94 7-3.23 9.14-6.44l8.08-12.11c2.87-4.31 7.71-6.9 12.89-6.9h24.21c8.56 0 15.5-6.94 15.5-15.5v-21.7C359.23 71.63 422.86 131.02 441.93 208H423.5c-8.56 0-15.5 6.94-15.5 15.5z"/></svg> Location: Texas, USA </li>
+<li><a href="https://time.is/CT" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="clock" class="svg-inline--fa fa-clock fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><path fill="currentColor" d="M256,8C119,8,8,119,8,256S119,504,256,504,504,393,504,256,393,8,256,8Zm92.49,313h0l-20,25a16,16,0,0,1-22.49,2.5h0l-67-49.72a40,40,0,0,1-15-31.23V112a16,16,0,0,1,16-16h32a16,16,0,0,1,16,16V256l58,42.5A16,16,0,0,1,348.49,321Z"/></svg> Timezone: Central Time</a></li>
+<li><a href="mailto:srl295@gmail.com" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope" class="svg-inline--fa fa-envelope fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><path fill="currentColor" d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg> srl295@gmail.com</a></li>
+<li><a href="https://twitter.com/srl295" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" class="svg-inline--fa fa-twitter fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> @srl295</a></li>
+<li><a href="https://github.com/srl295" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg> @srl295</a></li>
+<li><a href="https://srl295.github.io"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="link" class="svg-inline--fa fa-link fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><path fill="currentColor" d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg> git.io/srl295</a></li>
+<li><a href="https://www.linkedin.com/in/srloomis" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin" class="svg-inline--fa fa-linkedin fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg> linkedin.com/in/srloomis</a></li>
+<li><a href="https://stackexchange.com/users/62556/steven-r-loomis" target="_blank" rel="noopener"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="stack-overflow" class="svg-inline--fa fa-stack-overflow fa-w-12" role="img" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 384 512"><path fill="currentColor" d="M290.7 311L95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z"/></svg> Stack Exchange</a></li>
+</ul>
+<h2 id="Qualifications"><a href="#Qualifications" class="headerlink" title="Qualifications"></a>Qualifications</h2><h3 id="Disciplines"><a href="#Disciplines" class="headerlink" title="Disciplines"></a>Disciplines</h3><ul>
+<li>Agile practice (dev + scrum lead)</li>
+<li>DevOps, CI/CD, and SOD</li>
+<li>Object Oriented Development</li>
+<li>Test Driven Design</li>
+<li>Multicultural enablement: Globalization and Localization</li>
+</ul>
+<h3 id="Languages"><a href="#Languages" class="headerlink" title="Languages"></a>Languages</h3><ul>
+<li><strong>Native/Bilingual</strong>: C/C++, Java, JavaScript (Node.js, browser, embedded), HTML/CSS, gnumake</li>
+<li><strong>Full Professional Proficiency</strong>: gnumake, bash, XML/XLIFF</li>
+<li><strong>Professional Working</strong>: sql, Vue, jQuery</li>
+<li><strong>Limited Working/Conversational</strong>: sed, TeX/LaTeX/XeTeX</li>
+<li><strong>Elementary</strong>: python, PostScript, 6502</li>
+<li><strong>I can order lunch in</strong>: perl, php, 8080</li>
+</ul>
+<h3 id="Platforms"><a href="#Platforms" class="headerlink" title="Platforms"></a>Platforms</h3><p><strong>Mainframe/Handheld</strong>: MacOS/MacOSX, GNU/Linux (Slackware, RedHat, Debian, Mandrake, Ubuntu, NixOS), Microsoft Windows 10 through 3.1, AIX, IBM i (OS400), IBM z (z/OS), Solaris/Illumos, NeXT, PalmOS, Coherent, IRIX, A/UX, CTIX, HP/UX, BeOS/Haiku, FreeBSD, Taligent CommonPoint, Newton, Apple ][ DOS, MS-DOS, OS/2</p>
+<p><strong>Embedded</strong>: Microchip PIC16F84, Arduino (Atmel AVR), Raspberry Pi, BeagleBone (TI OMAP3530), Tessel, ESP8266 (PlatformIO), Espruino</p>
+<h3 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h3><ul>
+<li><strong>Cloud</strong>: Docker, Kubernetes, Cloud Foundry, OpenWhisk/IBM Cloud Functions, Cloudant, Kafka, S3</li>
+<li><strong>CI/CD</strong>: Jenkins, Travis, GitHub Actions, Artifactory, IBM Cloud CLI, Hashicorp Vault</li>
+<li><strong>Team</strong>: Jira, Trac, ZenHub, 1Password</li>
+<li><strong>Insights</strong>: New Relic, Prometheus, Grafana</li>
+<li><strong>Edit</strong>: VS Code, Emacs, Eclipse</li>
+<li><strong>Web</strong>: Servlets/J2EE, Express, basic Vue.js</li>
+</ul>
+<h2 id="Experience"><a href="#Experience" class="headerlink" title="Experience"></a>Experience</h2><h3 id="Independent-Contractor-2020"><a href="#Independent-Contractor-2020" class="headerlink" title="Independent Contractor (2020-)"></a>Independent Contractor (2020-)</h3><ul>
+<li>Currently contracting with <a href="https://www.unicode.org" target="_blank" rel="noopener">The Unicode Consortium</a> to improve the <a href="https://www.unicode.org/cldr" target="_blank" rel="noopener">CLDR</a> project’s infrastructure. Focus areas include continuous integration and deployment, modernization and paying down tech debt, and developer documentation.
+Environments and tools include Java/Eclipse, Node.js, Maven, and Github Actions.</li>
+</ul>
+<h3 id="IBM-Corporate-Globalization-1998—2020"><a href="#IBM-Corporate-Globalization-1998—2020" class="headerlink" title="IBM Corporate Globalization (1998—2020)"></a>IBM Corporate Globalization (1998—2020)</h3><ul>
+<li>Providing internal-facing globalization-related consulting services across the IBM Corporation as well as external-facing to clients in multiple sectors, including US Federal, large multinational corporations especially in the finance sector. Part of the team executing on the complete relationship from RfP phase through completion.</li>
+</ul>
+<h4 id="2020-2020-OpenWhisk-adoption-lead"><a href="#2020-2020-OpenWhisk-adoption-lead" class="headerlink" title="2020-2020: OpenWhisk adoption lead"></a>2020-2020: OpenWhisk adoption lead</h4><ul>
+<li>Responsible for driving adoption of OpenWhisk-based
+serverless architecture and best practices throughout the G11n Team</li>
+<li>Developed sample applications and detailed developer
+guidance.</li>
+<li>Drove interlock with serverless platform owners
+and engaged with OpenWhisk open source community
+to find answers, solve problems, and even contribute
+back to the open source solutions.</li>
+</ul>
+<h4 id="2019-2020-Project-Manager-G11n-Tech-Team"><a href="#2019-2020-Project-Manager-G11n-Tech-Team" class="headerlink" title="2019-2020: Project Manager, G11n Tech Team"></a>2019-2020: Project Manager, G11n Tech Team</h4><ul>
+<li>Took over a project team in mid-cycle on short notice.</li>
+<li>Organized sprint plans</li>
+<li>Responsible for communicating with stakeholders as to progress
+and bringing closure on requirements</li>
+<li>Scope of project management role included development teams in Asia, North America, Europe
+and Africa.</li>
+<li>Saw the completion of a flagship web app and
+underlying cloud translation services through v1.0 to
+UAT</li>
+</ul>
+<h4 id="2016-2020-G11n-Tech-Team"><a href="#2016-2020-G11n-Tech-Team" class="headerlink" title="2016-2020: G11n Tech Team"></a>2016-2020: G11n Tech Team</h4><p>Background: Globalization Pipeline is a Translation-as-a-Service software offering which is in the IBM Cloud (aka Bluemix) catalog.</p>
+<h5 id="GTech-Microservices"><a href="#GTech-Microservices" class="headerlink" title="GTech Microservices"></a>GTech Microservices</h5><p>Responsibilities:</p>
+<ul>
+<li>Part of team designing and architecting microservice-based XLIFF translation pipeline services</li>
+<li>Responsible for Human Post Editing microservice in Java (Spring Boot)</li>
+<li>Responsible for build engineering of CI/CD processes for building and testing the microservices and API orchestrator. </li>
+</ul>
+<h5 id="Globalization-Pipeline"><a href="#Globalization-Pipeline" class="headerlink" title="Globalization Pipeline"></a>Globalization Pipeline</h5><p>Responsibilities:</p>
+<ul>
+<li>Evaluated and implemented Cloudant (apache couchdb) based data store subsystem, including custom backup facility</li>
+<li>Interfaced with IBM&#39;s Translation Service Centers, as developer of an integration agent
+managing XLIFF-based human post editing (Node.js).</li>
+<li>Deployment of New Relic based monitoring and alerting, including custom synthetics and APM integration.</li>
+<li>Driving adoption of Slack for team communication and automated application notification</li>
+<li>Participated in onboarding of Globalization Pipeline users</li>
+<li>Developed Node.js based SDK and client ( <code>gp-js-client</code> and <code>gp-js-cli</code> )</li>
+<li>Developed custom integration solutions based on team translation data requirements</li>
+<li>Developed Openwhisk-based translation connector</li>
+<li>Gave internal and external presentations to showcase the Globalization Pipeline, including a co-keynote at Fluent</li>
+<li>Architectural and development support to Elastic Kibana globalization and integration with Globalization Pipeline</li>
+</ul>
+<h4 id="2013-2020-Node-js"><a href="#2013-2020-Node-js" class="headerlink" title="2013-2020: Node.js"></a>2013-2020: Node.js</h4><!--
+First Node comment: https://github.com/nodejs/node-v0.x-archive/issues/4689#issuecomment-22204220
+-->
+
+<p>Role: Core Collaborator, CTC/TSC member, WG leader, WG member</p>
+<ul>
+<li>Drove <code>Intl</code> (ICU-based) feature enablement “on by default”
+in Node.js v0.12</li>
+<li>Engaged with IBM, RedHat stakeholders to continously
+support and refine internationalization availability, configuration
+options. Provided support via internal Slack channels, external
+GitHub issues and IRC.</li>
+<li>Continued to support the <a href="https://www.npmjs.com/package/full-icu" target="_blank" rel="noopener"><code>full-icu</code></a> npm module, which has over 100,000 weekly downloads.</li>
+<li>Node TSC member (2015)</li>
+<li>Started the Intl WG, and member of successor i18n WG</li>
+<li>Built a tool to simplify npm authentication to our internal npm repository for ci/cd</li>
+</ul>
+<h4 id="1997-2020-International-Components-for-Unicode"><a href="#1997-2020-International-Components-for-Unicode" class="headerlink" title="1997-2020: International Components for Unicode"></a>1997-2020: International Components for Unicode</h4><p>Role: IBM’s Technical Lead for ICU for C/C++, Technical Committee Member</p>
+<p>Background: The International Components for Unicodeis an open source C/C++ and Java project providing functionality for manipulating cultural and langauge-sensitive text using the Unicode standard.</p>
+<p>As Technical Lead, I am responsible for representing IBM’s interests and that of its customers, particularly with regards to functionality and features in the C/C++ API. I develop and test C, C++ and Java APIs as needed.</p>
+<p>Highlights:</p>
+<ul>
+<li>C test framework</li>
+<li>Automated testing design and maintenance</li>
+<li>Automated release system maintenance</li>
+<li>Calendar and Locale related classes (C++)</li>
+<li>Implemented the ULI-TC segmentation exception break iterator</li>
+<li>jitterbug/cvs to trac/svn (2006)</li>
+<li>trac/svn to GitHub/Jira (2018)</li>
+<li>Initiated effort to transition ICU to the Unicode Consortium</li>
+</ul>
+<p>Developed web and CLI applications using ICU: Locale Explorer, UnicodeBrowser, Transliterator.</p>
+<p>Involved in many aspects of project. In charge of build and release issues. Emphasis on high quality work with quick turnaround for internal and external users. Involved in support and resolution of all aspects of product use (installation, build problems, code problems, debugging). Key role in support of single code base across many platforms (Windows NT,95,98,2000,XP,7,8,10/Linux/HPUX 9,10/Solaris/AIX/IBM system z (390), i (400), with support for BSD,Mac and many other platforms.) General &quot;problem solver&quot; when difficulties occur. (Especially: Hardware, UNIX, network issues). Proposal and implementation of changes to build and installation process, including a new tool for data packaging.</p>
+<p>Source Repository, Defect Tracking, Development Process tools support: Engineered the ICU team&#39;s transition from CVS and Jitterbug to Subversion and trac. Designed and implemented custom python plugin modules to support ticket/changeset integration and to provide a review process. Provide extensive testing and maintenance.</p>
+<h4 id="2002-2020-Common-Locale-Data-Repository"><a href="#2002-2020-Common-Locale-Data-Repository" class="headerlink" title="2002-2020: Common Locale Data Repository"></a>2002-2020: Common Locale Data Repository</h4><p>Role: founding member of TC, design, tooling, infrastructure</p>
+<p>Responsibilities:</p>
+<ul>
+<li>Developed the Survey Tool, which is used to collect linguistic data</li>
+<li>Infrastructure: 2019 migration from trac/svn to JIRA/GitHub</li>
+<li>Engaged with linguistic communities to collect and improve the status of language support, particularly with respect to minority languages.</li>
+<li>Conference presentation and discussions</li>
+</ul>
+<h4 id="Unicode-Consortium-2012-2020"><a href="#Unicode-Consortium-2012-2020" class="headerlink" title="Unicode Consortium (2012-2020)"></a>Unicode Consortium (2012-2020)</h4><ul>
+<li>Unicode Localization Interoperability (ULI-TC/SC) chair</li>
+<li>IBM&#39;s primary representative to Unicode and to INCITS JTC1/L2/SC2 USNB</li>
+<li>Participate and contribute to UTC meetings and Unicode technical standards</li>
+<li>Assist in infrastructure and development concerns</li>
+</ul>
+<h4 id="OASIS"><a href="#OASIS" class="headerlink" title="OASIS"></a>OASIS</h4><ul>
+<li>Participated in XLIFF-TC, and XLIFF-OMOS-TC</li>
+</ul>
+<h4 id="ECMA"><a href="#ECMA" class="headerlink" title="ECMA"></a>ECMA</h4><ul>
+<li>Participated in ECMA262 (JavaScript) and contributor to ECMA402 (I18n)</li>
+</ul>
+<h4 id="2006-2016-Sun-Oracle-Java-Liason"><a href="#2006-2016-Sun-Oracle-Java-Liason" class="headerlink" title="2006-2016: Sun (Oracle) Java Liason"></a>2006-2016: Sun (Oracle) Java Liason</h4><p>Role: Liaison between IBM and the Java2D group at Oracle (previously Sun Microsystems), Santa Clara in regards to complex text layout and bidirectional text processing areas of the Java environment.</p>
+<p>Responsibilities:</p>
+<ul>
+<li>BiDi functionality</li>
+<li>Integration and support of the ICU layout engine</li>
+<li>Spearheaded project to integrate tha HarfBuzz layout engine (completed in JDK/Java 9)</li>
+</ul>
+<h3 id="2001-Jan-Dec-University-of-Malta"><a href="#2001-Jan-Dec-University-of-Malta" class="headerlink" title="2001 (Jan-Dec): University of Malta"></a>2001 (Jan-Dec): University of Malta</h3><p>Systems Engineer, Department of Computer Science and Artificial Intelligence, University of Malta (Europe).</p>
+<p>Worked on Maltese Language localization, advocacy, and standardization activities. Technical advisor on font, keyboard, processing, and educational activities. Appearances in local media in support of Maltese language computing.</p>
+<p>(Note: continued on a LOA basis with IBM during this time.)</p>
+<h3 id="1993-1997-Software-Engineer-Taligent-Inc-Cupertino-California"><a href="#1993-1997-Software-Engineer-Taligent-Inc-Cupertino-California" class="headerlink" title="1993-1997: Software Engineer,  Taligent Inc., Cupertino, California."></a>1993-1997: Software Engineer,  Taligent Inc., Cupertino, California.</h3><p><em>On Jan 1, 1997, Taligent became a wholly-owned subsidiary of IBM. At the end of 1997, I transitioned to IBM.</em></p>
+<p><strong>Bidi Browser</strong>: Worked on a small team to provide Arabic and Hebrew enablement in a major web browser (1996)</p>
+<p><strong>WebRunner Server Works</strong>: Designed, developed, supported Taligent WebRunner Server Works, C++ and Java frameworks providing an early abstraction for server-side dynamic content independent of operating systems and server plug-in mechanisms such as CGI/NSAPI/ICAPI/ISAPI. US Patent #6,233,622.  Re-imagined as Server Works for Java, an extension of the Java Servlet API.</p>
+<p>My contributions included: Initial concept, URL handling and tests (RFC 1808), integration with existing Web Servers, Sample Code and technical support. Represented Taligent and IBM in a product review for a major magazine. Staffed a kiosk at trade shows demonstrating the WebRunner Server Works packages.</p>
+<p><strong>CommonPoint Messaging Frameworks</strong>: Developed interfaces and tests for low-level POP3 and SMTP code.</p>
+<p><strong>Media/Distributed Communications Group</strong>: Implemented CORBA IDL parser, designed and implemented service broker, port mapper, and service starter (the Primary Object Directory).
+Contributor to CommonPoint communications and service access frameworks including TCP/IP protocols on AIX.</p>
+<p>Build and pre-build integration support. (MacOS/MPW and TalOS.) Maintained the &#39;lab&#39;, including extensive unofficial technical support, including MacOS applications and configuration/AIX/Solaris/Ethernet hardware/security. Departmental webmaster (1993). Tools support including C++ HTMLizer, URL Chat for internal link sharing, a GUI ‘tail’ for build logfile viewing (MacOS), and a facility for communications channel performance testing.</p>
+<h3 id="1992-1993-Instructor-The-Kings-Academy-Los-Altos-California"><a href="#1992-1993-Instructor-The-Kings-Academy-Los-Altos-California" class="headerlink" title="1992-1993: Instructor, The Kings Academy, Los Altos, California"></a>1992-1993: Instructor, The Kings Academy, Los Altos, California</h3><p>Instructed Junior and Senior High School Students in fundamental programming using the BASIC and 6502 assembly languages.</p>
+<p>Developed and supported “AuntieEm”/Mac6502/asm - 6502 emulator (Apple ][ environment), with assembler. For MacOS and UNIX.</p>
+<p>Set up computer lab with Windows 3.1, and PromiseLAN network. Provided Technical support for the lab.</p>
+<h3 id="1990-Consultant-to-Color-Blend-Painting-San-Carlos-California"><a href="#1990-Consultant-to-Color-Blend-Painting-San-Carlos-California" class="headerlink" title="1990: Consultant to Color Blend Painting, San Carlos, California"></a>1990: Consultant to Color Blend Painting, San Carlos, California</h3><p>Provided Macintosh application consulting, troubleshooting. Among other projects, worked on prototype of a Hypercard-based contact management application. Provided training in the HyperTalk programming language.</p>
+<h3 id="1989-Software-Engineer-IntelliChoice-Cupertino-California"><a href="#1989-Software-Engineer-IntelliChoice-Cupertino-California" class="headerlink" title="1989: Software Engineer, IntelliChoice, Cupertino, California"></a>1989: Software Engineer, IntelliChoice, Cupertino, California</h3><p>UI development and testing for a HyperCard-based (HyperTalk langauge) car information kiosk, guiding users through vehicle selections based on user preference. Extensive integration with XCMDs and XFCNs.</p>
+<h2 id="Patents"><a href="#Patents" class="headerlink" title="Patents"></a>Patents</h2><ul>
+<li><p><a href="http://patft1.uspto.gov/netacgi/nph-Parser?patentnumber=6233622" target="_blank" rel="noopener">US 6,233,622 B1</a> - Adapter and handler framework for web server extensions.</p>
+</li>
+<li><p><a href="http://patft1.uspto.gov/netacgi/nph-Parser?patentnumber=9063636" target="_blank" rel="noopener">US 9,063,636</a> - Management of input methods</p>
+</li>
+<li><p><a href="http://patft1.uspto.gov/netacgi/nph-Parser?patentnumber=10810211" target="_blank" rel="noopener">US 10,810,211 B2</a> - Dynamic expression sticker management</p>
+</li>
+</ul>
+<h2 id="Awards"><a href="#Awards" class="headerlink" title="Awards"></a>Awards</h2><ul>
+<li>IBM Eminence and Excellence (2015, 2016)</li>
+<li>IBM Open Source Engagement (2015, 2016, 2017, 2019)</li>
+<li>IBM Manager’s Choice (2014, 2015, 2016, 2017, 2019)</li>
+</ul>
+<h2 id="Education"><a href="#Education" class="headerlink" title="Education"></a>Education</h2><p>Degrees:</p>
+<ul>
+<li>2014: Bachelor of Arts, Computer Science, Thomas Edison State University (Trenton, New Jersey)</li>
+<li>1999: Associate in Arts, Interdisciplinary Studies, De Anza College (Cupertino, California)</li>
+</ul>
+<p>Coursework:</p>
+<ul>
+<li>2001: Windows 2000 Certification, University of Malta (Tal-Qroqq, Malta, Europe)</li>
+<li>1993: C++, West Valley College (Saratoga, California)</li>
+<li>1989: C, Foothill College (Los Altos, California)</li>
+</ul>
+<p>Awards:</p>
+<ul>
+<li>2009: Unicode Bulldog Award for contributions to ICU and CLDR</li>
+</ul>
+<h2 id="Linguistic-Protocols"><a href="#Linguistic-Protocols" class="headerlink" title="Linguistic Protocols"></a>Linguistic Protocols</h2><p>i.e. human language skills:</p>
+<ul>
+<li><code>en-US</code> (American English): Fully Proficient.</li>
+<li><code>es-US</code> (US Spanish / español estadounidense): Able to read and, mostly, hear. Can perform complex OS installations in Spanish. (Elementary Spanish course, 9 Semester Hours plus self study)</li>
+<li><code>ja</code> (Japanese): Some conversational training (4 Semester Hours) and experience, but I need to check the equivalent of stackoverflow for most tasks. Some recognition of Kanji/Han characters.</li>
+<li><code>grc</code> (Koine Greek): Some reading skill</li>
+<li><code>mt</code> (Maltese): Some conversational skill.</li>
+</ul>
+<p>Familiar, with low levels of comprehension, with a wide variety of scripts and their distinctions: Arabic, Hebrew, Cyrillic (Russian), Devanagari (Hindi) and neighbors, Syriac (Assyrian), Japanese and Chinese ideographs.</p>
+<p>Interested in Braille (limited skill) and sign languages. Some experience and much interest in linguistics/computational linguistics via IBM Translation projects, ICU/CLDR and the UTC/Unicode Script Ad Hoc.</p>
+<h2 id="Other-Experience"><a href="#Other-Experience" class="headerlink" title="Other Experience"></a>Other Experience</h2><h3 id="Reformed-Heritage-Church-Hanover-Presbytery-of-San-Jose-California"><a href="#Reformed-Heritage-Church-Hanover-Presbytery-of-San-Jose-California" class="headerlink" title="Reformed Heritage Church (Hanover Presbytery) of San José, California"></a>Reformed Heritage Church (Hanover Presbytery) of San José, California</h3><h4 id="2014—present-Elder"><a href="#2014—present-Elder" class="headerlink" title="2014—present: Elder"></a>2014—present: Elder</h4><p>Responsible for shepherding ministries/pastoral care, education including leadership training, and periodic sermon preparation.</p>
+<h4 id="2008—2014-Deacon"><a href="#2008—2014-Deacon" class="headerlink" title="2008—2014: Deacon"></a>2008—2014: Deacon</h4><p>Responsible for charitable distributions in support of needs, financial counseling, as well as support of ministry needs.</p>
+<h4 id="2009—2015-Treasurer-CFO"><a href="#2009—2015-Treasurer-CFO" class="headerlink" title="2009—2015: Treasurer (CFO)"></a>2009—2015: Treasurer (CFO)</h4><p>Responsible for tracking income and expenses, payroll, records management, and bank interaction.
+Drove improvements to forms and policies around best practices. Drove migration from shrinkwrap QuickBooks to QuickBooks Online. Managed education sessions for onboarding of additional treasury team members.</p>
+<h3 id="Personal-Projects"><a href="#Personal-Projects" class="headerlink" title="Personal Projects"></a>Personal Projects</h3><h4 id="Amateur-Radio-US-General-Class-License-including-5-wpm-Morse-Code"><a href="#Amateur-Radio-US-General-Class-License-including-5-wpm-Morse-Code" class="headerlink" title="Amateur Radio: US General Class License (including 5 wpm Morse Code)."></a>Amateur Radio: US General Class License (including 5 wpm Morse Code).</h4><p>Working on experimental AX.25 socket bindings for Node.js. Contributed code improvements to LinPac, an AX.25 terminal application. Managed the Packet Radio tent for WVARA Amateur Radio Field Day.</p>
+<h4 id="1990—present-UNIX-at-home"><a href="#1990—present-UNIX-at-home" class="headerlink" title="1990—present: UNIX at home."></a>1990—present: UNIX at home.</h4><ul>
+<li>UUCP, SMTP, POP, IMAP, HTTP/S, SSH/SSL configuration and management. </li>
+<li>multi-tenant virtual hosting.</li>
+<li>network performance analysis and troubleshooting.</li>
+<li>firewall requirements, implementation, and maintenance.</li>
+<li>docker-based FreePBX (Asterix SIP/s) installation for home telephony.</li>
+<li>Bulletin Board (BBS) software design and implementation.</li>
+<li>Network cabling, installation, support. Physical layers through high level applications: 10/100/1000baseT, 10base2, PoE, Mikrotik router management, 802.11b/g/n wireless, AppleTalk, Farallon PhoneNet. Network Analyzer operation.</li>
+<li>Home monitoring with Prometheus (including custom exporters), Grafana.</li>
+<li>FreeNAS deployed with RAID for robust storage. Custom scripts for off-site backup.</li>
+</ul>
+<h4 id="Other-projects"><a href="#Other-projects" class="headerlink" title="Other projects"></a>Other projects</h4><ul>
+<li>custom MacOS WDEF development</li>
+<li>HTML Color Picker (Mac)</li>
+<li>Tetris and Asteroids game clones</li>
+<li>rule-based MIDI “music” generation</li>
+<li>Ports to MacOS: gnuchess, sokoban, xwator, t_tris</li>
+<li>SQL-based chatroom &#39;bot&#39;</li>
+<li>AOL-IM plugin implementing Eliza</li>
+<li>Gravitational simulations</li>
+<li>Music engraving using Finale and LilyPond</li>
+<li>LaTeX/XeTeX: Sermons, Unicode proposals, and two larger (100+ page) book projects (a Christian education book, and a historical family memoir)</li>
+<li>Soldering (learning SMT).</li>
+<li>Arduino/ESP8266/Raspberry Pi/BeagleBone hardware experiments with robotics and environmental sensors.</li>
+</ul>
+<hr>
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGkAAABpCAAAAAAc6VLmAAAA40lEQVR42u3ZQQ6EIAxAUe9/ac1sDYVfNLEwvyujyHPRlArHMY7zF+DqeShVkc4oWnP1x4VPlZaTaMaF39GfRWkzCcyv9FdSapzSFhJdd+i92ZVQqYBkX640Tru3Q2kR6ZYWNAvDpmaQj0rlJbrQ0GqEs1ypqARSMUwxsBuC1yylehKdOryHC5vSGlKqkQX/MrOm0rdSrgWFDUxznNIa0mTa9V+eLU5KVaTUmVqq23l0yqr0rZTfL+9XreZrSntJoJElbYvSDhIoTqSBUVpIAmdqYBkiP9NK5aXULvmbu6NK5aQL584j9vvhOGQAAAAASUVORK5CYII=" alt="git.io/srl295" title="git.io/srl295" class="myqrcode">
+<style>svg:not(:root).svg-inline--fa {
+  overflow: visible;
+}
+
+.svg-inline--fa {
+  display: inline-block;
+  font-size: inherit;
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+}
+.svg-inline--fa.fa-lg {
+  vertical-align: -0.225em;
+}
+.svg-inline--fa.fa-w-1 {
+  width: 0.0625em;
+}
+.svg-inline--fa.fa-w-2 {
+  width: 0.125em;
+}
+.svg-inline--fa.fa-w-3 {
+  width: 0.1875em;
+}
+.svg-inline--fa.fa-w-4 {
+  width: 0.25em;
+}
+.svg-inline--fa.fa-w-5 {
+  width: 0.3125em;
+}
+.svg-inline--fa.fa-w-6 {
+  width: 0.375em;
+}
+.svg-inline--fa.fa-w-7 {
+  width: 0.4375em;
+}
+.svg-inline--fa.fa-w-8 {
+  width: 0.5em;
+}
+.svg-inline--fa.fa-w-9 {
+  width: 0.5625em;
+}
+.svg-inline--fa.fa-w-10 {
+  width: 0.625em;
+}
+.svg-inline--fa.fa-w-11 {
+  width: 0.6875em;
+}
+.svg-inline--fa.fa-w-12 {
+  width: 0.75em;
+}
+.svg-inline--fa.fa-w-13 {
+  width: 0.8125em;
+}
+.svg-inline--fa.fa-w-14 {
+  width: 0.875em;
+}
+.svg-inline--fa.fa-w-15 {
+  width: 0.9375em;
+}
+.svg-inline--fa.fa-w-16 {
+  width: 1em;
+}
+.svg-inline--fa.fa-w-17 {
+  width: 1.0625em;
+}
+.svg-inline--fa.fa-w-18 {
+  width: 1.125em;
+}
+.svg-inline--fa.fa-w-19 {
+  width: 1.1875em;
+}
+.svg-inline--fa.fa-w-20 {
+  width: 1.25em;
+}
+.svg-inline--fa.fa-pull-left {
+  margin-right: 0.3em;
+  width: auto;
+}
+.svg-inline--fa.fa-pull-right {
+  margin-left: 0.3em;
+  width: auto;
+}
+.svg-inline--fa.fa-border {
+  height: 1.5em;
+}
+.svg-inline--fa.fa-li {
+  width: 2em;
+}
+.svg-inline--fa.fa-fw {
+  width: 1.25em;
+}
+
+.fa-layers svg.svg-inline--fa {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.fa-layers {
+  display: inline-block;
+  height: 1em;
+  position: relative;
+  text-align: center;
+  vertical-align: -0.125em;
+  width: 1em;
+}
+.fa-layers svg.svg-inline--fa {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.fa-layers-counter, .fa-layers-text {
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+}
+
+.fa-layers-text {
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.fa-layers-counter {
+  background-color: #ff253a;
+  border-radius: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #fff;
+  height: 1.5em;
+  line-height: 1;
+  max-width: 5em;
+  min-width: 1.5em;
+  overflow: hidden;
+  padding: 0.25em;
+  right: 0;
+  text-overflow: ellipsis;
+  top: 0;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+.fa-layers-bottom-right {
+  bottom: 0;
+  right: 0;
+  top: auto;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+}
+
+.fa-layers-bottom-left {
+  bottom: 0;
+  left: 0;
+  right: auto;
+  top: auto;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+}
+
+.fa-layers-top-right {
+  right: 0;
+  top: 0;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+.fa-layers-top-left {
+  left: 0;
+  right: auto;
+  top: 0;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+}
+
+.fa-lg {
+  font-size: 1.3333333333em;
+  line-height: 0.75em;
+  vertical-align: -0.0667em;
+}
+
+.fa-xs {
+  font-size: 0.75em;
+}
+
+.fa-sm {
+  font-size: 0.875em;
+}
+
+.fa-1x {
+  font-size: 1em;
+}
+
+.fa-2x {
+  font-size: 2em;
+}
+
+.fa-3x {
+  font-size: 3em;
+}
+
+.fa-4x {
+  font-size: 4em;
+}
+
+.fa-5x {
+  font-size: 5em;
+}
+
+.fa-6x {
+  font-size: 6em;
+}
+
+.fa-7x {
+  font-size: 7em;
+}
+
+.fa-8x {
+  font-size: 8em;
+}
+
+.fa-9x {
+  font-size: 9em;
+}
+
+.fa-10x {
+  font-size: 10em;
+}
+
+.fa-fw {
+  text-align: center;
+  width: 1.25em;
+}
+
+.fa-ul {
+  list-style-type: none;
+  margin-left: 2.5em;
+  padding-left: 0;
+}
+.fa-ul > li {
+  position: relative;
+}
+
+.fa-li {
+  left: -2em;
+  position: absolute;
+  text-align: center;
+  width: 2em;
+  line-height: inherit;
+}
+
+.fa-border {
+  border: solid 0.08em #eee;
+  border-radius: 0.1em;
+  padding: 0.2em 0.25em 0.15em;
+}
+
+.fa-pull-left {
+  float: left;
+}
+
+.fa-pull-right {
+  float: right;
+}
+
+.fa.fa-pull-left,
+.fas.fa-pull-left,
+.far.fa-pull-left,
+.fal.fa-pull-left,
+.fab.fa-pull-left {
+  margin-right: 0.3em;
+}
+.fa.fa-pull-right,
+.fas.fa-pull-right,
+.far.fa-pull-right,
+.fal.fa-pull-right,
+.fab.fa-pull-right {
+  margin-left: 0.3em;
+}
+
+.fa-spin {
+  -webkit-animation: fa-spin 2s infinite linear;
+          animation: fa-spin 2s infinite linear;
+}
+
+.fa-pulse {
+  -webkit-animation: fa-spin 1s infinite steps(8);
+          animation: fa-spin 1s infinite steps(8);
+}
+
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+.fa-rotate-90 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.fa-rotate-180 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.fa-rotate-270 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+
+.fa-flip-horizontal {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
+}
+
+.fa-flip-vertical {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+  -webkit-transform: scale(1, -1);
+          transform: scale(1, -1);
+}
+
+.fa-flip-both, .fa-flip-horizontal.fa-flip-vertical {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+  -webkit-transform: scale(-1, -1);
+          transform: scale(-1, -1);
+}
+
+:root .fa-rotate-90,
+:root .fa-rotate-180,
+:root .fa-rotate-270,
+:root .fa-flip-horizontal,
+:root .fa-flip-vertical,
+:root .fa-flip-both {
+  -webkit-filter: none;
+          filter: none;
+}
+
+.fa-stack {
+  display: inline-block;
+  height: 2em;
+  position: relative;
+  width: 2.5em;
+}
+
+.fa-stack-1x,
+.fa-stack-2x {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.svg-inline--fa.fa-stack-1x {
+  height: 1em;
+  width: 1.25em;
+}
+.svg-inline--fa.fa-stack-2x {
+  height: 2em;
+  width: 2.5em;
+}
+
+.fa-inverse {
+  color: #fff;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.sr-only-focusable:active, .sr-only-focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+.svg-inline--fa .fa-primary {
+  fill: var(--fa-primary-color, currentColor);
+  opacity: 1;
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa .fa-secondary {
+  fill: var(--fa-secondary-color, currentColor);
+  opacity: 0.4;
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-primary {
+  opacity: 0.4;
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-secondary {
+  opacity: 1;
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa mask .fa-primary,
+.svg-inline--fa mask .fa-secondary {
+  fill: black;
+}
+
+.fad.fa-inverse {
+  color: #fff;
+}</style>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://srl295.github.io/resume.html" data-id="cl2gfj3ga0001f7f0ikquqk2v" class="article-share-link">Share</a>
+      
+        <a href="https://srl295.github.io/resume.html#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bluemix/">bluemix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cldr/">cldr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dvcs/">dvcs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/g11n/">g11n</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/globalizationpipeline/">globalizationpipeline</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/i18n/">i18n</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/icu/">icu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/icu4c/">icu4c</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/job/">job</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kibana/">kibana</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/locales/">locales</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/opensource/">opensource</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/perl/">perl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pino/">pino</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/promises/">promises</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scm/">scm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sketch/">sketch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unicode/">unicode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wip/">wip</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/bluemix/" style="font-size: 10px;">bluemix</a> <a href="/tags/cldr/" style="font-size: 10px;">cldr</a> <a href="/tags/dvcs/" style="font-size: 10px;">dvcs</a> <a href="/tags/g11n/" style="font-size: 12.5px;">g11n</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/globalizationpipeline/" style="font-size: 20px;">globalizationpipeline</a> <a href="/tags/i18n/" style="font-size: 10px;">i18n</a> <a href="/tags/icu/" style="font-size: 12.5px;">icu</a> <a href="/tags/icu4c/" style="font-size: 10px;">icu4c</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/job/" style="font-size: 10px;">job</a> <a href="/tags/kibana/" style="font-size: 10px;">kibana</a> <a href="/tags/locales/" style="font-size: 10px;">locales</a> <a href="/tags/node/" style="font-size: 15px;">node</a> <a href="/tags/opensource/" style="font-size: 10px;">opensource</a> <a href="/tags/perl/" style="font-size: 12.5px;">perl</a> <a href="/tags/pino/" style="font-size: 10px;">pino</a> <a href="/tags/promises/" style="font-size: 10px;">promises</a> <a href="/tags/scm/" style="font-size: 12.5px;">scm</a> <a href="/tags/sketch/" style="font-size: 10px;">sketch</a> <a href="/tags/unicode/" style="font-size: 17.5px;">unicode</a> <a href="/tags/wip/" style="font-size: 10px;">wip</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/04/26/git-twofer-3/">git twofer, the third</a>
+          </li>
+        
+          <li>
+            <a href="/2021/03/29/git-twofer-2/">git twofer, again</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/16/srl-next/">srl.next</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/16/sketch-how-text-works/">Sketch - how text works</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/09/git-twofer/">git twofer</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 Steven R. Loomis<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> 
+      
+      <span class="retrodefinition" id="rdfooter"><b class="rdkey"></b>: <span class="rddef"></span><a href="/2017/02/07/literate-programmers/"><sup>?</sup></a> <i class="rdex"></i>
+      </span>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/resume.html" class="mobile-nav-link">Resume</a>
+  
+    <a href="/" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'srl295';
+  
+  var disqus_url = 'https://srl295.github.io/resume.html';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/retrodefinitions.js"></script>
+
+  </div>
+</body>
+</html>

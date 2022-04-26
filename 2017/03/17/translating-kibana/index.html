@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>Translating Kibana with the Globalization Pipeline | Steven R. Loomis</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Introduction  This post (and video) will explain how to translate Kibana using the Globalization Pipeline service on Bluemix. Note that some of the steps shown here depend on kibana:8766 which was n">
+<meta name="keywords" content="globalizationpipeline,kibana">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Translating Kibana with the Globalization Pipeline">
+<meta property="og:url" content="https://srl295.github.io/2017/03/17/translating-kibana/index.html">
+<meta property="og:site_name" content="Steven R. Loomis">
+<meta property="og:description" content="Introduction  This post (and video) will explain how to translate Kibana using the Globalization Pipeline service on Bluemix. Note that some of the steps shown here depend on kibana:8766 which was n">
+<meta property="og:locale" content="en-US">
+<meta property="og:image" content="https://srl295.github.io/2017/03/17/translating-kibana/kibana0.png">
+<meta property="og:image" content="https://srl295.github.io/2017/03/17/translating-kibana/gp-dash.png">
+<meta property="og:image" content="https://srl295.github.io/2017/03/17/translating-kibana/kibana1.png">
+<meta property="og:updated_time" content="2020-05-22T00:10:18.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Translating Kibana with the Globalization Pipeline">
+<meta name="twitter:description" content="Introduction  This post (and video) will explain how to translate Kibana using the Globalization Pipeline service on Bluemix. Note that some of the steps shown here depend on kibana:8766 which was n">
+<meta name="twitter:image" content="https://srl295.github.io/2017/03/17/translating-kibana/kibana0.png">
+<meta name="twitter:creator" content="@srl295">
+  
+    <link rel="alternate" href="/atom.xml" title="Steven R. Loomis" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-70353707-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+    <meta name="google-site-verification" content="sbLStvzF9g9-7JUTpZDHcWb0XO3ztnCYqUHzwLENBxs">
+  
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Steven R. Loomis</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/resume.html">Resume</a>
+        
+          <a class="main-nav-link" href="/">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <a id="nav-print-btn" class="nav-icon" href="javascript:window.print()" title="print"></a>
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://srl295.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-translating-kibana" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/17/translating-kibana/" class="article-date">
+  <time datetime="2017-03-17T17:25:41.000Z" itemprop="datePublished">2017-03-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Translating Kibana with the Globalization Pipeline
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <div class="video-container"><iframe src="//www.youtube.com/embed/fI9iuXWYHfI" frameborder="0" allowfullscreen></iframe></div>
+
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><img src="/2017/03/17/translating-kibana/kibana0.png">
+
+<p>This post (and video) will explain how to translate Kibana using the Globalization Pipeline service on Bluemix. Note that some of the steps shown here depend on <a href="https://github.com/elastic/kibana/pull/8766" target="_blank" rel="noopener">kibana:8766</a> which was not merged as this article went to press. (Portions are based on the <code>development-internationalization.asciidoc</code> document from that PR.)</p>
+<h1 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h1><ul>
+<li><p>Kibana — for now, I am using the <a href="https://github.com/hickeyma/kibana/tree/i18n_phase2" target="_blank" rel="noopener">i18n_phase2</a> branch from <a href="https://github.com/elastic/kibana/pull/8766" target="_blank" rel="noopener">kibana:8766</a>. - <a href="https://github.com/elastic/kibana/commit/91f27f69a03eb74f4a84d2f628b8f5584b9d2a70" target="_blank" rel="noopener">91f27f69a03eb74f4a84d2f628b8f5584b9d2a70</a> to be precise.  See Kibana’s READMEs for detailed setup instruction.</p>
+</li>
+<li><p>A <a href="https://bluemix.net" target="_blank" rel="noopener">Bluemix</a> account to access Globalization Pipeline. It&#39;s free to sign up!</p>
+</li>
+<li><p>Java and the latest <a href="https://github.com/IBM-Bluemix/gp-java-tools/releases" target="_blank" rel="noopener">gp-cli.jar</a> (Globalization Pipeline tools).</p>
+</li>
+</ul>
+<h1 id="Setting-up-Globalization-Pipeline"><a href="#Setting-up-Globalization-Pipeline" class="headerlink" title="Setting up Globalization Pipeline"></a>Setting up Globalization Pipeline</h1><ul>
+<li>Follow the GP <a href="https://github.com/IBM-Bluemix/gp-common#quick-start-guide" target="_blank" rel="noopener">Quick Start Guide</a> to create a service instance. Copy down the &quot;credentials&quot; into a new file, <code>gp-credentials.json</code> which should look something like the following:</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"> <span class="attr">"url"</span>: <span class="string">"https://gp-rest.bluemix.example.com/translate/rest"</span>,</span><br><span class="line"> <span class="attr">"userId"</span>: <span class="string">"c2lnbiB1cCBAIGJsdWVtaXgubmV0ISEK"</span>,</span><br><span class="line"> <span class="attr">"password"</span>: <span class="string">"aHVudGVyNDIK"</span>,</span><br><span class="line"> <span class="attr">"instanceId"</span>: <span class="string">"aHR0cHM6Ly9ibHVlbWl4Lm5ldCA8PDwK"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Create the bundle on the GP instance. The example below uses English (<code>en</code>) as the source langage and requests Spanish, Japanese, and French targets (<code>es,ja,fr</code>).</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ java -jar &#123;wherever&#125;/gp-cli.jar create-bundle  -j &#123;wherever&#125;/gp-credentials.json  -b <span class="string">'kibana_core'</span>  -l en,es,ja,fr</span><br><span class="line">A new bundle <span class="string">'kibana_core'</span> was successfully created.</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>The bundle will show up in the Bluemix dashboard under the service’s console, but as empty.</p>
+</li>
+<li><p>We are going to translate the <code>src/core_plugins/kibana/translations/en.json</code> file in Kibana. Upload that file to the Globalization Pipeline service using the command line:</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/src/kibana</span><br><span class="line">$ java -jar &#123;wherever&#125;/gp-cli.jar import  -j &#123;wherever&#125;/gp-credentials.json  -b <span class="string">'kibana_core'</span> -l en -f src/core_plugins/kibana/translations/en.json -t json</span><br><span class="line">Resource data extracted from src/core_plugins/kibana/translations/en.json was successfully imported to bundle:kibana_core, language:en</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>If you head back over to the Bluemix dashboard, you can now see the populated bundle with translated content:</li>
+</ul>
+<img src="/2017/03/17/translating-kibana/gp-dash.png">
+
+<p>What you see was done with machine translation, hence the red “U” (Unreviewed). The content here can be corrected manually by clicking the Pencil icon, or marked as manually reviewed by clicking the Checkmark. It’s also possible to download the translated content for offline review or use, or to upload a corrected version of one of the translations.</p>
+<p>Head back over to the command line, though, because it is time to create our plugin.</p>
+<h1 id="Creating-the-plugin"><a href="#Creating-the-plugin" class="headerlink" title="Creating the plugin"></a>Creating the plugin</h1><ul>
+<li>See <a href="https://github.com/elastic/generator-kibana-plugin" target="_blank" rel="noopener">https://github.com/elastic/generator-kibana-plugin</a> - create a <code>kibana-YOURNAME-translation-plugin</code> next to your <code>kibana</code> directory.</li>
+</ul>
+<p>Something like this:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g yo generator-kibana-plugin</span><br><span class="line">…</span><br><span class="line">Everything looks all right!</span><br><span class="line"></span><br><span class="line">$ yo kibana-plugin</span><br><span class="line">? Your Plugin Name gp srl kibana plugin</span><br><span class="line">? Short Description An awesome Kibana translation plugin</span><br><span class="line">? Target Kibana Version master</span><br><span class="line"></span><br><span class="line">I<span class="string">'m all done. Running npm install for you to install the required dependencies. If this fails, try running the command yourself.</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>You will notice that the generator has created a <code>translations/es.json</code> file. We will replace this with our translated content.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rm translations/es.json</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Now, download the translated content into the correct files:</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ java -jar &#123;wherever&#125;/gp-cli.jar <span class="built_in">export</span>  -j &#123;wherever&#125;/gp-credentials.json -b <span class="string">'kibana_core'</span> -t json -l es -f translations/es.json</span><br><span class="line">Resource data exported from bundle:kibana_core, language: es was successfully saved to file translations/es.json</span><br><span class="line"></span><br><span class="line">$ java -jar &#123;wherever&#125;/gp-cli.jar <span class="built_in">export</span>  -j &#123;wherever&#125;/gp-credentials.json -b <span class="string">'kibana_core'</span> -t json -l fr -f translations/fr.json</span><br><span class="line">Resource data exported from bundle:kibana_core, language: fr was successfully saved to file translations/fr.json</span><br><span class="line"></span><br><span class="line">$ java -jar &#123;wherever&#125;/gp-cli.jar <span class="built_in">export</span>  -j &#123;wherever&#125;/gp-credentials.json -b <span class="string">'kibana_core'</span> -t json -l ja -f translations/ja.json</span><br><span class="line">Resource data exported from bundle:kibana_core, language: ja was successfully saved to file translations/ja.json</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Update the <code>index.js</code> file in the plugin to mention the updated <code>translations</code> files.</li>
+</ul>
+<p>You will see a section like this:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">translations: [</span><br><span class="line"> resolve(__dirname, <span class="string">'./translations/es.json'</span>)</span><br><span class="line">],</span><br></pre></td></tr></table></figure>
+
+<p>Change it to mention all of the language files we have just downloaded:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">translations: [</span><br><span class="line"> resolve(__dirname, <span class="string">'./translations/es.json'</span>),</span><br><span class="line"> resolve(__dirname, <span class="string">'./translations/ja.json'</span>),</span><br><span class="line"> resolve(__dirname, <span class="string">'./translations/fr.json'</span>)</span><br><span class="line">],</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><em>That&#39;s all the coding we&#39;ll need for today…</em></p>
+</li>
+<li><p>Copy your entire translations plugin directory to the Kibana plugins (<code>&lt;kibana_root&gt;/plugins/</code>) directory</p>
+</li>
+</ul>
+<h1 id="Trying-it-out"><a href="#Trying-it-out" class="headerlink" title="Trying it out"></a>Trying it out</h1><p>Fire up Kibana and you should see the translated content!</p>
+<img src="/2017/03/17/translating-kibana/kibana1.png">
+
+<h1 id="More-steps"><a href="#More-steps" class="headerlink" title="More steps"></a>More steps</h1><ul>
+<li><p>By the way, French isn’t included in the video or images becuase I ran into <a href="https://github.com/elastic/kibana/issues/10580" target="_blank" rel="noopener">kibana#10580</a> during the production of this video. When this is fixed I will come back and edit this video, but until then, beware single quotes (<code>&#39;</code>) in your translated strings.</p>
+</li>
+<li><p>Note that if you repeat the <code>import</code> and <code>export</code> steps of the <code>gp-cli</code> tool, the Globalization Pipeline will automatically manage translation changes if, for example, translated keys are added or removed, or translated content changes.</p>
+</li>
+<li><p>Follow the progress of Kibana Globalization on Github: <a href="https://github.com/elastic/kibana/issues/6515" target="_blank" rel="noopener">(kibana#6515)</a>.</p>
+</li>
+<li><p>Read more about <a href="https://console.ng.bluemix.net/docs/#services/GlobalizationPipeline/index.html" target="_blank" rel="noopener">Globalization Pipeline</a></p>
+</li>
+<li><p>Connect with the <a href="https://developer.ibm.com/open/openprojects/ibm-bluemix-globalization-pipeline/" target="_blank" rel="noopener">Globalization Pipeline Open Source Community</a></p>
+</li>
+</ul>
+<h1 id="Acknowledgements"><a href="#Acknowledgements" class="headerlink" title="Acknowledgements"></a>Acknowledgements</h1><ul>
+<li>Thanks to fellow IBMers Martin Hickey, Shikha Srivastava, and Jonathan Lo for the Kibana G11n work <a href="https://github.com/elastic/kibana/issues/6515" target="_blank" rel="noopener">(kibana#6515)</a>, also the <a href="https://github.com/elastic/kibana/" target="_blank" rel="noopener">elastic/kibana</a> team for being a great OSS community, and last but not least the entire Globalization Pipeline team.</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://srl295.github.io/2017/03/17/translating-kibana/" data-id="cl2gfj3ho0015f7f01oxemzeu" class="article-share-link">Share</a>
+      
+        <a href="https://srl295.github.io/2017/03/17/translating-kibana/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/globalizationpipeline/">globalizationpipeline</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/kibana/">kibana</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/06/02/pino-couch/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Announcing 🌲 pino-couch
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/02/07/literate-programmers/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Literate Programmers</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bluemix/">bluemix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cldr/">cldr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dvcs/">dvcs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/g11n/">g11n</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/globalizationpipeline/">globalizationpipeline</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/i18n/">i18n</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/icu/">icu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/icu4c/">icu4c</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/job/">job</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kibana/">kibana</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/locales/">locales</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/opensource/">opensource</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/perl/">perl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pino/">pino</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/promises/">promises</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scm/">scm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sketch/">sketch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unicode/">unicode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wip/">wip</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/bluemix/" style="font-size: 10px;">bluemix</a> <a href="/tags/cldr/" style="font-size: 10px;">cldr</a> <a href="/tags/dvcs/" style="font-size: 10px;">dvcs</a> <a href="/tags/g11n/" style="font-size: 12.5px;">g11n</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/globalizationpipeline/" style="font-size: 20px;">globalizationpipeline</a> <a href="/tags/i18n/" style="font-size: 10px;">i18n</a> <a href="/tags/icu/" style="font-size: 12.5px;">icu</a> <a href="/tags/icu4c/" style="font-size: 10px;">icu4c</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/job/" style="font-size: 10px;">job</a> <a href="/tags/kibana/" style="font-size: 10px;">kibana</a> <a href="/tags/locales/" style="font-size: 10px;">locales</a> <a href="/tags/node/" style="font-size: 15px;">node</a> <a href="/tags/opensource/" style="font-size: 10px;">opensource</a> <a href="/tags/perl/" style="font-size: 12.5px;">perl</a> <a href="/tags/pino/" style="font-size: 10px;">pino</a> <a href="/tags/promises/" style="font-size: 10px;">promises</a> <a href="/tags/scm/" style="font-size: 12.5px;">scm</a> <a href="/tags/sketch/" style="font-size: 10px;">sketch</a> <a href="/tags/unicode/" style="font-size: 17.5px;">unicode</a> <a href="/tags/wip/" style="font-size: 10px;">wip</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/04/26/git-twofer-3/">git twofer, the third</a>
+          </li>
+        
+          <li>
+            <a href="/2021/03/29/git-twofer-2/">git twofer, again</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/16/srl-next/">srl.next</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/16/sketch-how-text-works/">Sketch - how text works</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/09/git-twofer/">git twofer</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 Steven R. Loomis<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> 
+      
+      <span class="retrodefinition" id="rdfooter"><b class="rdkey"></b>: <span class="rddef"></span><a href="/2017/02/07/literate-programmers/"><sup>?</sup></a> <i class="rdex"></i>
+      </span>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/resume.html" class="mobile-nav-link">Resume</a>
+  
+    <a href="/" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'srl295';
+  
+  var disqus_url = 'https://srl295.github.io/2017/03/17/translating-kibana/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/retrodefinitions.js"></script>
+
+  </div>
+</body>
+</html>
