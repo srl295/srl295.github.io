@@ -3,15 +3,23 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>Archives: 2018 | Steven R. Loomis</title>
+  <title>Code Hive Tx in 2022 | Steven R. Loomis</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Steven R. Loomis">
-<meta property="og:url" content="https://srl295.github.io/archives/2018/index.html">
+  <meta name="description" content="Well, it was 2.5 years since I posted the srl.next article and clearly a lot has gone on. We’re at the end of the year, when in the Gregorian calendar we remember and celebrate Christ’s incarnation—Ch">
+<meta name="keywords" content="codehive,2022">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Code Hive Tx in 2022">
+<meta property="og:url" content="https://srl295.github.io/2022/12/26/code-hive-2022/index.html">
 <meta property="og:site_name" content="Steven R. Loomis">
+<meta property="og:description" content="Well, it was 2.5 years since I posted the srl.next article and clearly a lot has gone on. We’re at the end of the year, when in the Gregorian calendar we remember and celebrate Christ’s incarnation—Ch">
 <meta property="og:locale" content="en-US">
+<meta property="og:image" content="https://srl295.github.io/2022/12/26/code-hive-2022/code-hive-logo.png">
+<meta property="og:image" content="https://srl295.github.io/2022/12/26/code-hive-2022/srl-tuktuk.jpeg">
+<meta property="og:updated_time" content="2022-12-26T20:18:55.851Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Steven R. Loomis">
+<meta name="twitter:title" content="Code Hive Tx in 2022">
+<meta name="twitter:description" content="Well, it was 2.5 years since I posted the srl.next article and clearly a lot has gone on. We’re at the end of the year, when in the Gregorian calendar we remember and celebrate Christ’s incarnation—Ch">
+<meta name="twitter:image" content="https://srl295.github.io/2022/12/26/code-hive-2022/code-hive-logo.png">
 <meta name="twitter:creator" content="@srl295">
   
     <link rel="alternate" href="/atom.xml" title="Steven R. Loomis" type="application/atom+xml">
@@ -80,40 +88,81 @@ ga('send', 'pageview');
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/07/02/icu-infra/" class="archive-article-date">
-  <time datetime="2018-07-03T01:24:54.000Z" itemprop="datePublished">Jul 2</time>
+        <section id="main"><article id="post-code-hive-2022" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/12/26/code-hive-2022/" class="article-date">
+  <time datetime="2022-12-26T20:00:00.000Z" itemprop="datePublished">2022-12-26</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/02/icu-infra/">ICU Infrastructure Migration</a>
+    <h1 class="article-title" itemprop="name">
+      Code Hive Tx in 2022
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Well, it was 2.5 years since I posted the <a href="/2020/07/16/srl-next/" title="srl.next">srl.next</a> article and clearly a lot has gone on.</p>
+<p>We’re at the end of the year, when in the <a href="https://en.wikipedia.org/wiki/Gregorian_calendar" target="_blank" rel="noopener">Gregorian calendar</a> we remember and celebrate Christ’s incarnation—Christmas!  So this post will serve as a bit of an update.</p>
+<h2 id="What’s-been-going-on"><a href="#What’s-been-going-on" class="headerlink" title="What’s been going on?"></a>What’s been going on?</h2><h3 id="Code-Hive-Tx-LLC"><a href="#Code-Hive-Tx-LLC" class="headerlink" title="Code Hive Tx, LLC"></a>Code Hive Tx, LLC</h3><img src="/2022/12/26/code-hive-2022/code-hive-logo.png" title="Code Hive Tx, LLC: code, people, world">
 
+<p>I organized my consulting work as <code>Code Hive Tx, LLC</code>, with its own site <a href="https://codehivetx.us" target="_blank" rel="noopener">https://codehivetx.us</a>.  I’m not pivoting into apiary work, although that is a potential future hobby.  Instead, this is a hive for code: software development.  It&#39;s a Texas Code Hive, headquartered in Dripping Springs, TX, USA where I have shared office space.  Code Hive began its first consulting services January 2022.</p>
+<h3 id="CLDR-Infrastructure"><a href="#CLDR-Infrastructure" class="headerlink" title="CLDR Infrastructure"></a>CLDR Infrastructure</h3><p>As mentioned in the <a href="/2020/07/16/srl-next/" title="srl.next">srl.next</a> post, I continue to work on Unicode’s Common Locale Data Repository (<a href="https://cldr.unicode.org" target="_blank" rel="noopener">CLDR</a>). A lot has happened, both in terms of project and data growth, but also in terms of process and software modernization.  CLDR has had an emphasis on paying down technical debt, and much progress has been made.  The crowdsourced linguistic voting platform has gone from a Java servlet-based structure to a modernized J2EE application, including OpenAPI Spec 3.0 (Swagger) REST documentation.  The front end now has Vue3 as its core, largely replacing many home grown frameworks.  Ansible was used to automate VM provisioning, with the result that an additional staging server was recently added, with almost no time spent in server configuration before it was ready to be productive.</p>
+<h3 id="Fintech"><a href="#Fintech" class="headerlink" title="Fintech"></a>Fintech</h3><p>I’ve also picked up a local client in the fintech space, focussed around distributed computing and data science needs in python.  I’ve brought in improvements to the automated build system as well as deploying custom Prometheus collectors and dashboards to make sure everything is working the way it ought to be.  Actually, Prometheus figures somewhere into most of my projects, including telling me whether the home printer is accidentally powered off or not!</p>
+<h3 id="CLDR-Keyboard-Spec"><a href="#CLDR-Keyboard-Spec" class="headerlink" title="CLDR Keyboard Spec"></a>CLDR Keyboard Spec</h3><p>Additionally, I’ve been involved in the CLDR Keyboard subcommittee for some time.  As of this writing, there isn’t a great landing page with current status on this activity, although it’s on the TODO list.  You can read the current landing page <a href="https://cldr.unicode.org/index/keyboard-workgroup" target="_blank" rel="noopener">here</a>.</p>
+<p>In summary, the work of this subcommittee is to bring the <a href="http://www.unicode.org/reports/tr35/tr35-keyboards.html#Contents" target="_blank" rel="noopener">UTS #35 Part 7</a> from its current state as merely describing keyboards, to become <em>the</em> standard industry-wide for implementing all keyboards.  That is both ambitious, and also needs to be justified as a goal.  I’m going to attempt to do both in a future post. Very briefly, though, currently keyboard development is completely platform-specific and so keyboard authors must convince the respective organizations and communities to independently develop for their language on Android, iOS, macOS, Linux, Windows, just to name a few.</p>
+<p>What I did want to mention here is that many people have been volunteering their time, or been able to spend time on behalf of their respective organizations, in order to attend these subcommittee meetings over the past couple of years.  However, that has not itself resulted in rapid development of the specification.</p>
+<p>To that end, Code Hive Tx, LLC has received a <a href="https://home.unicode.org/adopt-a-character/about-adopt-a-character/" target="_blank" rel="noopener">Unicode Adopt-a-Character grant</a> in order to progress the spec and fund participation in the meeting.  As a result, I’ve been able to produce a draft specification with many improvements, as well as spend time on sample data, actual DTDs, test code, and so on.  This enables the other team members to make comments on this spec work and has resulted in much progress.</p>
+<p>But a spec without an implementation is, as they say, just a spec. That’s where Keyman comes in.</p>
+<h3 id="SIL-Keyman"><a href="#SIL-Keyman" class="headerlink" title="SIL Keyman"></a>SIL Keyman</h3><p>In addition to the spec work above, Code Hive Tx, LLC also has a contract with <a href="http://www.sil.org" target="_blank" rel="noopener">SIL International</a> to add a production implementation of the CLDR Keyboard spec and associated tools to <a href="https://keyman.com" target="_blank" rel="noopener">Keyman</a>, SIL’s widely used open-source keyboard platform.</p>
+<p>I recently returned from a week-long planning meeting in Siem Reap, Cambodia with the Keyman team.  Besides an interesting trip and location itself, it was great to discuss in-person the future of keyboarding.</p>
+<img src="/2022/12/26/code-hive-2022/srl-tuktuk.jpeg" title="Steven holding on to a Tuk-Tuk">
+
+<h2 id="Next-keystrokes"><a href="#Next-keystrokes" class="headerlink" title="Next keystrokes"></a>Next keystrokes</h2><p>As mentioned above, the spec work and the implementation work go hand-in-hand, giving leverage to the prospect of a major sea change in ease of keyboard implementation.  As of last week, we have the first actual keystrokes processed using a prototype CLDR keyboard.  But that’s for another post.</p>
+<hr>
+<p>Merry Christmas and Happy New Year from Code Hive Tx, LLC!</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://srl295.github.io/2022/12/26/code-hive-2022/" data-id="clc5agr0n00063kf0hwo01lzp" class="article-share-link">Share</a>
+      
+        <a href="https://srl295.github.io/2022/12/26/code-hive-2022/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/2022/">2022</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/codehive/">codehive</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2022/04/26/git-twofer-3/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">git twofer, the third</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
 </section>
         
           <aside id="sidebar">
@@ -210,11 +259,13 @@ ga('send', 'pageview');
 <script>
   var disqus_shortname = 'srl295';
   
+  var disqus_url = 'https://srl295.github.io/2022/12/26/code-hive-2022/';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
