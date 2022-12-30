@@ -4,7 +4,9 @@ s: code-hive-2022
 date: 2022-12-26 12:00:00
 tags:
 - codehive
-- 2022
+- cldr
+- sil
+- keyman
 ---
 
 Well, it was 2.5 years since I posted the {% post_link srl-next srl.next %} article and clearly a lot has gone on.
@@ -49,7 +51,7 @@ I recently returned from a week-long planning meeting in Siem Reap, Cambodia wit
 
 ## Next keystrokes
 
-As mentioned above, the spec work and the implementation work go hand-in-hand, giving leverage to the prospect of a major sea change in ease of keyboard implementation.  As of last week, we have the first actual keystrokes processed using a prototype CLDR keyboard.  But that’s for another post.
+As mentioned above, the spec work and the implementation work go hand-in-hand, giving leverage to the prospect of a major sea change in ease of keyboard implementation.  As of last week, we have the first actual keystrokes processed using a prototype CLDR keyboard.  But that’s for another post: {% post_link ldml-keyman-kbd-progress “Keyboard Progress” %}
 
 -----
 
