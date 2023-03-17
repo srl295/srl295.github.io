@@ -1,0 +1,12 @@
+{
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/*.code-search": true,
+        ".deploy_git": true
+    },
+    "git.repositoryScanIgnoredFolders": [
+        "node_modules",
+        ".deploy_git"
+    ],
+}
