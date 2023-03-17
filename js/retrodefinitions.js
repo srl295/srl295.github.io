@@ -1,3 +1,5 @@
+// See: https://srl295.github.io/2017/02/07/literate-programmers/
+
 (function($){
 
     var definitions = {
