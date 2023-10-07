@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>TypeScript Array fun | Steven R. Loomis</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="What’s in an Array? I ran into an unexpected TypeScript (or perhaps JavaScript) issue. Yes, I know, yet another. Here’s how it works. Names have been changed to protect the author of this pr. Starting">
+<meta name="keywords" content="typescript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TypeScript Array fun">
+<meta property="og:url" content="https://srl295.github.io/2023/10/07/ts-array-fun/index.html">
+<meta property="og:site_name" content="Steven R. Loomis">
+<meta property="og:description" content="What’s in an Array? I ran into an unexpected TypeScript (or perhaps JavaScript) issue. Yes, I know, yet another. Here’s how it works. Names have been changed to protect the author of this pr. Starting">
+<meta property="og:locale" content="en-US">
+<meta property="og:updated_time" content="2023-10-07T14:43:49.137Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TypeScript Array fun">
+<meta name="twitter:description" content="What’s in an Array? I ran into an unexpected TypeScript (or perhaps JavaScript) issue. Yes, I know, yet another. Here’s how it works. Names have been changed to protect the author of this pr. Starting">
+<meta name="twitter:creator" content="@srl295">
+  
+    <link rel="alternate" href="/atom.xml" title="Steven R. Loomis" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'G-4XHW0MCRD6', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+    <meta name="google-site-verification" content="sbLStvzF9g9-7JUTpZDHcWb0XO3ztnCYqUHzwLENBxs">
+  
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Steven R. Loomis</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/resume.html">Resume</a>
+        
+          <a class="main-nav-link" href="/">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <a id="nav-print-btn" class="nav-icon" href="javascript:window.print()" title="print"></a>
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://srl295.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-ts-array-fun" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/10/07/ts-array-fun/" class="article-date">
+  <time datetime="2023-10-07T16:19:34.000Z" itemprop="datePublished">2023-10-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      TypeScript Array fun
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>What’s in an Array? I ran into an unexpected TypeScript (or perhaps JavaScript) issue. Yes, I know, yet another.</p>
+<p>Here’s how it works. <em>Names have been changed to protect the author of <a href="https://github.com/keymanapp/keyman/pull/9688" target="_blank" rel="noopener">this pr</a>.</em></p>
+<h3 id="Starting-out"><a href="#Starting-out" class="headerlink" title="Starting out"></a>Starting out</h3><p>Let’s say you want an array class. Not just any array, a <em>special</em> array.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">"node:console"</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SplitArray</span> <span class="keyword">extends</span> <span class="title">Array</span>&lt;<span class="title">String</span>&gt; </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(strs : string, sep : string) &#123;</span><br><span class="line">        <span class="keyword">super</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">const</span> s <span class="keyword">of</span> strs.split(sep)) &#123;</span><br><span class="line">            <span class="keyword">this</span>.push(s);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Not a lot to see here. It&#39;s a special array class, we have a special constructor to get the data just right.</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span> const q = new SplitArray("this-and-that", "-");</span><br><span class="line"><span class="meta">&gt;</span> console.dir(q);</span><br><span class="line">SplitArray(3) [ 'this', 'and', 'that' ]</span><br></pre></td></tr></table></figure>
+
+<p>So far so good. Seems to be working as intended, we can add all sorts of other functions and such.</p>
+<h3 id="Just-one-more-thing"><a href="#Just-one-more-thing" class="headerlink" title="Just one more thing"></a>Just one more thing</h3><p>Let’s add some debugging. Why not.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SplitArray</span> </span>&#123;</span><br><span class="line">    …</span><br><span class="line">    toString() : string &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.map(<span class="function"><span class="params">q</span> =&gt;</span> <span class="string">`<span class="subst">$&#123;q&#125;</span>(length: <span class="subst">$&#123;q.length&#125;</span>)`</span>).join(<span class="string">','</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>A little excessive, but mostly harmless.  (right?)</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">…</span><br><span class="line"><span class="meta">&gt;</span> q.toString()</span><br><span class="line">/dev/null/arrays.ts:6</span><br><span class="line">        for(const s of strs.split(sep)) &#123;</span><br><span class="line">                            ^</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">TypeError: strs.split is not a function or its return value is not iterable</span><br><span class="line">    at SplitArray (/dev/null/arrays.ts:6:29)</span><br><span class="line">    at SplitArray.map (&lt;anonymous&gt;)</span><br><span class="line">    at SplitArray.toString (/dev/null/arrays.ts:12:21)</span><br><span class="line">    at Object.&lt;anonymous&gt; (/dev/null/arrays.ts:21:15)</span><br><span class="line">    …</span><br></pre></td></tr></table></figure>
+
+<p>Huh? Line 6 is the constructor. Why are we constructing this object, yet again? I was just trying to add a little toString()…</p>
+<h3 id="The-insanity-check-bounces"><a href="#The-insanity-check-bounces" class="headerlink" title="The insanity check bounces"></a>The insanity check bounces</h3><p>Maybe the <code>map</code> function is too complicated.  Let’s just change it to <code>this.map(q =&gt; q)</code> to see if it works at all. Nope.</p>
+<p>Debugging shows that <code>strs</code> has the value of <code>3</code>. As in, the number.</p>
+<h3 id="Reading-the-docs"><a href="#Reading-the-docs" class="headerlink" title="Reading the docs"></a>Reading the docs</h3><p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map" target="_blank" rel="noopener">Array.prototype.map()</a>, and I quote,</p>
+<blockquote>
+<p>creates a new array populated with the results of calling a provided function on every element in the calling array</p>
+</blockquote>
+<p>That’s what we’re trying to do, alright.</p>
+<h3 id="Working-as-Designed-Or-Don’t-Do-That"><a href="#Working-as-Designed-Or-Don’t-Do-That" class="headerlink" title="Working as Designed. Or, Don’t Do That."></a>Working as Designed. Or, <em>Don’t Do That.</em></h3><p>The problem here is that my little class doesn’t just have an array, it <em>is</em> an array. And so it is expected to act like one.</p>
+<p>The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Array" target="_blank" rel="noopener"><code>Array()</code> constructor</a> has a few overloads:</p>
+<ul>
+<li>new Array()</li>
+<li>new Array(element1, element2?, /* …, */ elementN)</li>
+<li>new Array(arrayLength)</li>
+</ul>
+<p>arrayLength… such as, perhaps, 3?</p>
+<p>The call to <code>super()</code> should have been a clue here. What’s happening internally is that map(q =&gt; q) is doing something like:</p>
+<p><code>n = new SplitArray(3);  n[0] = q[0];  n[1] = q[1]; n[2] = q[2];</code></p>
+<p>That&#39;s all fine, except for the constructor.</p>
+<h3 id="Super-Back-to-the-factory"><a href="#Super-Back-to-the-factory" class="headerlink" title="Super. Back to the factory"></a>Super. Back to the factory</h3><p>To fix this, we can use a factory static instead of our “helpful” constructor, which turned out to be less than helpful to the map()</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SplitArray</span> <span class="keyword">extends</span> <span class="title">Array</span>&lt;<span class="title">String</span>&gt; </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> split(strs : string, <span class="attr">sep</span> : string) &#123;</span><br><span class="line">        <span class="keyword">const</span> a = <span class="keyword">new</span> SplitArray();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">const</span> s <span class="keyword">of</span> strs.split(sep)) &#123;</span><br><span class="line">            a.push(s);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    toString() : string &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.map(<span class="function"><span class="params">q</span> =&gt;</span> <span class="string">`<span class="subst">$&#123;q&#125;</span>(length: <span class="subst">$&#123;q.length&#125;</span>)`</span>).join(<span class="string">','</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Now, finally, <code>toString()</code> will work properly. For some definition of properly.</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span> q.toString()</span><br><span class="line">this(length: 4),and(length: 3),that(length: 4)</span><br></pre></td></tr></table></figure>
+
+<p>We also could have contained the Array as a property, instead of subclassing.</p>
+<p>The tl;dr (now that you’ve perhaps already read it) is: Use caution when overriding Array constructors. Consider having an array instead of being one.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://srl295.github.io/2023/10/07/ts-array-fun/" data-id="clng5a8hm0014jjf0thtozqiw" class="article-share-link">Share</a>
+      
+        <a href="https://srl295.github.io/2023/10/07/ts-array-fun/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/typescript/">typescript</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2022/12/29/ldml-keyman-kbd-progress/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Progress on LDML Keyman Keyboards</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/2022/">2022</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bluemix/">bluemix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cldr/">cldr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/codehive/">codehive</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dvcs/">dvcs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/g11n/">g11n</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/globalizationpipeline/">globalizationpipeline</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/i18n/">i18n</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/icu/">icu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/icu4c/">icu4c</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/job/">job</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/keyman/">keyman</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kibana/">kibana</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/locales/">locales</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/opensource/">opensource</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/perl/">perl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pino/">pino</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/promises/">promises</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/scm/">scm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sil/">sil</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sketch/">sketch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/typescript/">typescript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unicode/">unicode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wip/">wip</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/2022/" style="font-size: 10px;">2022</a> <a href="/tags/bluemix/" style="font-size: 10px;">bluemix</a> <a href="/tags/cldr/" style="font-size: 15px;">cldr</a> <a href="/tags/codehive/" style="font-size: 10px;">codehive</a> <a href="/tags/dvcs/" style="font-size: 10px;">dvcs</a> <a href="/tags/g11n/" style="font-size: 12.5px;">g11n</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/globalizationpipeline/" style="font-size: 20px;">globalizationpipeline</a> <a href="/tags/i18n/" style="font-size: 10px;">i18n</a> <a href="/tags/icu/" style="font-size: 12.5px;">icu</a> <a href="/tags/icu4c/" style="font-size: 10px;">icu4c</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/job/" style="font-size: 10px;">job</a> <a href="/tags/keyman/" style="font-size: 12.5px;">keyman</a> <a href="/tags/kibana/" style="font-size: 10px;">kibana</a> <a href="/tags/locales/" style="font-size: 10px;">locales</a> <a href="/tags/node/" style="font-size: 15px;">node</a> <a href="/tags/opensource/" style="font-size: 10px;">opensource</a> <a href="/tags/perl/" style="font-size: 12.5px;">perl</a> <a href="/tags/pino/" style="font-size: 10px;">pino</a> <a href="/tags/promises/" style="font-size: 10px;">promises</a> <a href="/tags/scm/" style="font-size: 12.5px;">scm</a> <a href="/tags/sil/" style="font-size: 12.5px;">sil</a> <a href="/tags/sketch/" style="font-size: 10px;">sketch</a> <a href="/tags/typescript/" style="font-size: 10px;">typescript</a> <a href="/tags/unicode/" style="font-size: 17.5px;">unicode</a> <a href="/tags/wip/" style="font-size: 10px;">wip</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">October 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/10/07/ts-array-fun/">TypeScript Array fun</a>
+          </li>
+        
+          <li>
+            <a href="/2022/12/29/ldml-keyman-kbd-progress/">Progress on LDML Keyman Keyboards</a>
+          </li>
+        
+          <li>
+            <a href="/2022/12/26/code-hive-2022/">Code Hive Tx in 2022</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/26/git-twofer-3/">git twofer, the third</a>
+          </li>
+        
+          <li>
+            <a href="/2021/03/29/git-twofer-2/">git twofer, again</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 Steven R. Loomis<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> 
+      
+      <span class="retrodefinition" id="rdfooter"><b class="rdkey"></b>: <span class="rddef"></span><a href="/2017/02/07/literate-programmers/"><sup>?</sup></a> <i class="rdex"></i>
+      </span>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/resume.html" class="mobile-nav-link">Resume</a>
+  
+    <a href="/" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'srl295';
+  
+  var disqus_url = 'https://srl295.github.io/2023/10/07/ts-array-fun/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/retrodefinitions.js"></script>
+
+  </div>
+</body>
+</html>
