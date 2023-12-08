@@ -3,10 +3,14 @@ title: Steven R. Loomis • i18n Code Sculptor
 date: 2023-12-08 00:00:00
 ---
 
+![Steven R. Loomis](resume/loomis2023.jpg)
+
 ### Objective
 
  To work on software projects which make a difference
 for real people, with an emphasis on internationalization.
+
+{% asset_img loomis2023.png %}
 
 - {% fa_inline globe-africa fas %} Location: Texas, USA
 - [{% fa_inline clock fas %} Timezone: Central Time](https://time.is/CT)
@@ -16,6 +20,12 @@ for real people, with an emphasis on internationalization.
 - [{% fa_inline link fas %} git.io/srl295](https://srl295.github.io)
 - [{% fa_inline linkedin fab %} linkedin.com/in/srloomis](https://www.linkedin.com/in/srloomis)
 - [{% fa_inline stack-overflow fab %} Stack Exchange](https://stackexchange.com/users/62556/steven-r-loomis)
+
+## Positions Held
+
+- Owner, [Code Hive TX, LLC](https://codehivetx.us)
+- Chair, Unicode CLDR Digitally Disadvantaged Languages [(DDL-SC)](https://cldr.unicode.org/ddl)
+- Vice-chair, Unicode [Infrastructure Committee](https://www.unicode.org/consortium/techchairs.html)
 
 ## Qualifications
 
@@ -30,7 +40,7 @@ for real people, with an emphasis on internationalization.
 ### Languages
 
 - **Native/Bilingual**: C/C++, Java, JavaScript (Node.js, browser, embedded), HTML/CSS, gnumake
-- **Full Professional Proficiency**: gnumake, bash, XML/XLIFF, TypeScript
+- **Full Professional Proficiency**: bash, XML/XLIFF, TypeScript
 - **Professional Working**: sql, Vue3, jQuery
 - **Limited Working/Conversational**: sed, TeX/LaTeX/XeTeX
 - **Elementary**: python, PostScript, 6502
@@ -38,7 +48,7 @@ for real people, with an emphasis on internationalization.
 
 ### Platforms
 
-**Mainframe/Handheld**: MacOS/MacOSX, GNU/Linux (Slackware, RedHat, Debian, Mandrake, Ubuntu, NixOS), Microsoft Windows 11 through 3.1, AIX, IBM i (OS400), IBM z (z/OS), Solaris/Illumos, NeXT, PalmOS, Coherent, IRIX, A/UX, CTIX, HP/UX, BeOS/Haiku, FreeBSD, Taligent CommonPoint, Newton, Apple ][ DOS, MS-DOS, OS/2
+**Mainframe/Handheld**: MacOS/MacOSX, GNU/Linux (Slackware, RedHat, Debian, Mandrake, Ubuntu, NixOS), Microsoft Windows 11 through 3.1, AIX, IBM i (OS400), IBM z (z/OS), Solaris/Illumos, NeXT, PalmOS, Coherent, IRIX, A/UX, CTIX, HP/UX, BeOS/Haiku, FreeBSD, Taligent CommonPoint, Newton, Apple II DOS, MS-DOS, OS/2
 
 **Embedded**: Microchip PIC16F84, Arduino (Atmel AVR), Raspberry Pi, BeagleBone (TI OMAP3530), Tessel, ESP8266 (PlatformIO), Espruino
 
@@ -54,9 +64,9 @@ for real people, with an emphasis on internationalization.
 
 ## Experience
 
-### Owner, Code Hive Tx, LLC (2021-)
+### Owner, Code Hive Tx, LLC (2021—Present)
 
-Some of our many contracts include:
+Some of our contracts include:
 
 - CLDR Infrastructure: [The Unicode Consortium](https://www.unicode.org) needed to improve the [CLDR](https://www.unicode.org/cldr) project’s infrastructure. Focus areas include continuous integration and deployment, modernization and paying down tech debt, and developer documentation.
 Environments and tools include Java/Eclipse, Node.js, Maven, and Github Actions.
@@ -65,7 +75,7 @@ Environments and tools include Java/Eclipse, Node.js, Maven, and Github Actions.
 - Fintech sector — implementation of a distributed computing system for testing and machine learning training. Improvements to automated build system, and alerting/observability through custom Prometheus collectors. General IT support.
 - Globalization consulting
 
-### Independent Contractor (2020-2021)
+### Independent Contractor (2020—2021)
 
 - CLDR Infrastructure (see above)
 - All contracts were renegotiated with Code Hive Tx, LLC
@@ -85,7 +95,7 @@ and engaged with OpenWhisk open source community
 to find answers, solve problems, and even contribute
 back to the open source solutions.
 
-#### 2019-2020: Project Manager, G11n Tech Team
+#### 2019—2020: Project Manager, G11n Tech Team
 
 - Took over a project team in mid-cycle on short notice.
 - Organized sprint plans
@@ -97,7 +107,7 @@ and Africa.
 underlying cloud translation services through v1.0 to
 UAT
 
-#### 2016-2020: G11n Tech Team
+#### 2016—2020: G11n Tech Team
 
 Background: Globalization Pipeline is a Translation-as-a-Service software offering which is in the IBM Cloud (aka Bluemix) catalog.
 
@@ -125,7 +135,7 @@ managing XLIFF-based human post editing (Node.js).
 - Gave internal and external presentations to showcase the Globalization Pipeline, including a co-keynote at Fluent
 - Architectural and development support to Elastic Kibana globalization and integration with Globalization Pipeline
 
-#### 2013-2020: Node.js
+#### 2013—2020: Node.js
 
 <!--
 First Node comment: https://github.com/nodejs/node-v0.x-archive/issues/4689#issuecomment-22204220
@@ -143,7 +153,7 @@ GitHub issues and IRC.
 - Started the Intl WG, and member of successor i18n WG
 - Built a tool to simplify npm authentication to our internal npm repository for ci/cd
 
-#### 1997-2020: International Components for Unicode
+#### 1997—2020: International Components for Unicode
 
 Role: IBM’s Technical Lead for ICU for C/C++, Technical Committee Member
 
@@ -168,7 +178,7 @@ Involved in many aspects of project. In charge of build and release issues. Emph
 
 Source Repository, Defect Tracking, Development Process tools support: Engineered the ICU team's transition from CVS and Jitterbug to Subversion and trac. Designed and implemented custom python plugin modules to support ticket/changeset integration and to provide a review process. Provide extensive testing and maintenance.
 
-#### 2002-2020: Common Locale Data Repository
+#### 2002—2020: Common Locale Data Repository
 
 Role: founding member of TC, design, tooling, infrastructure
 
@@ -179,7 +189,7 @@ Responsibilities:
 - Engaged with linguistic communities to collect and improve the status of language support, particularly with respect to minority languages.
 - Conference presentation and discussions
 
-#### Unicode Consortium (2012-2020)
+#### Unicode
 
 - Unicode Localization Interoperability (ULI-TC/SC) chair
 - IBM's primary representative to Unicode and to INCITS JTC1/L2/SC2 USNB
@@ -194,7 +204,7 @@ Responsibilities:
 
 - Participated in ECMA262 (JavaScript) and contributor to ECMA402 (I18n)
 
-#### 2006-2016: Sun (Oracle) Java Liason
+#### 2006—2016: Sun (Oracle) Java Liason
 
 Role: Liaison between IBM and the Java2D group at Oracle (previously Sun Microsystems), Santa Clara in regards to complex text layout and bidirectional text processing areas of the Java environment.
 
@@ -204,7 +214,7 @@ Responsibilities:
 - Integration and support of the ICU layout engine
 - Spearheaded project to integrate tha HarfBuzz layout engine (completed in JDK/Java 9)
 
-### 2001: University of Malta
+### University of Malta (2001)
 
 Systems Engineer, Department of Computer Science and Artificial Intelligence, University of Malta (Europe).
 
@@ -212,7 +222,7 @@ Worked on Maltese Language localization, advocacy, and standardization activitie
 
 (This work was pursued while on a voluntary Leave of Absence from IBM, which resumed as full-time in 2002.)
 
-### 1993-1997: Software Engineer,  Taligent Inc., Cupertino, California.
+### Software Engineer,  Taligent Inc., Cupertino, California. (1993—1997)
 
 _On Jan 1, 1997, Taligent became a wholly-owned subsidiary of IBM. At the end of 1997, I transitioned to IBM._
 
@@ -229,19 +239,19 @@ Contributor to CommonPoint communications and service access frameworks includin
 
 Build and pre-build integration support. (MacOS/MPW and TalOS.) Maintained the 'lab', including extensive unofficial technical support, including MacOS applications and configuration/AIX/Solaris/Ethernet hardware/security. Departmental webmaster (1993). Tools support including C++ HTMLizer, URL Chat for internal link sharing, a GUI ‘tail’ for build logfile viewing (MacOS), and a facility for communications channel performance testing.
 
-### 1992-1993: Instructor, The Kings Academy, Los Altos, California
+### Instructor, The Kings Academy, Los Altos, California (1992—1993)
 
 Instructed Junior and Senior High School Students in fundamental programming using the BASIC and 6502 assembly languages.
 
-Developed and supported “AuntieEm”/Mac6502/asm - 6502 emulator (Apple ][ environment), with assembler. For MacOS and UNIX.
+Developed and supported “AuntieEm”/Mac6502/asm - 6502 emulator (Apple II environment), with assembler. For MacOS and UNIX.
 
 Set up computer lab with Windows 3.1, and PromiseLAN network. Provided Technical support for the lab.
 
-### 1990: Consultant to Color Blend Painting, San Carlos, California
+### Consultant to Color Blend Painting, San Carlos, California (1990)
 
 Provided Macintosh application consulting, troubleshooting. Among other projects, worked on prototype of a Hypercard-based contact management application. Provided training in the HyperTalk programming language.
 
-### 1989: Software Engineer, IntelliChoice, Cupertino, California
+### Software Engineer, IntelliChoice, Cupertino, California (1989)
 
 UI development and testing for a HyperCard-based (HyperTalk langauge) car information kiosk, guiding users through vehicle selections based on user preference. Extensive integration with XCMDs and XFCNs.
 
@@ -255,9 +265,11 @@ UI development and testing for a HyperCard-based (HyperTalk langauge) car inform
 
 ## Awards
 
+
 - IBM Eminence and Excellence (2015, 2016)
 - IBM Open Source Engagement (2015, 2016, 2017, 2019)
 - IBM Manager’s Choice (2014, 2015, 2016, 2017, 2019)
+- Unicode Bulldog Award for contributions to ICU and CLDR (2009)
 
 ## Education
 
@@ -272,10 +284,6 @@ Coursework:
 - 1993: C++, West Valley College (Saratoga, California, USA)
 - 1989: C, Foothill College (Los Altos, California, USA)
 
-Awards:
-
-- 2009: Unicode Bulldog Award for contributions to ICU and CLDR
-
 ## Linguistic Protocols
 
 Human Language skills:
@@ -288,7 +296,7 @@ Human Language skills:
 
 Familiar, with low levels of comprehension, with a wide variety of scripts and their distinctions: Arabic, Hebrew, Cyrillic (Russian), Devanagari (Hindi) and neighbors, Syriac (Assyrian), Japanese and Chinese ideographs.
 
-Interested in Braille (limited skill) and sign languages. Some experience and much interest in linguistics/computational linguistics via IBM Translation projects, ICU/CLDR and the UTC/Unicode Script Ad Hoc.
+Interested in Braille (limited skill) and sign languages. Some experience and much interest in linguistics/computational linguistics translation projects, ICU/CLDR and the UTC/Unicode Script Ad Hoc.
 
 ## Other Experience
 
