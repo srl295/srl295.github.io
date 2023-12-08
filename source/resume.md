@@ -1,6 +1,6 @@
 ---
 title: Steven R. Loomis • i18n Code Sculptor
-date: 2021-01-15 00:00:00
+date: 2023-12-08 00:00:00
 ---
 
 ### Objective
@@ -8,7 +8,7 @@ date: 2021-01-15 00:00:00
  To work on software projects which make a difference
 for real people, with an emphasis on internationalization.
 
-- {% fa_inline globe-africa fas %} Location: Texas, USA 
+- {% fa_inline globe-africa fas %} Location: Texas, USA
 - [{% fa_inline clock fas %} Timezone: Central Time](https://time.is/CT)
 - [{% fa_inline envelope fas %} srl295@gmail.com](mailto:srl295@gmail.com)
 - [{% fa_inline twitter fab %} @srl295](https://twitter.com/srl295)
@@ -30,33 +30,45 @@ for real people, with an emphasis on internationalization.
 ### Languages
 
 - **Native/Bilingual**: C/C++, Java, JavaScript (Node.js, browser, embedded), HTML/CSS, gnumake
-- **Full Professional Proficiency**: gnumake, bash, XML/XLIFF
-- **Professional Working**: sql, Vue, jQuery
+- **Full Professional Proficiency**: gnumake, bash, XML/XLIFF, TypeScript
+- **Professional Working**: sql, Vue3, jQuery
 - **Limited Working/Conversational**: sed, TeX/LaTeX/XeTeX
 - **Elementary**: python, PostScript, 6502
 - **I can order lunch in**: perl, php, 8080
 
 ### Platforms
 
-**Mainframe/Handheld**: MacOS/MacOSX, GNU/Linux (Slackware, RedHat, Debian, Mandrake, Ubuntu, NixOS), Microsoft Windows 10 through 3.1, AIX, IBM i (OS400), IBM z (z/OS), Solaris/Illumos, NeXT, PalmOS, Coherent, IRIX, A/UX, CTIX, HP/UX, BeOS/Haiku, FreeBSD, Taligent CommonPoint, Newton, Apple ][ DOS, MS-DOS, OS/2
+**Mainframe/Handheld**: MacOS/MacOSX, GNU/Linux (Slackware, RedHat, Debian, Mandrake, Ubuntu, NixOS), Microsoft Windows 11 through 3.1, AIX, IBM i (OS400), IBM z (z/OS), Solaris/Illumos, NeXT, PalmOS, Coherent, IRIX, A/UX, CTIX, HP/UX, BeOS/Haiku, FreeBSD, Taligent CommonPoint, Newton, Apple ][ DOS, MS-DOS, OS/2
 
 **Embedded**: Microchip PIC16F84, Arduino (Atmel AVR), Raspberry Pi, BeagleBone (TI OMAP3530), Tessel, ESP8266 (PlatformIO), Espruino
 
 ### Tools
 
-- **Cloud**: Docker, Kubernetes, Cloud Foundry, OpenWhisk/IBM Cloud Functions, Cloudant, Kafka, S3
+- **Cloud**: Docker, Kubernetes, Cloud Foundry, OpenWhisk/IBM Cloud Functions, Cloudant, Kafka, S3, Google Compute Platform, Vagrant
 - **CI/CD**: Jenkins, Travis, GitHub Actions, Artifactory, IBM Cloud CLI, Hashicorp Vault
 - **Team**: Jira, Trac, ZenHub, 1Password
-- **Insights**: New Relic, Prometheus, Grafana
+- **Insights**: New Relic, Prometheus, Grafana, Datadog, QuickBooks API
 - **Edit**: VS Code, Emacs, Eclipse
-- **Web**: Servlets/J2EE, Express, basic Vue.js
+- **Web**: Servlets/J2EE, Express, Vue, Webpack
+- **Store**: zfs / RAID, routing and VLANs
 
 ## Experience
 
-### Independent Contractor (2020-)
+### Owner, Code Hive Tx, LLC (2021-)
 
-- Currently contracting with [The Unicode Consortium](https://www.unicode.org) to improve the [CLDR](https://www.unicode.org/cldr) project’s infrastructure. Focus areas include continuous integration and deployment, modernization and paying down tech debt, and developer documentation.
+Some of our many contracts include:
+
+- CLDR Infrastructure: [The Unicode Consortium](https://www.unicode.org) needed to improve the [CLDR](https://www.unicode.org/cldr) project’s infrastructure. Focus areas include continuous integration and deployment, modernization and paying down tech debt, and developer documentation.
 Environments and tools include Java/Eclipse, Node.js, Maven, and Github Actions.
+- We were the recipient of and completed a [Unicode AAC Grant](https://aac.unicode.org/grants) in 2023 to progress the Keyboard specification.
+- [Keyman LDML](https://keyman.com/ldml) — design and implementation to add LDML support to Keyman.
+- Fintech sector — implementation of a distributed computing system for testing and machine learning training. Improvements to automated build system, and alerting/observability through custom Prometheus collectors. General IT support.
+- Globalization consulting
+
+### Independent Contractor (2020-2021)
+
+- CLDR Infrastructure (see above)
+- All contracts were renegotiated with Code Hive Tx, LLC
 
 ### IBM Corporate Globalization (1998—2020)
 
@@ -95,7 +107,7 @@ Responsibilities:
 
 - Part of team designing and architecting microservice-based XLIFF translation pipeline services
 - Responsible for Human Post Editing microservice in Java (Spring Boot)
-- Responsible for build engineering of CI/CD processes for building and testing the microservices and API orchestrator. 
+- Responsible for build engineering of CI/CD processes for building and testing the microservices and API orchestrator.
 
 ##### Globalization Pipeline
 
@@ -121,8 +133,7 @@ First Node comment: https://github.com/nodejs/node-v0.x-archive/issues/4689#issu
 
 Role: Core Collaborator, CTC/TSC member, WG leader, WG member
 
-- Drove `Intl` (ICU-based) feature enablement “on by default”
-in Node.js v0.12
+- Drove `Intl` (ICU-based) feature enablement “on by default” in Node.js v0.12
 - Engaged with IBM, RedHat stakeholders to continously
 support and refine internationalization availability, configuration
 options. Provided support via internal Slack channels, external
@@ -193,13 +204,13 @@ Responsibilities:
 - Integration and support of the ICU layout engine
 - Spearheaded project to integrate tha HarfBuzz layout engine (completed in JDK/Java 9)
 
-### 2001 (Jan-Dec): University of Malta
+### 2001: University of Malta
 
 Systems Engineer, Department of Computer Science and Artificial Intelligence, University of Malta (Europe).
 
 Worked on Maltese Language localization, advocacy, and standardization activities. Technical advisor on font, keyboard, processing, and educational activities. Appearances in local media in support of Maltese language computing.
 
-(Note: continued on a LOA basis with IBM during this time.)
+(This work was pursued while on a voluntary Leave of Absence from IBM, which resumed as full-time in 2002.)
 
 ### 1993-1997: Software Engineer,  Taligent Inc., Cupertino, California.
 
@@ -252,14 +263,14 @@ UI development and testing for a HyperCard-based (HyperTalk langauge) car inform
 
 Degrees:
 
-- 2014: Bachelor of Arts, Computer Science, Thomas Edison State University (Trenton, New Jersey)
-- 1999: Associate in Arts, Interdisciplinary Studies, De Anza College (Cupertino, California)
+- 2014: Bachelor of Arts, Computer Science, Thomas Edison State University (Trenton, New Jersey, USA)
+- 1999: Associate in Arts, Interdisciplinary Studies, De Anza College (Cupertino, California, USA)
 
 Coursework:
 
 - 2001: Windows 2000 Certification, University of Malta (Tal-Qroqq, Malta, Europe)
-- 1993: C++, West Valley College (Saratoga, California)
-- 1989: C, Foothill College (Los Altos, California)
+- 1993: C++, West Valley College (Saratoga, California, USA)
+- 1989: C, Foothill College (Los Altos, California, USA)
 
 Awards:
 
@@ -267,13 +278,13 @@ Awards:
 
 ## Linguistic Protocols
 
-i.e. human language skills:
+Human Language skills:
 
-- `en-US` (American English): Fully Proficient.
-- `es-US` (US Spanish / español estadounidense): Able to read and, mostly, hear. Can perform complex OS installations in Spanish. (Elementary Spanish course, 9 Semester Hours plus self study)
-- `ja` (Japanese): Some conversational training (4 Semester Hours) and experience, but I need to check the equivalent of stackoverflow for most tasks. Some recognition of Kanji/Han characters.
-- `grc` (Koine Greek): Some reading skill
-- `mt` (Maltese): Some conversational skill.
+- `en-US` (American English): Fully Proficient. Texan is a challenge sometimes.
+- `es-US` (US Spanish / español estadounidense): Able to read and, mostly, hear. Can perform complex OS installations in Spanish. (College-level Elementary Spanish course, 9 Semester Hours plus continuing self study)
+- `ja` (Japanese): Some conversational training (4 Semester Hours college) and experience. Some recognition of Kanji/Han characters.
+- `grc` (Koine Greek): Some reading skill.
+- `mt` (Maltese): Some conversational skill. (Conversational course work, plus self-guided coursework, plus self-study and one year residency)
 
 Familiar, with low levels of comprehension, with a wide variety of scripts and their distinctions: Arabic, Hebrew, Cyrillic (Russian), Devanagari (Hindi) and neighbors, Syriac (Assyrian), Japanese and Chinese ideographs.
 
@@ -283,18 +294,18 @@ Interested in Braille (limited skill) and sign languages. Some experience and mu
 
 ### Reformed Heritage Church (Hanover Presbytery) of San José, California
 
-#### 2014—present: Elder
+#### 2014—2020: Elder
 
 Responsible for shepherding ministries/pastoral care, education including leadership training, and periodic sermon preparation.
 
 #### 2008—2014: Deacon
 
-Responsible for charitable distributions in support of needs, financial counseling, as well as support of ministry needs.
+Responsible for charitable distributions in support of needs, financial counseling, and support of ministry needs.
 
 #### 2009—2015: Treasurer (CFO)
 
 Responsible for tracking income and expenses, payroll, records management, and bank interaction.
-Drove improvements to forms and policies around best practices. Drove migration from shrinkwrap QuickBooks to QuickBooks Online. Managed education sessions for onboarding of additional treasury team members.
+Drove improvements to forms and policies around best practices. Drove migration from on-prem QuickBooks to QuickBooks Online. Managed education sessions for onboarding of additional treasury team members.
 
 ### Personal Projects
 
@@ -303,15 +314,15 @@ Working on experimental AX.25 socket bindings for Node.js. Contributed code impr
 
 #### 1990—present: UNIX at home.
 
-- UUCP, SMTP, POP, IMAP, HTTP/S, SSH/SSL configuration and management. 
+- UUCP, SMTP, POP, IMAP, HTTP/S, SSH/SSL configuration and management.
 - multi-tenant virtual hosting.
 - network performance analysis and troubleshooting.
 - firewall requirements, implementation, and maintenance.
 - docker-based FreePBX (Asterix SIP/s) installation for home telephony.
 - Bulletin Board (BBS) software design and implementation.
-- Network cabling, installation, support. Physical layers through high level applications: 10/100/1000baseT, 10base2, PoE, Mikrotik router management, 802.11b/g/n wireless, AppleTalk, Farallon PhoneNet. Network Analyzer operation.
+- Network cabling, installation, support. Physical layers through high level applications: Fiber, 10/100/1000baseT, 10base2, PoE, Mikrotik router management, 802.11b/g/n wireless, AppleTalk, Farallon PhoneNet. Network Analyzer operation. Power over Ethernet planning.
 - Home monitoring with Prometheus (including custom exporters), Grafana.
-- FreeNAS deployed with RAID for robust storage. Custom scripts for off-site backup.
+- TrueNAS deployed with RAID for robust storage. Custom scripts for off-site backup.
 
 #### Other projects
 
