@@ -21,7 +21,7 @@ for real people, with an emphasis on internationalization.
 - [{% fa_inline linkedin fab %} linkedin.com/in/srloomis](https://www.linkedin.com/in/srloomis)
 - [{% fa_inline stack-overflow fab %} Stack Exchange](https://stackexchange.com/users/62556/steven-r-loomis)
 
-## Positions Held
+## Current Positions
 
 - Owner, [Code Hive TX, LLC](https://codehivetx.us)
 - Chair, Unicode CLDR Digitally Disadvantaged Languages [(DDL-SC)](https://cldr.unicode.org/ddl)
