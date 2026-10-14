@@ -7,17 +7,19 @@ date: 2038-01-19 03:14:08
 
 i18n code sculptor • I _“work on software projects which make a difference for real people, with an emphasis on internationalization”_
 
+- Owner: [`code hive tx, llc`](https://codehivetx.us) - here is where I write about my work projects
+
 - Details and contact info: [**résumé**](./resume.html)
 - To see the latest blog posts, visit the [archives](https://srl295.github.io/archives/).
 
 * Social: [LinkedIn](http://www.linkedin.com/in/srloomis) | [Twitter: @srl295](http://twitter.com/srl295) | [Github: @srl295](https://github.com/srl295) | [openhub](https://www.openhub.net/accounts/srl295) | [keybase](https://keybase.io/srl295)
-* Projects: [ICU](http://icu-project.org) ([me](https://ssl.icu-project.org/trac/wiki/Srl)) | [CLDR](http://unicode.org/cldr) | [Past ULI-TC Chair](http://unicode.org/uli) | [Past Unicode-TC rep](http://unicode.org) 
+* Projects: [ICU](http://icu-project.org) ([me](https://ssl.icu-project.org/trac/wiki/Srl)) | [CLDR](http://unicode.org/cldr) | [Past ULI-TC Chair](http://unicode.org/uli) | [Past Unicode-TC rep](http://unicode.org)
 
 * “My script is encoded in Unicode… now what?” — see my article on [Full Stack Enablement](https://srl295.github.io/2017/06/06/full-stack-enablement/)
 
 # Presentations
 
-## 2020 
+## 2020
 
 - Meet me (virtually) at the [44th Int’l & Unicode Conference](https://www.unicodeconference.org/) October 14-16, 2020
 
@@ -25,7 +27,7 @@ i18n code sculptor • I _“work on software projects which make a difference 
 * Nov 1: FEISGILTT@LocWorld35: ULI/XLIFF [slides](https://cdn.rawgit.com/srl295/srl295-slides/2017-11-01-feisgiltt-uli/index.html) | [pdf](https://www.dropbox.com/s/se7qaswihxu8l0u/ULI%20%40%20FEISGILTT2017.pdf?dl=0)
 * IUC41
     - Putting ICU to Work [pdf](https://www.dropbox.com/s/wxmzmwsgxkkopm1/MonS3T3%20-%20Putting%20ICU%20to%20Work.pdf?dl=0)
-    - `Intl` as in Internationalization [pdf](https://www.dropbox.com/s/8tj7pzorv6ir9z2/Tue%20S5T2%20Loomis%20Intl%20as%20in%20Internationalization.pdf?dl=0) 
+    - `Intl` as in Internationalization [pdf](https://www.dropbox.com/s/8tj7pzorv6ir9z2/Tue%20S5T2%20Loomis%20Intl%20as%20in%20Internationalization.pdf?dl=0)
 * Oct 2: JavaOne
    * [BOF 4226: Harfbuzz in JDK 9 (JEP 258)](https://www.dropbox.com/s/ndkm55wsa6qieh9/BOF4226.pdf?dl=0) - San Francisco
 
@@ -41,7 +43,7 @@ i18n code sculptor • I _“work on software projects which make a difference 
    * `Intl` all the things: [slides](https://cdn.rawgit.com/srl295/srl295-slides/2016-11-03-iuc40/index.html) | [repo](https://github.com/srl295/srl295-slides/tree/2016-11-03-iuc40) | [pdf](https://www.dropbox.com/s/0nuyx8nhvh85ukn/s9t3%20Nodejs%20Intl%20All%20the%20Things.pdf?dl=0)
 * Aug 8: [FresNode](http://www.meetup.com/en-US/fresno-node-js) Fresno
 * July 28
-   * [Intl as in Internationalization](https://cdn.rawgit.com/srl295/srl295-slides/2016-07-NodeSummit-final/index.html) at [NodeSummit](http://nodesummit.com) SF | [repo](https://github.com/srl295/srl295-slides/tree/2016-07-NodeSummit) 
+   * [Intl as in Internationalization](https://cdn.rawgit.com/srl295/srl295-slides/2016-07-NodeSummit-final/index.html) at [NodeSummit](http://nodesummit.com) SF | [repo](https://github.com/srl295/srl295-slides/tree/2016-07-NodeSummit)
    NOTE: Use an Intl-enabled browser for best results, such as Firefox.
 * Mar 9 - Fluent, SF
    * [Globalization Pipeline (keynote)](http://conferences.oreilly.com/fluent/javascript-html-us/public/schedule/detail/50476) | [vid](https://www.oreilly.com/ideas/globalization-pipeline-translations-at-cloud-speeds)   w/ Steven Atkin
